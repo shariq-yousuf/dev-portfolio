@@ -26,7 +26,6 @@ body {
   height: 100dvh;
   background-color: rgb(0, 0, 0);
   padding: 1px;
-  /* border: 1px solid white; */
 }
 
 .navbar ul {
@@ -73,17 +72,18 @@ body {
   background-size: cover;
   color: var(--sec-color);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  align-items: center;
 }
 
 .intro-container {
   width: 50%;
   text-align: center;
-  transform: translateY(9rem);
 }
 
 .intro h2,
 .intro h1 {
-  margin: 10px;
+  margin: 1rem;
   font-weight: normal;
 }
 
@@ -94,4 +94,22 @@ body {
 
 .my-name {
   font-size: 4rem;
+}
+
+@media screen and (max-width: 720px) {
+  .navbar ul {
+    margin: 1rem 0;
+  }
+
+  .navbar a {
+    font-size: 1rem;
+  }
+
+  .intro-container {
+    width: 100%;
+  }
+
+  .my-name {
+    font-size: 3rem;
+  }
 }
