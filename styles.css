@@ -3,7 +3,7 @@
 }
 
 :root {
-  --code-img: url(src/code-img.jpg);
+  --code-img: url(https://res.cloudinary.com/do0pop1de/image/upload/v1718113378/src%20for%20portfolio%20website/intro-bg.jpg);
   --primary-color: rgb(255, 174, 0);
   --sec-color: rgb(239, 235, 133);
 }
