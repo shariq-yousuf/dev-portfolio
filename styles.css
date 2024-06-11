@@ -96,6 +96,24 @@ body {
   font-size: 4rem;
 }
 
+#back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 2rem;
+  right: 4rem;
+  text-decoration: none;
+}
+
+.material-symbols-outlined:hover {
+  color: var(--sec-color);
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 600, "GRAD" 0, "opsz" 24;
+  color: var(--primary-color);
+  font-size: 3rem !important;
+}
+
 @media screen and (max-width: 720px) {
   .navbar ul {
     margin: 1rem 0;
@@ -111,5 +129,14 @@ body {
 
   .my-name {
     font-size: 3rem;
+  }
+
+  #back-to-top {
+    bottom: 1.5rem;
+    right: 2rem;
+  }
+
+  .material-symbols-outlined {
+    font-size: 2rem !important;
   }
 }
