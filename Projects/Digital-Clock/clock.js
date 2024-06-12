@@ -19,7 +19,10 @@ let date;
 
 const updateDate = setInterval(() => {
   date = new Date();
-  timeEl.textContent = `${date.getHours()} : ${date.getMinutes()}  : ${date.getSeconds()}`;
+  timeEl.textContent = `${date.getHours().toString().padStart(2, 0)} : ${date
+    .getMinutes()
+    .toString()
+    .padStart(2, 0)}  : ${date.getSeconds().toString().padStart(2, 0)}`;
   dateEl.textContent = `${months[date.getMonth()]}, ${
     days[date.getDay()]
   } ${date.getDate()}`;
