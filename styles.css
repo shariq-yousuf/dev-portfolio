@@ -21,7 +21,6 @@ body {
 }
 
 #home,
-#my-projects,
 #my-skills {
   height: 100dvh;
   background-color: rgb(0, 0, 0);
@@ -98,7 +97,6 @@ body {
 
 .role {
   color: var(--primary-color);
-  /* text-decoration: overline; */
   font-style: italic;
 }
 
@@ -110,14 +108,91 @@ body {
   text-decoration: none;
 }
 
-.material-symbols-outlined:hover {
+.icon {
+  color: var(--primary-color);
+  font-size: 3rem !important;
+}
+
+.icon:hover {
   color: var(--sec-color);
 }
 
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 600, "GRAD" 0, "opsz" 24;
+}
+
+#my-projects {
+  min-height: 100dvh;
+  background-color: rgb(31, 31, 73);
+  padding: 20px;
+}
+
+#my-projects h1 {
+  margin: 0 0 10px 0;
+  text-align: center;
   color: var(--primary-color);
-  font-size: 3rem !important;
+}
+
+#my-projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: start;
+  align-items: start;
+}
+
+.card {
+  box-sizing: content-box;
+  color: var(--primary-color);
+  width: 250px;
+  height: 280px;
+  background-color: transparent;
+  border-radius: 20px;
+  margin: 0;
+  padding: 0;
+  border: 3px solid var(--primary-color);
+}
+
+.card:hover {
+  box-shadow: 0px 0px 15px 0px var(--sec-color);
+}
+
+.card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card img {
+  text-align: center;
+  display: block;
+  width: 230px;
+  margin: 10px auto;
+  border-radius: 10px;
+}
+
+.card h2 {
+  margin: 5px 0 5px 10px;
+}
+
+.card p {
+  margin: 5px 10px 5px 10px;
+  text-align: justify;
+  color: var(--sec-color);
 }
 
 @media screen and (max-width: 720px) {
@@ -144,5 +219,9 @@ body {
 
   .material-symbols-outlined {
     font-size: 2rem !important;
+  }
+
+  #my-projects {
+    padding: 10px;
   }
 }
