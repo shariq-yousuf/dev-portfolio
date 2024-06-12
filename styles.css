@@ -96,6 +96,12 @@ body {
   font-size: 4rem;
 }
 
+.role {
+  color: var(--primary-color);
+  /* text-decoration: overline; */
+  font-style: italic;
+}
+
 #back-to-top {
   display: none;
   position: fixed;
