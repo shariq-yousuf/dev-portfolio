@@ -181,6 +181,7 @@ body {
   text-align: center;
   display: block;
   width: 230px;
+  height: 125px;
   margin: 10px auto;
   border-radius: 10px;
 }
