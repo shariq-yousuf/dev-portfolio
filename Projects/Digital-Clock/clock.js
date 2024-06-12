@@ -1,5 +1,6 @@
 const timeEl = document.getElementById("time");
 const dateEl = document.getElementById("date");
+const bodyEl = document.getElementsByTagName("body");
 const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 const months = [
   "January",
@@ -26,4 +27,8 @@ const updateDate = setInterval(() => {
   dateEl.textContent = `${months[date.getMonth()]}, ${
     days[date.getDay()]
   } ${date.getDate()}`;
+
+  if (date.getHours > "19" || date.getHours < "06") {
+    bodyEl[0].style.background = "black";
+  }
 }, 1000);
