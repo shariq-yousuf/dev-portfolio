@@ -22,6 +22,15 @@ const projects = [
       "https://res.cloudinary.com/do0pop1de/image/upload/v1718191950/src%20for%20portfolio%20website/secret-chat.png",
     url: "https://shariq-yousuf.github.io/Secret-Chat/",
   },
+  {
+    id: 3,
+    title: "TicTacToe",
+    description:
+      "The Xs and Os are coming! Prepare for strategic battles.",
+    imgSrc:
+      "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/coming-soon",
+    url: "./Projects/Coming Soon/coming-soon.html",
+  },
 ];
 
 // navbar, prevent default behavior and scroll to section without updating url
