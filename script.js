@@ -9,7 +9,8 @@ const projects = [
     title: "Digital Clock",
     description:
       "Stay on time, anywhere! Simple, clean digital clock. Always accurate, always free. Check it out!",
-    imgSrc: "/src/Screenshot (35).png",
+    imgSrc:
+      "https://res.cloudinary.com/do0pop1de/image/upload/v1718194146/src%20for%20portfolio%20website/clock.png",
     url: "/Projects/Digital Clock/index.html",
   },
   {
