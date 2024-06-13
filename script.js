@@ -126,5 +126,3 @@ for (const skill of skills) {
   bgEl.appendChild(imgEl);
   mySkillsContainer.appendChild(bgEl);
 }
-
-// acc https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/skills%20icons/zp6j0gvdx8bvvh8yt0mk
