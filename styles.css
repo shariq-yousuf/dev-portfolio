@@ -127,7 +127,7 @@ body {
   padding: 20px;
 }
 
-#my-projects h1 {
+.heading {
   margin: 0 0 10px 0;
   text-align: center;
   color: var(--primary-color);
@@ -196,6 +196,39 @@ body {
   color: var(--sec-color);
 }
 
+#my-skills {
+  padding: 20px;
+  background-color: rgb(49, 45, 41);
+}
+
+#my-skills-container {
+  width: 50dvw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: start;
+  gap: 10px;
+  margin: 30px auto;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--primary-color);
+}
+
+#my-skills-container .bg {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.764);
+}
+
+#my-skills-container img {
+  width: 50px;
+  height: 50px;
+}
+
 @media screen and (max-width: 720px) {
   .navbar ul {
     margin: 1rem 0;
@@ -224,5 +257,9 @@ body {
 
   #my-projects {
     padding: 10px;
+  }
+
+  #my-skills-container {
+    width: 80dvw;
   }
 }

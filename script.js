@@ -3,6 +3,7 @@ const links = document.querySelectorAll(
 );
 const backToTopBtn = document.getElementById("back-to-top");
 const myProjectsContainer = document.getElementById("my-projects-container");
+const mySkillsContainer = document.getElementById("my-skills-container");
 const projects = [
   {
     id: 1,
@@ -25,11 +26,57 @@ const projects = [
   {
     id: 3,
     title: "TicTacToe",
-    description:
-      "The Xs and Os are coming! Prepare for strategic battles.",
+    description: "The Xs and Os are coming! Prepare for strategic battles.",
     imgSrc:
       "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/coming-soon",
     url: "./Projects/Coming Soon/coming-soon.html",
+  },
+];
+const skills = [
+  {
+    id: 9,
+    title: "GitHub",
+    icon: "https://res.cloudinary.com/do0pop1de/image/upload/v1718268748/src%20for%20portfolio%20website/skills%20icons/github.svg",
+  },
+  {
+    id: 8,
+    title: "Git",
+    icon: "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/skills%20icons/git",
+  },
+  {
+    id: 7,
+    title: "JavaScript",
+    icon: "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/skills%20icons/js",
+  },
+  {
+    id: 6,
+    title: "SASS",
+    icon: "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/skills%20icons/sass-icon",
+  },
+  {
+    id: 5,
+    title: "Accessibility",
+    icon: "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/skills%20icons/Accessibility",
+  },
+  {
+    id: 4,
+    title: "Tailwind CSS",
+    icon: "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/skills%20icons/tailwind-css",
+  },
+  {
+    id: 3,
+    title: "Bootstrap 5",
+    icon: "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/skills%20icons/bootstrap",
+  },
+  {
+    id: 2,
+    title: "CSS",
+    icon: "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/skills%20icons/css",
+  },
+  {
+    id: 1,
+    title: "HTML5",
+    icon: "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/skills%20icons/html",
   },
 ];
 
@@ -58,7 +105,7 @@ window.onscroll = function () {
 // adding projects
 for (const project of projects) {
   const projectCard = document.createElement("div");
-  projectCard.id = `card-${project.id}`;
+  projectCard.id = `project-${project.id}`;
   projectCard.className = "card";
   projectCard.innerHTML = `
   <a href="${project.url}">
@@ -67,5 +114,17 @@ for (const project of projects) {
   <p>${project.description}</p>
   </a>`;
   myProjectsContainer.appendChild(projectCard);
-  console.log(projectCard);
 }
+
+// adding skills
+for (const skill of skills) {
+  const bgEl = document.createElement("div");
+  bgEl.className = "bg";
+  const imgEl = document.createElement("img");
+  imgEl.setAttribute("src", skill.icon);
+  imgEl.setAttribute("alt", skill.title);
+  bgEl.appendChild(imgEl);
+  mySkillsContainer.appendChild(bgEl);
+}
+
+// acc https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/skills%20icons/zp6j0gvdx8bvvh8yt0mk
