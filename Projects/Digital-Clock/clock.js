@@ -28,7 +28,7 @@ const updateDate = setInterval(() => {
     days[date.getDay()]
   } ${date.getDate()}`;
 
-  if (date.getHours > "19" || date.getHours < "06") {
+  if (date.getHours() > "19" || date.getHours() < "06") {
     bodyEl[0].style.background = "black";
   }
 }, 1000);
