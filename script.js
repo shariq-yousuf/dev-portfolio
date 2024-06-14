@@ -89,7 +89,7 @@ projects.push({
   title: "Coming Soon...",
   description: "Web just got more awesome. Our next project is cooking up. What could it be?",
   imgSrc:
-    "",
+    "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/coming%20soon",
   url: "./Projects/Coming Soon/coming-soon.html",
 })
 
