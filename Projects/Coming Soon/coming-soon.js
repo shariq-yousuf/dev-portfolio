@@ -1,4 +1,5 @@
-const timerEl = document.getElementById("timer");
+const timerDays = document.getElementById("timer-days");
+const timerHours = document.getElementById("timer-hours");
 
 const timer = setInterval(() => {
   const date = new Date(2024, 5, 22);
@@ -17,7 +18,8 @@ const timer = setInterval(() => {
   secN = (minN - min) * 60;
   const sec = Math.floor(secN);
 
-  timerEl.textContent = `${days} Days ${hrs.toString().padStart(2, 0)} : ${min
+  timerDays.textContent = `${days} Days+`;
+  timerHours.textContent = `${hrs.toString().padStart(2, 0)} : ${min
     .toString()
     .padStart(2, 0)} : ${sec.toString().padStart(2, 0)}`;
 }, 1000);

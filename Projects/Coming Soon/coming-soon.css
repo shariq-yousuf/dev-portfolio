@@ -31,7 +31,8 @@ body {
   font-size: 1.5rem;
 }
 
-#timer {
+#timer-days,
+#timer-hours {
   font-size: 3rem;
   margin: 10px;
 }
