@@ -24,6 +24,15 @@ const projects = [
       "https://res.cloudinary.com/do0pop1de/image/upload/v1718191950/src%20for%20portfolio%20website/secret-chat.png",
     url: "https://shariq-yousuf.github.io/Secret-Chat/",
   },
+  {
+    id: 3,
+    title: "TicTacToe",
+    description:
+      "Challenge friends or conquer AI! Classic Tic Tac Toe with two modes. Play with friends or AI, first to three in a row wins!",
+    imgSrc:
+      "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/tictactoe",
+    url: "https://shariq-yousuf.github.io/TicTacToe/",
+  },
 ];
 
 const skills = [
@@ -76,22 +85,13 @@ const skills = [
 
 projects.push({
   id: projects.length + 1,
-  title: "TicTacToe",
-  description:
-    "Challenge friends or conquer AI! Classic Tic Tac Toe with two modes. Play with friends or AI, first to three in a row wins!",
-  imgSrc:
-    "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/tictactoe",
-  url: "https://shariq-yousuf.github.io/TicTacToe/",
-});
-
-projects.push({
-  id: projects.length + 1,
   title: "Coming Soon...",
-  description: "Web just got more awesome. Our next project is cooking up. What could it be?",
+  description:
+    "Web just got more awesome. Our next project is cooking up. What could it be?",
   imgSrc:
     "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/coming%20soon",
   url: "./Projects/Coming Soon/coming-soon.html",
-})
+});
 
 // PUSH NEW PROJECT ABOVE THIS LINE
 
