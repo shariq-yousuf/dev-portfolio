@@ -40,6 +40,10 @@ body {
   color: var(--primary-color);
 }
 
+.navbar li:hover {
+  transform: scale(1.05);
+}
+
 .navbar a::before {
   content: "< ";
   color: var(--sec-color);
@@ -121,7 +125,7 @@ body {
 
 #my-projects {
   min-height: 100dvh;
-  background-color: rgb(31, 31, 73);
+  background-color: rgb(31, 75, 107);
   padding: 20px;
 }
 
@@ -153,6 +157,7 @@ body {
 
 .card:hover {
   box-shadow: 0px 0px 15px 0px var(--sec-color);
+  transform: scale(1.01);
 }
 
 .card a {
@@ -197,7 +202,7 @@ body {
 #my-skills {
   min-height: 100dvh;
   padding: 20px;
-  background-color: rgb(49, 45, 41);
+  background-color: rgb(31, 31, 73);
 }
 
 #my-skills-container {
@@ -223,9 +228,38 @@ body {
   background-color: rgba(255, 255, 255, 0.764);
 }
 
-#my-skills-container img {
+#my-skills-container img,
+#contact-div img {
   width: 50px;
   height: 50px;
+}
+
+#contact-div {
+  height: 40dvh;
+  background-color: rgb(198, 246, 246);
+  padding: 20px;
+}
+
+#social-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  height: 50%;
+}
+
+.link {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.link:hover {
+  transform: scale(1.1);
 }
 
 footer {

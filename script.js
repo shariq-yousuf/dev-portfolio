@@ -4,6 +4,7 @@ const links = document.querySelectorAll(
 const backToTopBtn = document.getElementById("back-to-top");
 const myProjectsContainer = document.getElementById("my-projects-container");
 const mySkillsContainer = document.getElementById("my-skills-container");
+const contactDiv = document.getElementById("social-links");
 
 const projects = [
   {
@@ -83,6 +84,27 @@ const skills = [
   },
 ];
 
+const socialLinks = [
+  {
+    id: 1,
+    platform: "Github",
+    icon: "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/skills%20icons/github",
+    url: "https://github.com/shariq-yousuf",
+  },
+  {
+    id: 2,
+    platform: "LinkedIn",
+    icon: "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Social%20Icons/LinkedIn",
+    url: "#",
+  },
+  {
+    id: 3,
+    platform: "Twitter/X",
+    icon: "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Social%20Icons/Twitter",
+    url: "https://x.com/Shariq_601",
+  },
+];
+
 projects.push({
   id: projects.length + 1,
   title: "Coming Soon...",
@@ -108,7 +130,7 @@ function scrollIntoSection(event) {
 
 // back to top btn
 window.onscroll = function () {
-  const threshold = window.innerHeight;
+  const threshold = innerHeight - 150;
 
   if (window.scrollY >= threshold) {
     backToTopBtn.style.display = "block";
@@ -117,7 +139,7 @@ window.onscroll = function () {
   }
 };
 
-// adding projects
+// add projects
 const projectsInReverseOrder = projects.reverse();
 for (const project of projectsInReverseOrder) {
   const projectCard = document.createElement("div");
@@ -132,7 +154,7 @@ for (const project of projectsInReverseOrder) {
   myProjectsContainer.appendChild(projectCard);
 }
 
-// adding skills
+// add skills
 const skillsInReverseOrder = skills.reverse();
 for (const skill of skillsInReverseOrder) {
   const bgEl = document.createElement("div");
@@ -143,3 +165,14 @@ for (const skill of skillsInReverseOrder) {
   bgEl.appendChild(imgEl);
   mySkillsContainer.appendChild(bgEl);
 }
+
+// add social links
+socialLinks.forEach((link) => {
+  const linkHtml = `
+   <a href="${link.url}">
+   <div class="link"><img src="${link.icon}" alt="${link.platform}" /></div>
+   </a>
+  `;
+
+  contactDiv.innerHTML += linkHtml;
+});
