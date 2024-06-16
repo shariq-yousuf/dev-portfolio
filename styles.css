@@ -195,7 +195,7 @@ body {
 
 .card p {
   margin: 5px 10px 5px 10px;
-  text-align: justify;
+  /* text-align: justify; */
   color: var(--sec-color);
 }
 

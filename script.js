@@ -34,6 +34,15 @@ const projects = [
       "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/tictactoe",
     url: "https://shariq-yousuf.github.io/TicTacToe/",
   },
+  {
+    id: 4,
+    title: "Palindrome Checker",
+    description:
+      "Fun web app! Enter any text & see if it reads the same backwards (ignoring punctuation, case). Discover hidden palindromes!",
+    imgSrc:
+      "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/Palindrome%20Checker",
+    url: "./Projects/Palindrome Checker/index.html",
+  },
 ];
 
 const skills = [
