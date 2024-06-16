@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100dvh;
+  background-color: rgb(44, 81, 47);
+  color: rgb(251, 246, 206);
+  display: flex;
+  flex-direction: column;
+  padding: 15dvh 20px;
+  align-items: center;
+  font-family: "Quicksand", Arial, Helvetica, sans-serif;
+  font-optical-sizing: auto;
+}
+
+header {
+  text-align: center;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+main {
+  background-color: rgba(255, 255, 255, 0.427);
+  padding: 20px;
+  border-radius: 10px;
+  height: 25dvh;
+  width: 40dvw;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.input-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+#text-input {
+  border: none;
+  border-bottom: 2px solid black;
+  background-color: transparent;
+  text-align: center;
+  outline: none;
+  font-size: 18px;
+  font-weight: bold;
+  width: 70%;
+}
+
+#check-btn {
+  width: 25%;
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 0;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+#result {
+  text-align: center;
+  margin: 10px;
+  font-size: 18px;
+  color: black;
+}
+
+.definition {
+  width: 40dvw;
+  background-color: rgb(198, 184, 184);
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 720px) {
+  body {
+    padding: 20px 10px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  header p {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  main,
+  .definition {
+    width: 90dvw;
+    margin: 5px;
+  }
+
+  #check-btn {
+    padding: 5px 0;
+    font-weight: normal;
+    font-size: 12px;
+  }
+}

@@ -13,10 +13,12 @@ function checkPalindrome() {
   if (!inputText) {
     alert("Please input a value");
   } else if (cleanedInputText === reverseInputText) {
-    resultEl.textContent = `${inputText} is a palindrome`;
+    resultEl.innerHTML = `<strong>${inputText}</strong> is a palindrome`;
   } else {
-    resultEl.textContent = `${inputText} is not a palindrome`;
+    resultEl.innerHTML = `<strong>${inputText}</strong> is not a palindrome`;
   }
+
+  inputEl.value = "";
 }
 
 checkBtn.addEventListener("click", checkPalindrome);
