@@ -43,6 +43,15 @@ const projects = [
       "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/Palindrome%20Checker",
     url: "./Projects/Palindrome-Checker/index.html",
   },
+  {
+    id: 4,
+    title: "Lucky Draw",
+    description:
+      "Ditch the paper!  Lucky Draw picks winners for giveaways FAST. Enter names, spin, & see who wins!",
+    imgSrc:
+      "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/lucky-draw",
+    url: "./Projects/Lucky-Draw/index.html",
+  },
 ];
 
 const skills = [
