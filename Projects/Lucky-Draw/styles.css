@@ -132,6 +132,22 @@ output {
   transition: all 1s;
 }
 
+footer {
+  position: absolute;
+  bottom: 1rem;
+  right: 1.5rem;
+  font-size: 14px;
+}
+
+footer a {
+  color: white;
+  font-style: italic;
+}
+
+footer a:hover {
+  text-decoration: none;
+}
+
 @media screen and (max-width: 480px) {
   body {
     flex-direction: column-reverse;
@@ -146,6 +162,12 @@ output {
 
   .result-container {
     width: 90%;
-    /* height: 50px; */
+    height: 50px;
+  }
+
+  footer {
+    bottom: 12px;
+    right: 1rem;
+    font-size: 12px;
   }
 }
