@@ -9,6 +9,7 @@ let names;
 saveBtn.addEventListener("click", () => {
   if (inputNames.value) {
     names = inputNames.value.split("\n");
+    drawBtn.style.opacity = "1";
   } else {
     alert("Please enter names!");
   }
