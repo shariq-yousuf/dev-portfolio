@@ -37,5 +37,5 @@ drawBtn.addEventListener("click", () => {
 
     names.splice(drawIndex, 1);
     inputNames.value = names.join("\n");
-  }, 10000);
+  }, 8000);
 });
