@@ -7,20 +7,22 @@
     <title>Lucky Draw</title>
   </head>
   <body>
-    <h1>Lucky Draw</h1>
-    <div id="container">
-      <section>
-        <textarea
-          autofocus
-          id="input-names"
-          placeholder="Enter each name on next line!"
-        ></textarea>
-        <button id="save-btn">Save</button>
-        <button id="clear-btn">Clear All</button>
-      </section>
+    <section>
+      <textarea
+        autofocus
+        id="input-names"
+        placeholder="Enter each name on a new line!"
+      ></textarea>
+      <div class="btn-container">
+        <button id="save-btn" class="btn">Save</button>
+        <button id="clear-btn" class="btn">Clear All</button>
+      </div>
+    </section>
 
+    <div id="result-container">
+      <h1>Lucky Draw</h1>
       <output id="result"></output>
-      <button id="draw-btn">Draw</button>
+      <button id="draw-btn" class="btn">Draw</button>
     </div>
 
     <script src="script.js"></script>

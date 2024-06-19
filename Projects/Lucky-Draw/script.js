@@ -18,6 +18,7 @@ clearBtn.addEventListener("click", () => {
 });
 
 drawBtn.addEventListener("click", () => {
+  saveBtn.click();
   const drawIndex = Math.floor(Math.random() * names.length);
   const result = names[drawIndex];
 
