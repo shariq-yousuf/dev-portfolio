@@ -17,10 +17,11 @@ saveBtn.addEventListener("click", () => {
 
 clearBtn.addEventListener("click", () => {
   inputNames.value = "";
+  outputEl.innerHTML = "";
 });
 
 drawBtn.addEventListener("click", () => {
-  saveBtn.click();
+  outputEl.innerHTML = "";
   const drawIndex = Math.floor(Math.random() * names.length);
   const result = names[drawIndex];
 
