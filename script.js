@@ -41,7 +41,7 @@ const projects = [
       "Fun web app! Enter any text & see if it reads the same backwards (ignoring punctuation, case). Discover hidden palindromes!",
     imgSrc:
       "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/Palindrome%20Checker",
-    url: "./Projects/Palindrome Checker/index.html",
+    url: "./Projects/Palindrome-Checker/index.html",
   },
 ];
 
@@ -121,7 +121,7 @@ projects.push({
     "Web just got more awesome. Our next project is cooking up. What could it be?",
   imgSrc:
     "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/coming%20soon",
-  url: "./Projects/Coming Soon/coming-soon.html",
+  url: "./Projects/Coming-Soon/coming-soon.html",
 });
 
 // PUSH NEW PROJECT ABOVE THIS LINE
