@@ -44,13 +44,22 @@ const projects = [
     url: "./Projects/Palindrome-Checker/index.html",
   },
   {
-    id: 4,
+    id: 5,
     title: "Lucky Draw",
     description:
       "Ditch the paper!  Lucky Draw picks winners for giveaways FAST. Enter names, spin, & see who wins!",
     imgSrc:
       "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/lucky-draw",
     url: "./Projects/Lucky-Draw/index.html",
+  },
+  {
+    id: 6,
+    title: "Word Counter",
+    description:
+      "Craft with clarity! Analyze words, characters, & more. Count pronouns, estimate readability, find longest word.",
+    imgSrc:
+      "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/word-counter",
+    url: "./Projects/Word-Counter/index.html",
   },
 ];
 
