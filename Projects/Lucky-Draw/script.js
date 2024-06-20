@@ -3,6 +3,8 @@ const outputEl = document.getElementById("result");
 const saveBtn = document.getElementById("save-btn");
 const clearBtn = document.getElementById("clear-btn");
 const drawBtn = document.getElementById("draw-btn");
+const removeCheck = document.getElementById("remove-winner");
+const soundCheck = document.getElementById("sound-effect");
 const declaration = document.styleSheets[0].cssRules[1];
 let names;
 const audio = new Audio();
@@ -19,8 +21,8 @@ saveBtn.addEventListener("click", () => {
 clearBtn.addEventListener("click", () => {
   inputNames.value = "";
   outputEl.innerHTML = "";
-	 names = [];
-	drawBtn.style.opacity = "0";
+  names = [];
+  drawBtn.style.opacity = "0";
 });
 
 drawBtn.addEventListener("click", () => {
@@ -28,11 +30,13 @@ drawBtn.addEventListener("click", () => {
   const drawIndex = Math.floor(Math.random() * names.length);
   const result = names[drawIndex];
 
-  setTimeout(() => {
-    audio.src =
-      "https://res.cloudinary.com/do0pop1de/video/upload/f_auto:video,q_auto/v1/src%20for%20portfolio%20website/lucky%20draw%20sound%20effect";
-    audio.play();
-  }, 1000);
+  if (soundCheck.checked) {
+    setTimeout(() => {
+      audio.src =
+        "https://res.cloudinary.com/do0pop1de/video/upload/f_auto:video,q_auto/v1/src%20for%20portfolio%20website/lucky%20draw%20sound%20effect";
+      audio.play();
+    }, 1000);
+  }
 
   outputEl.style.setProperty("animation-name", "draw");
   declaration.style.setProperty("--percentage", `${names.length * 100}%`);
@@ -44,7 +48,9 @@ drawBtn.addEventListener("click", () => {
     outputEl.style.removeProperty("animation-name");
     outputEl.textContent = result;
 
-    names.splice(drawIndex, 1);
-    inputNames.value = names.join("\n");
+    if (removeCheck.checked) {
+      names.splice(drawIndex, 1);
+      inputNames.value = names.join("\n");
+    }
   }, 10000);
 });

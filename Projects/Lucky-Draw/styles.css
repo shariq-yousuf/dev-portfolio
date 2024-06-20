@@ -136,6 +136,21 @@ output {
   transition: all 1s;
 }
 
+.checkbox-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 1.5rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  position: absolute;
+  bottom: 30px;
+}
+
+.checkbox-container input {
+  width: 20px;
+  height: 20px;
+}
+
 footer {
   position: absolute;
   bottom: 1rem;
@@ -181,7 +196,10 @@ footer a:hover {
 
   .result-container {
     width: 90%;
-    /* height: 0px; */
+  }
+
+  .checkbox-container {
+    display: none;
   }
 
   footer {
