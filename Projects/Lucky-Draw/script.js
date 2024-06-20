@@ -19,6 +19,8 @@ saveBtn.addEventListener("click", () => {
 clearBtn.addEventListener("click", () => {
   inputNames.value = "";
   outputEl.innerHTML = "";
+	 names = [];
+	drawBtn.style.opacity = "0";
 });
 
 drawBtn.addEventListener("click", () => {
