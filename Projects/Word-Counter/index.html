@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Word Counter</title>
+  </head>
+  <body>
+    <header>
+      <h2>Word Counter</h2>
+    </header>
+    <main>
+      <div class="head-counters">
+        <div class="container">
+          <div id="words-el">Words</div>
+          <div id="word-count">0</div>
+        </div>
+        <div class="container">
+          <div id="char-el">Characters</div>
+          <div id="char-count">0</div>
+        </div>
+        <div class="container">
+          <div id="sent-el">Sentences</div>
+          <div id="sent-count">0</div>
+        </div>
+        <div class="container">
+          <div id="para-el">Paragraphs</div>
+          <div id="para-count">0</div>
+        </div>
+        <div class="container">
+          <div id="pro-el">Pronouns</div>
+          <div id="pro-count">0</div>
+        </div>
+      </div>
+
+      <div class="text-area-container">
+        <textarea
+          name="input-text"
+          id="input-text"
+          placeholder="paste your text here..."
+        ></textarea>
+      </div>
+
+      <div class="foot-counters">
+        <div id="avg-time-el">
+          Average Reading Time: <span id="avg-time">-</span>
+        </div>
+        <div id="longest-word-el">
+          Longest word: <span id="longest-word">-</span>
+        </div>
+      </div>
+    </main>
+    <footer>Mady by <a href="#">Shariq Yousuf</a> &copy; 2024</footer>
+    <script src="script.js"></script>
+  </body>
+</html>
