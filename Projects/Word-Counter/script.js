@@ -36,37 +36,28 @@ const pronouns = [
 ];
 
 let wordCount = 0;
-let charCount = 0;
-let sentCount = 0;
-let paraCount = 0;
-let proCount = 0;
-
 let wordFilteredArr;
-let sentFilteredArr;
-let paraFilteredArr;
 
 const findCounts = () => {
   const inputText = textArea.value;
 
   if (!textArea.value) {
     wordFilteredArr = [];
-    sentFilteredArr = [];
-    paraFilteredArr = [];
   } else {
     const wordArr = inputText.trim().split(" ");
     wordFilteredArr = wordArr.filter(removeEmptyElements);
-
-    const sentArr = inputText.trim().split(".");
-    sentFilteredArr = sentArr.filter(removeEmptyElements);
-
-    const paraArr = inputText.trim().split("\n");
-    paraFilteredArr = paraArr.filter(removeEmptyElements);
   }
 
-  charCount = inputText.length;
-  wordCount = wordFilteredArr.length;
-  sentCount = sentFilteredArr.length;
-  paraCount = paraFilteredArr.length;
+  const sentArr = inputText.trim().split(".");
+  const sentFilteredArr = sentArr.filter(removeEmptyElements);
+
+  const paraArr = inputText.trim().split("\n");
+  const paraFilteredArr = paraArr.filter(removeEmptyElements);
+
+  const charCount = inputText.length;
+  const wordCount = wordFilteredArr.length;
+  const sentCount = sentFilteredArr.length;
+  const paraCount = paraFilteredArr.length;
 
   wordCountEl.textContent = wordCount;
   charCountEl.textContent = charCount;
@@ -89,23 +80,40 @@ const findAvgTime = () => {
 };
 
 const findLongestWord = () => {
-  if (!textArea.value) {
-    longestWordEl.textContent = "";
-  } else {
-    let longestWord = "";
+  let longestWord = "";
 
-    for (const word of wordFilteredArr) {
-      if (word.length > longestWord.length) {
-        longestWord = word;
+  for (const word of wordFilteredArr) {
+    if (word.length > longestWord.length) {
+      longestWord = word;
+    }
+  }
+
+  longestWordEl.textContent = longestWord.replaceAll(/\W/g, "");
+};
+
+const findPronouns = () => {
+  const proFilteredArr = wordFilteredArr.filter((w) => {
+    const word = w.toLowerCase();
+
+    for (const pronoun of pronouns) {
+      if (word !== pronoun) {
+        continue;
+      } else {
+        return word === pronoun;
       }
     }
 
-    longestWordEl.textContent = longestWord.replaceAll(/\W/g, "");
-  }
+    return false;
+  });
+
+  const proCount = proFilteredArr.length;
+
+  proCountEl.textContent = proCount;
 };
 
 textArea.addEventListener("input", () => {
   findCounts();
   findAvgTime();
   findLongestWord();
+  findPronouns();
 });
