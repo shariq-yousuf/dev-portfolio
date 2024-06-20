@@ -8,10 +8,6 @@
   --sec-color: rgb(239, 235, 133);
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   margin: 0px;
   padding: 0px;
