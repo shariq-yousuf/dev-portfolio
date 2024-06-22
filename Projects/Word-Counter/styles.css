@@ -33,6 +33,7 @@ main {
 .head-counters,
 .foot-counters {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   background-color: #a01414df;
   padding: 10px 0;
@@ -98,9 +99,7 @@ footer a:hover {
 
   .head-counters,
   .foot-counters {
-    overflow-x: scroll;
     gap: 10px;
-    justify-content: start;
     padding: 10px;
   }
 }
