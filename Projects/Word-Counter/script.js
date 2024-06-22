@@ -54,8 +54,8 @@ const findCounts = () => {
   const paraArr = inputText.trim().split("\n");
   const paraFilteredArr = paraArr.filter(removeEmptyElements);
 
+  wordCount = wordFilteredArr.length;
   const charCount = inputText.length;
-  const wordCount = wordFilteredArr.length;
   const sentCount = sentFilteredArr.length;
   const paraCount = paraFilteredArr.length;
 
@@ -74,7 +74,7 @@ const findAvgTime = () => {
     avgTime.textContent = "";
   } else {
     avgTime.textContent = `~${Math.ceil(wordCount / 240)} ${
-      Math.ceil(wordCount / 240) === 1 ? "minute" : "minutes"
+      Math.ceil(wordCount / 240) < 2 ? "minute" : "minutes"
     }`;
   }
 };
