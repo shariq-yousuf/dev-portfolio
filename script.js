@@ -15,7 +15,8 @@ const projects = [
     imgSrc:
       "https://res.cloudinary.com/do0pop1de/image/upload/v1718194146/src%20for%20portfolio%20website/clock.png",
     liveUrl: "./Projects/Digital-Clock/clock.html",
-    githubLink: "",
+    githubLink:
+      "https://github.com/shariq-yousuf/Developer-Portfolio/tree/main/Projects/Digital-Clock",
   },
   {
     id: 2,
@@ -25,7 +26,7 @@ const projects = [
     imgSrc:
       "https://res.cloudinary.com/do0pop1de/image/upload/v1718191950/src%20for%20portfolio%20website/secret-chat.png",
     liveUrl: "https://shariq-yousuf.github.io/Secret-Chat/",
-    githubLink: "",
+    githubLink: "https://github.com/shariq-yousuf/Secret-Chat",
   },
   {
     id: 3,
@@ -35,7 +36,7 @@ const projects = [
     imgSrc:
       "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/tictactoe",
     liveUrl: "https://shariq-yousuf.github.io/TicTacToe/",
-    githubLink: "",
+    githubLink: "https://github.com/shariq-yousuf/TicTacToe",
   },
   {
     id: 4,
@@ -45,7 +46,8 @@ const projects = [
     imgSrc:
       "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/Palindrome%20Checker",
     liveUrl: "./Projects/Palindrome-Checker/index.html",
-    githubLink: "",
+    githubLink:
+      "https://github.com/shariq-yousuf/Developer-Portfolio/tree/main/Projects/Palindrome-Checker",
   },
   {
     id: 5,
@@ -55,7 +57,8 @@ const projects = [
     imgSrc:
       "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/lucky-draw",
     liveUrl: "./Projects/Lucky-Draw/index.html",
-    githubLink: "",
+    githubLink:
+      "https://github.com/shariq-yousuf/Developer-Portfolio/tree/main/Projects/Lucky-Draw",
   },
   {
     id: 6,
@@ -65,7 +68,8 @@ const projects = [
     imgSrc:
       "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/word-counter",
     liveUrl: "./Projects/Word-Counter/index.html",
-    githubLink: "",
+    githubLink:
+      "https://github.com/shariq-yousuf/Developer-Portfolio/tree/main/Projects/Word-Counter",
   },
 ];
 
@@ -152,7 +156,8 @@ projects.push({
   imgSrc:
     "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/coming%20soon",
   liveUrl: "./Projects/Coming-Soon/coming-soon.html",
-  githubLink: "",
+  githubLink:
+    "https://github.com/shariq-yousuf/Developer-Portfolio/tree/main/Projects/Coming-Soon",
 });
 
 // PUSH NEW PROJECT ABOVE THIS LINE
