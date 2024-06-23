@@ -252,6 +252,29 @@ body {
   transform: scale(1.1);
 }
 
+#about {
+  width: 70dvw;
+  min-height: 60dvh;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+}
+
+.my-photo {
+  /* width: 300px; */
+  height: 40dvh;
+  border-radius: 50%;
+  border: 0.5rem solid var(--primary-color);
+}
+
+.my-intro {
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+}
+
 footer {
   text-align: center;
   padding: 10px;
@@ -291,5 +314,17 @@ footer {
 
   #my-skills-container {
     width: 80dvw;
+  }
+
+  #about {
+    flex-wrap: wrap;
+    gap: 0;
+    width: 80%;
+  }
+
+  .my-intro {
+    font-size: 1rem;
+    line-height: normal;
+    text-align: center;
   }
 }

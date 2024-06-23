@@ -1,5 +1,5 @@
 const links = document.querySelectorAll(
-  "#home-link, #my-projects-link, #my-skills-link, #back-to-top"
+  "#home-link, #my-projects-link, #my-skills-link, #about-link, #contact-link, #back-to-top"
 );
 const backToTopBtn = document.getElementById("back-to-top");
 const myProjectsContainer = document.getElementById("my-projects-container");
