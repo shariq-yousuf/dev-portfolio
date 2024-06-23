@@ -11,55 +11,61 @@ const projects = [
     id: 1,
     title: "Digital Clock",
     description:
-      "Stay on time, anywhere! Simple, clean digital clock. Always accurate, always free. Check it out!",
+      "Stay on time, anywhere! Simple, clean digital clock. Always accurate. Check it out!",
     imgSrc:
       "https://res.cloudinary.com/do0pop1de/image/upload/v1718194146/src%20for%20portfolio%20website/clock.png",
-    url: "./Projects/Digital-Clock/clock.html",
+    liveUrl: "./Projects/Digital-Clock/clock.html",
+    githubLink: "",
   },
   {
     id: 2,
     title: "Secret Chat",
     description:
-      "Send secret messages with a fun twist! Secret Chat lets you encrypt messages. Encode your message, and share it with your friends.",
+      "Send secret messages with a fun twist! Secret Chat lets you encrypt messages.",
     imgSrc:
       "https://res.cloudinary.com/do0pop1de/image/upload/v1718191950/src%20for%20portfolio%20website/secret-chat.png",
-    url: "https://shariq-yousuf.github.io/Secret-Chat/",
+    liveUrl: "https://shariq-yousuf.github.io/Secret-Chat/",
+    githubLink: "",
   },
   {
     id: 3,
     title: "TicTacToe",
     description:
-      "Challenge friends or conquer AI! Classic Tic Tac Toe with two modes. Play with friends or AI, first to three in a row wins!",
+      "Classic Tic Tac Toe with two modes. Play with friends or AI, first to three in a row wins!",
     imgSrc:
       "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/tictactoe",
-    url: "https://shariq-yousuf.github.io/TicTacToe/",
+    liveUrl: "https://shariq-yousuf.github.io/TicTacToe/",
+    githubLink: "",
   },
   {
     id: 4,
     title: "Palindrome Checker",
     description:
-      "Fun web app! Enter any text & see if it reads the same backwards (ignoring punctuation, case). Discover hidden palindromes!",
+      "Enter any text & see if it reads the same backwards. Discover hidden palindromes!",
     imgSrc:
       "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/Palindrome%20Checker",
-    url: "./Projects/Palindrome-Checker/index.html",
+    liveUrl: "./Projects/Palindrome-Checker/index.html",
+    githubLink: "",
   },
   {
     id: 5,
     title: "Lucky Draw",
     description:
-      "Ditch the paper!  Lucky Draw picks winners for giveaways FAST. Enter names, spin, & see who wins!",
+      "Lucky Draw picks winners for giveaways FAST. Enter names, spin, & see who wins!",
     imgSrc:
       "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/lucky-draw",
-    url: "./Projects/Lucky-Draw/index.html",
+    liveUrl: "./Projects/Lucky-Draw/index.html",
+    githubLink: "",
   },
   {
     id: 6,
     title: "Word Counter",
     description:
-      "Craft with clarity! Analyze words, characters, & more. Count pronouns, estimate readability, find longest word.",
+      "Analyze words, characters, & more. Count pronouns, estimate readability, find longest word.",
     imgSrc:
       "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/word-counter",
-    url: "./Projects/Word-Counter/index.html",
+    liveUrl: "./Projects/Word-Counter/index.html",
+    githubLink: "",
   },
 ];
 
@@ -145,7 +151,8 @@ projects.push({
     "Web just got more awesome. Our next project is cooking up. What could it be?",
   imgSrc:
     "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/coming%20soon",
-  url: "./Projects/Coming-Soon/coming-soon.html",
+  liveUrl: "./Projects/Coming-Soon/coming-soon.html",
+  githubLink: "",
 });
 
 // PUSH NEW PROJECT ABOVE THIS LINE
@@ -161,7 +168,7 @@ function scrollIntoSection(event) {
   targetElement.scrollIntoView({ behavior: "smooth" });
 }
 
-// back to top btn
+// back to top btn appearance
 window.onscroll = function () {
   const threshold = innerHeight - 150;
 
@@ -174,21 +181,27 @@ window.onscroll = function () {
 
 // add projects
 const projectsInReverseOrder = projects.reverse();
+
 for (const project of projectsInReverseOrder) {
   const projectCard = document.createElement("div");
   projectCard.id = `project-${project.id}`;
   projectCard.className = "card";
+
   projectCard.innerHTML = `
-  <a href="${project.url}">
   <img src="${project.imgSrc}" alt="Project ${project.id} Image."/>
   <h2>${project.title}</h2>
   <p>${project.description}</p>
-  </a>`;
+  <div class="link-container">
+  <a class="live-link" href="${project.liveUrl}">View Live</a>
+  <a class="github-link" href="${project.githubLink}">Github</a>
+  </div>`;
+
   myProjectsContainer.appendChild(projectCard);
 }
 
 // add skills
 const skillsInReverseOrder = skills.reverse();
+
 for (const skill of skillsInReverseOrder) {
   const bgEl = document.createElement("div");
   bgEl.className = "bg";

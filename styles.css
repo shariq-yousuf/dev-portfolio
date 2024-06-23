@@ -122,11 +122,12 @@ body {
 #my-projects {
   min-height: 100dvh;
   background-color: rgb(31, 75, 107);
-  padding: 20px;
+  padding: 10px;
 }
 
 .heading {
-  margin: 0 0 10px 0;
+  margin: 0;
+  margin-bottom: 10px;
   text-align: center;
   color: var(--primary-color);
 }
@@ -134,65 +135,58 @@ body {
 #my-projects-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1.5rem;
   justify-content: center;
   align-items: start;
 }
 
 .card {
-  box-sizing: content-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   color: var(--primary-color);
   width: 250px;
   height: 280px;
   background-color: transparent;
   border-radius: 20px;
   margin: 0;
-  padding: 0;
+  padding: 10px;
   border: 3px solid var(--primary-color);
-}
-
-.card:hover {
-  box-shadow: 0px 0px 15px 0px var(--sec-color);
-  transform: scale(1.01);
-}
-
-.card a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.card a:hover {
-  text-decoration: none;
-  color: inherit;
-}
-
-.card a:visited {
-  text-decoration: none;
-  color: inherit;
-}
-
-.card a:active {
-  text-decoration: none;
-  color: inherit;
 }
 
 .card img {
   text-align: center;
   display: block;
-  width: 230px;
+  width: 100%;
   height: 125px;
-  margin: 10px auto;
+  margin: 0px auto;
   border-radius: 10px;
 }
 
 .card h2 {
-  margin: 5px 0 5px 10px;
+  margin: 0;
 }
 
 .card p {
-  margin: 5px 10px 5px 10px;
-  /* text-align: justify; */
+  margin: 0;
   color: var(--sec-color);
+}
+
+.link-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card a {
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.card a:hover {
+  bottom: 3px;
 }
 
 #my-skills {
