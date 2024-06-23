@@ -5,6 +5,8 @@ const backToTopBtn = document.getElementById("back-to-top");
 const myProjectsContainer = document.getElementById("my-projects-container");
 const mySkillsContainer = document.getElementById("my-skills-container");
 const contactDiv = document.getElementById("social-links");
+const burgerIcon = document.getElementById("burger-icon");
+const burgerMenuContent = document.getElementById("burger-menu-content");
 
 const projects = [
   {
@@ -226,4 +228,15 @@ socialLinks.forEach((link) => {
   `;
 
   contactDiv.innerHTML += linkHtml;
+});
+
+// add burger menu for small screen
+burgerIcon.addEventListener("click", () => {
+  if (burgerIcon.innerHTML === "@") {
+    burgerIcon.innerHTML = "#";
+  } else {
+    burgerIcon.innerHTML = "@";
+  }
+
+  burgerMenuContent.classList.toggle("hidden");
 });
