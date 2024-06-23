@@ -126,9 +126,15 @@ const socialLinks = [
   },
   {
     id: 3,
-    platform: "Twitter/X",
-    icon: "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Social%20Icons/Twitter",
-    url: "https://x.com/Shariq_601",
+    platform: "Gmail",
+    icon: "",
+    url: "mailto:shariqyousuf01@gmail.com",
+  },
+  {
+    id: 4,
+    platform: "freeCodeCamp",
+    icon: "",
+    url: "https://www.freecodecamp.org/shariq-yousuf",
   },
 ];
 
