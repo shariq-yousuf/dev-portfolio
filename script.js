@@ -232,10 +232,10 @@ socialLinks.forEach((link) => {
 
 // add burger menu for small screen
 burgerIcon.addEventListener("click", () => {
-  if (burgerIcon.innerHTML === "@") {
-    burgerIcon.innerHTML = "#";
+  if (burgerIcon.innerHTML === "menu") {
+    burgerIcon.innerHTML = "close";
   } else {
-    burgerIcon.innerHTML = "@";
+    burgerIcon.innerHTML = "menu";
   }
 
   burgerMenuContent.classList.toggle("hidden");
