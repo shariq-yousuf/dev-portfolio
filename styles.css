@@ -225,7 +225,10 @@ body {
 }
 
 #contact-div {
-  height: 40dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  min-height: 40dvh;
   background-color: rgb(198, 246, 246);
   padding: 20px;
 }

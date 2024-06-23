@@ -133,13 +133,13 @@ const socialLinks = [
   {
     id: 3,
     platform: "Gmail",
-    icon: "",
+    icon: "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Social%20Icons/Gmail-icon",
     url: "mailto:shariqyousuf01@gmail.com",
   },
   {
     id: 4,
     platform: "freeCodeCamp",
-    icon: "",
+    icon: "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Social%20Icons/freeCodeCamp-icon",
     url: "https://www.freecodecamp.org/shariq-yousuf",
   },
 ];
@@ -216,7 +216,7 @@ for (const skill of skillsInReverseOrder) {
 socialLinks.forEach((link) => {
   const linkHtml = `
    <a href="${link.url}">
-   <div class="link"><img src="${link.icon}" alt="${link.platform}" /></div>
+   <div class="link" title="${link.platform}"><img src="${link.icon}" alt="${link.platform}"></div>
    </a>
   `;
 
