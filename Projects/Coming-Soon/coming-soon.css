@@ -16,8 +16,9 @@ body {
   justify-content: center;
   align-items: center;
   height: 100dvh;
-  width: 60dvw;
+  min-width: 60dvw;
   margin: 0 auto;
+  padding: 20px;
 }
 
 .container h1,
@@ -33,6 +34,6 @@ body {
 
 #timer-days,
 #timer-hours {
-  font-size: 3rem;
+  font-size: 2rem;
   margin: 10px;
 }
