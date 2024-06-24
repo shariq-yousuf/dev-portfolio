@@ -73,6 +73,16 @@ const projects = [
     githubLink:
       "https://github.com/shariq-yousuf/Developer-Portfolio/tree/main/Projects/Word-Counter",
   },
+  {
+    id: 7,
+    title: "Roman Numeral Converter",
+    description: "Convert decimal numbers (1-3999) to classic Roman numerals.",
+    imgSrc:
+      "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/roman-numerals-converter",
+    liveUrl: "./Projects/Roman-Numeral-Converter/index.html",
+    githubLink:
+      "https://github.com/shariq-yousuf/Developer-Portfolio/tree/main/Projects/Roman-Numeral-Converter",
+  },
 ];
 
 const skills = [
