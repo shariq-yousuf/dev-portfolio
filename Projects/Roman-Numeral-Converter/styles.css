@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,7 +15,7 @@ body {
   background-color: var(--primary-color);
   color: var(--primary-color);
   height: 100dvh;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Quicksand", Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .bold {
@@ -42,7 +44,7 @@ body {
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
 }
 
 #number {
@@ -70,6 +72,7 @@ input::-webkit-outer-spin-button {
   cursor: pointer;
   margin-bottom: 10px;
   font-size: 1rem;
+  font-family: "Quicksand", Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #convert-btn:hover {

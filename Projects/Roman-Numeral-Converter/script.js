@@ -22,15 +22,11 @@ const checkInputNumber = () => {
 
   if (inputValue === "") {
     outputEl.textContent = "Please enter a valid number.";
-    outputEl.classList.remove("bold");
   } else if (parseInt(inputValue) < 1) {
     outputEl.textContent = "Please enter a number greater than or equal to 1.";
-    outputEl.classList.remove("bold");
   } else if (parseInt(inputValue) >= 4000) {
     outputEl.textContent = "Please enter a number less than or equal to 3999.";
-    outputEl.classList.remove("bold");
   } else {
-    outputEl.classList.add("bold");
     decimalToRoman();
   }
 };
