@@ -184,13 +184,17 @@ body {
 .card a {
   text-decoration: none;
   color: inherit;
-  position: relative;
   font-weight: bold;
   font-size: 1.2rem;
 }
 
 .card a:hover {
-  bottom: 3px;
+  transform: scale(1.1);
+}
+
+.live-icon {
+  font-size: 1.5rem;
+  vertical-align: text-top;
 }
 
 #my-skills {
@@ -358,7 +362,7 @@ footer {
     right: 2rem;
   }
 
-  .material-symbols-outlined {
+  .icon {
     font-size: 2rem !important;
   }
 

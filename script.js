@@ -199,7 +199,7 @@ for (const project of projectsInReverseOrder) {
   <h2>${project.title}</h2>
   <p>${project.description}</p>
   <div class="link-container">
-  <a class="live-link" href="${project.liveUrl}">View Live</a>
+  <a class="live-link" href="${project.liveUrl}"><i class="material-symbols-outlined live-icon"> visibility</i> Live</a>
   <a class="github-link" href="${project.githubLink}">Github</a>
   </div>`;
 
