@@ -63,6 +63,8 @@ let userAnswer;
 const correctAnswers = new Set();
 
 const startQuiz = () => {
+  currentQuestionIndex = 0;
+  correctAnswers.clear();
   renderQuestion(currentQuestionIndex);
 
   nextBtn.textContent = "Next";
@@ -127,7 +129,6 @@ function getUserAnswer(inputEl) {
   nextBtn.removeAttribute("disabled");
 
   userAnswer = inputEl.value;
-
   checkUserAnswer();
 }
 
@@ -157,8 +158,6 @@ const nextQuestion = () => {
 
     if (correctAnswers.size < quizData.length) {
       quizEl.innerHTML += "Want to try again?";
-
-      currentQuestionIndex = 0;
 
       nextBtn.textContent = "Take Quiz Again";
       nextBtn.removeEventListener("click", nextQuestion);
