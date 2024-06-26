@@ -63,6 +63,14 @@ let userAnswer;
 let isOptionChecked = false;
 const correctAnswers = new Set();
 
+const startQuiz = () => {
+  renderQuestion(currentQuestionIndex);
+
+  nextBtn.textContent = "Submit";
+  nextBtn.removeEventListener("click", startQuiz);
+  nextBtn.addEventListener("click", nextQuestion);
+};
+
 const renderQuestion = (number) => {
   isOptionChecked = false;
 
@@ -77,25 +85,29 @@ const renderQuestion = (number) => {
         <p class="question my-4 md:m-8">
           ${que}
         </p>
-        <div class="options w-11/12 mx-auto cursor-pointer">
-          <div class="hover:bg-sky-300 px-4 py-2 rounded-3xl">
+        <ul class="options w-11/12 mx-auto cursor-pointer">
+          <li class="hover:bg-sky-300  rounded-3xl">
+            <label class="cursor-pointer block px-4 py-2" for="opt-1">
             <input onclick="getUserAnswer(this)" class="me-2" type="radio" name="${id}" id="opt-1" value="${ans.a}" />
-            <label class="cursor-pointer" for="opt-1">${ans.a}</label>
-          </div>
-          <div class="hover:bg-sky-300 px-4 py-2 rounded-3xl">
+            ${ans.a}</label>
+          </li>
+          <li class="hover:bg-sky-300 rounded-3xl">
+            <label class="cursor-pointer block px-4 py-2" for="opt-2">
             <input onclick="getUserAnswer(this)" class="me-2" type="radio" name="${id}" id="opt-2" value="${ans.b}" />
-            <label class="cursor-pointer" for="opt-2">${ans.b}</label>
-          </div>
-          <div class="hover:bg-sky-300 px-4 py-2 rounded-3xl">
+            ${ans.b}</label>
+          </li>
+          <li class="hover:bg-sky-300 rounded-3xl">
+            <label class="cursor-pointer block px-4 py-2" for="opt-3">
             <input onclick="getUserAnswer(this)" class="me-2" type="radio" name="${id}" id="opt-3" value="${ans.c}" />
-            <label class="cursor-pointer" for="opt-3">${ans.c}</label>
-          </div>
-          <div class="hover:bg-sky-300 px-4 py-2 rounded-3xl">
+            ${ans.c}</label>
+          </li>
+          <li class="hover:bg-sky-300 rounded-3xl">
+            <label class="cursor-pointer block px-4 py-2" for="opt-4">
             <input onclick="getUserAnswer(this)" class="me-2" type="radio" name="${id}" id="opt-4" value="${ans.d}" />
-            <label class="cursor-pointer" for="opt-4">${ans.d}</label>
-          </div>
-        </div>
-        `;
+            ${ans.d}</label>
+          </li>
+        </ul>
+      `;
 };
 
 function getUserAnswer(inputEl) {
@@ -116,27 +128,30 @@ function checkUserAnswer() {
   }
 }
 
-nextBtn.addEventListener("click", () => {
+const nextQuestion = () => {
+  console.log(isOptionChecked);
   if (currentQuestionIndex < quizData.length - 1) {
     if (isOptionChecked) {
       currentQuestionIndex++;
       renderQuestion(currentQuestionIndex);
     } else {
-      alert("Please choose one answer!");
+      alert("You haven't chosen an answer yet.");
     }
   } else {
     quizEl.innerHTML = `${
       correctAnswers.size > 1 ? "Correct Answers:" : "Correct Answer:"
     } ${correctAnswers.size}`;
-    nextBtn.style.display = "none";
 
-    // if (correctAnswers.size < quizData.length) {
-    //   nextBtn.innerHTML = "Take Quiz Again";
-    //   currentQuestionIndex = 0;
-    // } else {
-    //   nextBtn.style.display = "none";
-    // }
+    if (correctAnswers.size < quizData.length) {
+      currentQuestionIndex = 0;
+
+      nextBtn.textContent = "Take Quiz Again";
+      nextBtn.removeEventListener("click", nextQuestion);
+      nextBtn.addEventListener("click", startQuiz);
+    } else {
+      nextBtn.style.display = "none";
+    }
   }
-});
+};
 
-window.addEventListener("load", () => renderQuestion(currentQuestionIndex));
+window.addEventListener("load", startQuiz);
