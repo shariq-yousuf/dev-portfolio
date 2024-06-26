@@ -66,7 +66,7 @@ const correctAnswers = new Set();
 const startQuiz = () => {
   renderQuestion(currentQuestionIndex);
 
-  nextBtn.textContent = "Submit";
+  nextBtn.textContent = "Next";
   nextBtn.removeEventListener("click", startQuiz);
   nextBtn.addEventListener("click", nextQuestion);
 };
@@ -82,28 +82,36 @@ const renderQuestion = (number) => {
   } = quizData[number];
 
   quizEl.innerHTML = `
+        <span class="text-base absolute right-0 top-0">
+        ${id.toString().padStart(2, 0)}/
+        ${quizData.length.toString().padStart(2, 0)}
+        </span>
         <p class="question my-4 md:m-8">
           ${que}
         </p>
         <ul class="options w-11/12 mx-auto cursor-pointer">
           <li class="hover:bg-sky-300  rounded-3xl">
             <label class="cursor-pointer block px-4 py-2" for="opt-1">
-            <input onclick="getUserAnswer(this)" class="me-2" type="radio" name="${id}" id="opt-1" value="${ans.a}" />
+            <input onclick="getUserAnswer(this)"
+            class="me-2" type="radio" name="${id}" id="opt-1" value="${ans.a}"/>
             ${ans.a}</label>
           </li>
           <li class="hover:bg-sky-300 rounded-3xl">
             <label class="cursor-pointer block px-4 py-2" for="opt-2">
-            <input onclick="getUserAnswer(this)" class="me-2" type="radio" name="${id}" id="opt-2" value="${ans.b}" />
+            <input onclick="getUserAnswer(this)"
+            class="me-2" type="radio" name="${id}" id="opt-2" value="${ans.b}"/>
             ${ans.b}</label>
           </li>
           <li class="hover:bg-sky-300 rounded-3xl">
             <label class="cursor-pointer block px-4 py-2" for="opt-3">
-            <input onclick="getUserAnswer(this)" class="me-2" type="radio" name="${id}" id="opt-3" value="${ans.c}" />
+            <input onclick="getUserAnswer(this)"
+            class="me-2" type="radio" name="${id}" id="opt-3" value="${ans.c}"/>
             ${ans.c}</label>
           </li>
           <li class="hover:bg-sky-300 rounded-3xl">
             <label class="cursor-pointer block px-4 py-2" for="opt-4">
-            <input onclick="getUserAnswer(this)" class="me-2" type="radio" name="${id}" id="opt-4" value="${ans.d}" />
+            <input onclick="getUserAnswer(this)"
+            class="me-2" type="radio" name="${id}" id="opt-4" value="${ans.d}"/>
             ${ans.d}</label>
           </li>
         </ul>
