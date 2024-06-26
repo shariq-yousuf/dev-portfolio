@@ -115,6 +115,12 @@ const renderQuestion = (number) => {
           </li>
         </ul>
       `;
+
+  if (currentQuestionIndex === quizData.length - 1) {
+    setTimeout(() => {
+      nextBtn.textContent = "Submit";
+    }, 500);
+  }
 };
 
 function getUserAnswer(inputEl) {
