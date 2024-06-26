@@ -81,9 +81,9 @@ const renderQuestion = (number) => {
   } = quizData[number];
 
   quizEl.innerHTML = `
-        <span class="text-base absolute right-0 top-0">
-        ${id.toString().padStart(2, 0)}/
-        ${quizData.length.toString().padStart(2, 0)}
+        <span class="text-base absolute right-0 top-0">${id
+          .toString()
+          .padStart(2, 0)}/${quizData.length.toString().padStart(2, 0)}
         </span>
         <p class="question my-4 md:m-8">
           ${que}
