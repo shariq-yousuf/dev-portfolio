@@ -129,7 +129,6 @@ function checkUserAnswer() {
 }
 
 const nextQuestion = () => {
-  console.log(isOptionChecked);
   if (currentQuestionIndex < quizData.length - 1) {
     if (isOptionChecked) {
       currentQuestionIndex++;
@@ -138,17 +137,24 @@ const nextQuestion = () => {
       alert("You haven't chosen an answer yet.");
     }
   } else {
+    const percentageScore = (correctAnswers.size / quizData.length) * 100;
+
     quizEl.innerHTML = `${
       correctAnswers.size > 1 ? "Correct Answers:" : "Correct Answer:"
-    } ${correctAnswers.size}`;
+    } ${correctAnswers.size} out of ${quizData.length} <br/>
+     Score: ${parseInt(percentageScore)}% <br/>
+     `;
 
     if (correctAnswers.size < quizData.length) {
+      quizEl.innerHTML += "Want to try again?";
+
       currentQuestionIndex = 0;
 
       nextBtn.textContent = "Take Quiz Again";
       nextBtn.removeEventListener("click", nextQuestion);
       nextBtn.addEventListener("click", startQuiz);
     } else {
+      quizEl.innerHTML += "Congrats! You got all 5 questions right.";
       nextBtn.style.display = "none";
     }
   }
