@@ -158,7 +158,7 @@ const nextQuestion = () => {
       nextBtn.removeEventListener("click", nextQuestion);
       nextBtn.addEventListener("click", startQuiz);
     } else {
-      quizEl.innerHTML += "Congrats! You got all 5 questions right.";
+      quizEl.innerHTML += `Congrats! You got all ${quizData.length} questions right.`;
       nextBtn.style.display = "none";
     }
   }
