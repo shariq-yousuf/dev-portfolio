@@ -60,7 +60,6 @@ const quizData = [
 
 let currentQuestionIndex = 0;
 let userAnswer;
-let isOptionChecked = false;
 const correctAnswers = new Set();
 
 const startQuiz = () => {
@@ -72,7 +71,7 @@ const startQuiz = () => {
 };
 
 const renderQuestion = (number) => {
-  isOptionChecked = false;
+  nextBtn.setAttribute("disabled", "disabled");
 
   const {
     id,
@@ -119,8 +118,9 @@ const renderQuestion = (number) => {
 };
 
 function getUserAnswer(inputEl) {
+  nextBtn.removeAttribute("disabled");
+
   userAnswer = inputEl.value;
-  isOptionChecked = true;
 
   checkUserAnswer();
 }
@@ -138,12 +138,8 @@ function checkUserAnswer() {
 
 const nextQuestion = () => {
   if (currentQuestionIndex < quizData.length - 1) {
-    if (isOptionChecked) {
-      currentQuestionIndex++;
-      renderQuestion(currentQuestionIndex);
-    } else {
-      alert("You haven't chosen an answer yet.");
-    }
+    currentQuestionIndex++;
+    renderQuestion(currentQuestionIndex);
   } else {
     const percentageScore = (correctAnswers.size / quizData.length) * 100;
 
