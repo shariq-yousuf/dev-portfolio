@@ -78,11 +78,15 @@ const getQuizData = async () => {
   try {
     const response = await fetch(url);
     const result = await response.json();
-    quizData = result.results;
+    // quizData = result.results;
+
+    temp = result.results.splice(0, 3);
+    quizData = temp;
 
     startQuiz(quizData);
     spinnerContainer.style.display = "none";
   } catch (e) {
+    nextBtn.style.display = "none";
     spinnerContainer.innerHTML = `
       <p class="text-xl text-center">There was a problem loading the quiz data. Please click the button below to try again.</p>
       <button id="retry-btn"
@@ -102,6 +106,7 @@ const startQuiz = (quizData) => {
   correctAnswers.clear();
   renderQuestion(currentQuestionIndex, quizData);
 
+  nextBtn.style.display = "block";
   nextBtn.textContent = "Next";
   nextBtn.removeEventListener("click", showResult);
   nextBtn.addEventListener("click", nextQuestion);
@@ -115,7 +120,7 @@ const renderQuestion = (number, quizData) => {
   const answers = [...incorrect_answers, correct_answer].sort();
 
   const quizHTML = `
-        <span class="text-base absolute right-0 top-0">${id
+        <span id="que-n" class="text-base absolute right-0 top-0">${id
           .toString()
           .padStart(2, 0)}/${quizData.length.toString().padStart(2, 0)}
         </span>
@@ -232,15 +237,28 @@ const showResult = () => {
 
   resultData.forEach((item) => {
     const div = document.createElement("div");
-    div.classList.add("text-sky-800", "relative", "font-bold", "text-xl");
+    div.classList.add(
+      "text-sky-800",
+      "relative",
+      "p-px",
+      "font-bold",
+      "text-xl"
+    );
     div.innerHTML = item;
     const showCorrectAnsEl = document.createElement("p");
     showCorrectAnsEl.classList.add("m-2", "text-right", "text-green-700");
     showCorrectAnsEl.innerHTML = `Correct Answer: ${quizData[i].correct_answer}`;
     div.appendChild(showCorrectAnsEl);
     mainContainer.appendChild(div);
+
+    const queNumSpans = document.querySelectorAll("#que-n");
+    for (const queN of queNumSpans) {
+      console.log(queN);
+      queN.classList.remove("right-0");
+      queN.classList.add("left-0");
+    }
+
     const inputNodes = document.querySelectorAll("input");
-    const liNodes = document.querySelectorAll("li");
     for (const node of inputNodes) {
       for (const selected of selectedElements) {
         if (selected.getAttribute("id") === node.getAttribute("id")) {
@@ -268,9 +286,12 @@ const showResult = () => {
 
       node.setAttribute("disabled", "disabled");
     }
+
+    const liNodes = document.querySelectorAll("li");
     for (const node of liNodes) {
       node.classList.remove("hover:bg-sky-300");
     }
+
     i += 1;
   });
 };
