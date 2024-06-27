@@ -1,4 +1,5 @@
-const spinner = document.querySelector("#spinner")
+const spinnerContainer = document.querySelector("#spinner-container");
+const spinner = document.querySelector("#spinner");
 const quizEl = document.querySelector("#quiz");
 const nextBtn = document.querySelector("#next-btn");
 
@@ -68,12 +69,27 @@ const url =
   "https://opentdb.com/api.php?amount=10&category=23&difficulty=easy&type=multiple";
 
 const getQuizData = async () => {
-  const response = await fetch(url);
-  const result = await response.json();
-  quizData = result.results;
+  spinnerContainer.appendChild(spinner);
 
-  spinner.style.display = "none"
-  startQuiz(quizData);
+  try {
+    const response = await fetch(url);
+    const result = await response.json();
+    quizData = result.results;
+
+    startQuiz(quizData);
+    spinnerContainer.style.display = "none";
+  } catch (e) {
+    spinnerContainer.innerHTML = `
+      <p class="text-xl text-center">There was a problem loading the quiz data. Please click the button below to try again.</p>
+      <button id="retry-btn"
+      class="px-4 py-2 md:px-7 md:py-3 text-xl rounded-xl hover:bg-indigo-600 mt-4 block w-full bg-indigo-700 text-white tansition-all duration-500">
+      Retry</button>
+    `;
+    document.querySelector("#retry-btn").addEventListener("click", () => {
+      spinnerContainer.innerHTML = "";
+      getQuizData();
+    });
+  }
 };
 
 const startQuiz = (quizData) => {
