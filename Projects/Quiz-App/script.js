@@ -1,3 +1,4 @@
+const spinner = document.querySelector("#spinner")
 const quizEl = document.querySelector("#quiz");
 const nextBtn = document.querySelector("#next-btn");
 
@@ -71,6 +72,7 @@ const getQuizData = async () => {
   const result = await response.json();
   quizData = result.results;
 
+  spinner.style.display = "none"
   startQuiz(quizData);
 };
 
