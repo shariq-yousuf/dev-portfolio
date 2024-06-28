@@ -83,6 +83,17 @@ const projects = [
     githubLink:
       "https://github.com/shariq-yousuf/Developer-Portfolio/tree/main/Projects/Roman-Numeral-Converter",
   },
+  {
+    id: 8,
+    title: "Quiz App",
+    description:
+      "Test your knowledge! Answer Qs on science, history, nature & more.",
+    imgSrc:
+      "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/quiz-app",
+    liveUrl: "./Projects/Quiz-App/index.html",
+    githubLink:
+      "https://github.com/shariq-yousuf/Developer-Portfolio/tree/main/Projects/Quiz-App",
+  },
 ];
 
 const skills = [
@@ -205,7 +216,7 @@ for (const project of projectsInReverseOrder) {
   projectCard.className = "card";
 
   projectCard.innerHTML = `
-  <img src="${project.imgSrc}" alt="Project ${project.id} Image."/>
+  <img src="${project.imgSrc}" alt="${project.title}"/>
   <h2>${project.title}</h2>
   <p>${project.description}</p>
   <div class="link-container">

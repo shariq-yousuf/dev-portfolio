@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Favicons/quiz-app-icon"
+      type="image/x-icon"
+    />
+    <title>Quiz App</title>
+  </head>
+  <body
+    class="box-border relative min-h-dvh flex flex-col justify-evenly items-center bg-gradient-to-r from-indigo-400 from-10% via-sky-300 via-50% to-indigo-400 to-100%"
+    style="font-family: Quicksand, Verdana, Geneva, Tahoma, sans-serif"
+  >
+    <header>
+      <h1
+        class="text-3xl md:text-5xl font-black mt-4 text-center text-indigo-900"
+      >
+        Test Your Knowledge
+      </h1>
+    </header>
+
+    <main
+      id="main-container"
+      class="quiz-container bg-slate-100 md:w-1/2 w-11/12 md:p-8 p-4 rounded-lg shadow-2xl my-12"
+    >
+      <!-- spinner -->
+      <div
+        id="spinner-container"
+        class="h-full flex flex-col justify-center items-center text-red-900 font-bold italic"
+      >
+        <div id="spinner" role="status">
+          <svg
+            aria-hidden="true"
+            class="w-10 h-10 text-gray-200 animate-spin dark:text-gray-600 fill-white"
+            viewBox="0 0 100 101"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+              fill="currentColor"
+            />
+            <path
+              d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+              fill="currentFill"
+            />
+          </svg>
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+
+      <!-- quiz data -->
+      <div
+        id="quiz"
+        class="font-bold text-2xl text-sky-800 relative p-px"
+      ></div>
+      <button
+        disabled
+        id="next-btn"
+        class="px-4 py-2 md:px-7 md:py-3 text-xl font-bold rounded-xl mt-4 block ms-auto bg-indigo-700 text-white disabled:bg-slate-400 hover:bg-indigo-600"
+      >
+        Next
+      </button>
+    </main>
+
+    <div></div>
+    <div></div>
+
+    <footer class="absolute bottom-1">
+      Made by
+      <a
+        class="italic underline hover:no-underline"
+        href="https://shariq-yousuf.github.io/Developer-Portfolio/"
+        >Shariq Yousuf</a
+      >
+      &copy; 2024
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
