@@ -80,7 +80,7 @@ const getQuizData = async () => {
     const result = await response.json();
     // quizData = result.results;
 
-    temp = result.results.splice(0, 3);
+    temp = result.results.splice(0, 5);
     quizData = temp;
 
     startQuiz(quizData);
@@ -130,25 +130,25 @@ const renderQuestion = (number, quizData) => {
         <ul class="options w-11/12 mx-auto cursor-pointer">
           <li class="hover:bg-sky-300  rounded-3xl">
             <label class="cursor-pointer block px-4 py-2" for="Q-${id}-opt-1">
-            <input onclick="getUserAnswer(this)"
+            <input onclick="enabledNextBtn()"
             class="me-2" type="radio" name="${id}" id="Q-${id}-opt-1" 
             value="${answers[0]}"/>${answers[0]}</label>
           </li>
           <li class="hover:bg-sky-300 rounded-3xl">
             <label class="cursor-pointer block px-4 py-2" for="Q-${id}-opt-2">
-            <input onclick="getUserAnswer(this)"
+            <input onclick="enabledNextBtn()"
             class="me-2" type="radio" name="${id}" id="Q-${id}-opt-2" 
             value="${answers[1]}"/>${answers[1]}</label>
           </li>
           <li class="hover:bg-sky-300 rounded-3xl">
             <label class="cursor-pointer block px-4 py-2" for="Q-${id}-opt-3">
-            <input onclick="getUserAnswer(this)"
+            <input onclick="enabledNextBtn()"
             class="me-2" type="radio" name="${id}" id="Q-${id}-opt-3" 
             value="${answers[2]}"/>${answers[2]}</label>
           </li>
           <li class="hover:bg-sky-300 rounded-3xl">
             <label class="cursor-pointer block px-4 py-2" for="Q-${id}-opt-4">
-            <input onclick="getUserAnswer(this)"
+            <input onclick="enabledNextBtn()"
             class="me-2" type="radio" name="${id}" id="Q-${id}-opt-4" 
             value="${answers[3]}"/>${answers[3]}</label>
           </li>
@@ -163,11 +163,8 @@ const renderQuestion = (number, quizData) => {
   }
 };
 
-function getUserAnswer(inputEl) {
+function enabledNextBtn() {
   nextBtn.removeAttribute("disabled");
-
-  selectedElements.push(inputEl);
-  checkUserAnswer(inputEl.value);
 }
 
 function checkUserAnswer(inputValue) {
@@ -177,6 +174,14 @@ function checkUserAnswer(inputValue) {
 }
 
 const nextQuestion = () => {
+  const inputElements = document.querySelectorAll("input");
+  for (const inputEl of inputElements) {
+    if (inputEl.checked) {
+      selectedElements.push(inputEl);
+      checkUserAnswer(inputEl.value);
+    }
+  }
+
   if (currentQuestionIndex < quizData.length - 1) {
     currentQuestionIndex++;
     renderQuestion(currentQuestionIndex, quizData);
