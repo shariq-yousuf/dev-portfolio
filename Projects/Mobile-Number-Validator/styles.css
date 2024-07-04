@@ -57,6 +57,13 @@ body {
   margin: 5px auto;
 }
 
+#select-country {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  margin-bottom: 1rem;
+}
+
 label {
   margin-bottom: 10px;
 }
