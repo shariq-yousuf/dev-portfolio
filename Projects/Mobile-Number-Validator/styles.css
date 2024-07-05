@@ -13,22 +13,22 @@ body {
   font-size: 1rem;
   display: flex;
   flex-direction: column;
-  min-height: 100dvh;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  min-height: 100dvh;
   text-align: center;
-
+  position: relative;
   background-color: black;
   color: white;
 }
 
 .mobile-body {
   padding: 0.6rem;
+  margin: 3rem;
   border-radius: 8px;
   height: 22rem;
   width: 15rem;
-  background-color: gray;
+  background-color: rgb(179, 179, 182);
 }
 
 .camera {
@@ -37,10 +37,12 @@ body {
   border-radius: 50%;
   margin: 5px auto;
   background-color: black;
+  border: 2px solid white;
 }
 
 .screen {
-  background-color: rgb(164, 220, 233);
+  background-color: rgb(206, 247, 247);
+  box-shadow: 0 0 10px 2px gray;
   color: black;
   height: 18rem;
   display: flex;
@@ -55,6 +57,7 @@ body {
   background-color: black;
   border-radius: 50%;
   margin: 5px auto;
+  border: 4px outset;
 }
 
 #select-country {
@@ -75,8 +78,9 @@ input {
   width: 90%;
   text-align: center;
   padding: 5px;
-  margin: 5px;
+  margin: 8px;
   border-radius: 5px;
+  box-shadow: 0 0 10px 2px rgb(182, 181, 181);
 }
 
 .btn-container {
@@ -117,4 +121,18 @@ input {
   font-weight: bold;
   height: 3rem;
   width: 90%;
+}
+
+footer {
+  position: absolute;
+  bottom: 10px;
+}
+
+footer a {
+  color: white;
+  font-style: italic;
+}
+
+footer a:hover {
+  text-decoration: none;
 }
