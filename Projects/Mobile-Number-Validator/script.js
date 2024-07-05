@@ -5,21 +5,20 @@ const resultEl = document.querySelector("#results-div");
 const selectEl = document.querySelector("#select-country");
 
 const USANumberFormats = [
-  /^(1\s)?([0-9]{3})[\s-]?([0-9]{3})[\s-]?([0-9]{4})$/,
-  /^1?\s?(\([0-9]{3}\))[\s-]?([0-9]{3})[\s-]?([0-9]{4})$/,
+  /^(1\s)?([0-9]{3})(\s+|-)?([0-9]{3})(\s+|-)?([0-9]{4})$/,
+  /^1?\s?(\([0-9]{3}\))(\s+|-)?([0-9]{3})(\s+|-)?([0-9]{4})$/,
 ];
 
 const PakNumberFormats = [
-  /^((0092)|(\+92)|(0))3[0-4][0-9][\s-]?[0-9]{7}$/,
-  /^[(0092)(\+92)(0)]355[\s-]?[0-9]{7}$/,
-  /^[(0092)(\+92)(0)]370[\s-]?[0-9]{7}$/,
+  /^((0092|\+92)(\s+|-)?|0)3[0-4][0-9](\s+|-)?[0-9]{7}$/,
+  /^((0092|\+92)(\s+|-)?|0)355(\s+|-)?[0-9]{7}$/,
+  /^((0092|\+92)(\s+|-)?|0)370(\s+|-)?[0-9]{7}$/,
 ];
 
 const checkUserInput = () => {
   const inputValue = inputEl.value.trim();
 
   if (!inputValue) {
-    // alert("Please provide a phone number!");
     resultEl.textContent = "Please provide a phone number!";
   } else {
     let formats = PakNumberFormats;
@@ -47,9 +46,12 @@ const checkUserInput = () => {
 checkBtn.addEventListener("click", checkUserInput);
 clearBtn.addEventListener("click", () => {
   resultEl.textContent = "";
+  inputEl.value = "";
 });
 inputEl.addEventListener("keydown", (e) => {
-  const typingAlphabets = /^[a-zA-Z]$/.test(e.key);
+  const typingAlphabets = /^[a-z~!@#\$%\^&\*_=\[\]{}\\|/\?\.,<>;:'"]$/i.test(
+    e.key
+  );
   const numbers = /^[0-9]$/.test(e.key);
   console.log(e.key, typeof e.key);
   if (e.key === "Enter") {
