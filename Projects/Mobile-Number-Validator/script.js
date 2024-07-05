@@ -9,7 +9,11 @@ const USANumberFormats = [
   /^1?\s?(\([0-9]{3}\))[\s-]?([0-9]{3})[\s-]?([0-9]{4})$/,
 ];
 
-const PakNumberFormat = [/^[(0092)(\+92)(0)][0-9]{3}[\s-]?[0-9]{7}$/];
+const PakNumberFormats = [
+  /^[(0092)(\+92)(0)]3[0-4][0-9][\s-]?[0-9]{7}$/,
+  /^[(0092)(\+92)(0)]355[\s-]?[0-9]{7}$/,
+  /^[(0092)(\+92)(0)]370[\s-]?[0-9]{7}$/,
+];
 
 const checkUserInput = () => {
   const inputValue = inputEl.value.trim();
@@ -17,7 +21,7 @@ const checkUserInput = () => {
   if (!inputValue) {
     alert("Please provide a phone number");
   } else {
-    let formats = PakNumberFormat;
+    let formats = PakNumberFormats;
     let country = "Pak";
 
     if (selectEl.value === "usa") {
