@@ -19,7 +19,8 @@ const checkUserInput = () => {
   const inputValue = inputEl.value.trim();
 
   if (!inputValue) {
-    alert("Please provide a phone number");
+    // alert("Please provide a phone number!");
+    resultEl.textContent = "Please provide a phone number!";
   } else {
     let formats = PakNumberFormats;
     let country = "Pak";
@@ -48,9 +49,16 @@ clearBtn.addEventListener("click", () => {
   resultEl.textContent = "";
 });
 inputEl.addEventListener("keydown", (e) => {
+  const typingAlphabets = /^[a-zA-Z]$/.test(e.key);
+  const numbers = /^[0-9]$/.test(e.key);
+  console.log(e.key, typeof e.key);
   if (e.key === "Enter") {
     e.preventDefault();
     checkUserInput();
+  } else if (typingAlphabets) {
+    e.preventDefault();
+  } else if (numbers) {
+    resultEl.textContent = "";
   }
 });
 selectEl.addEventListener("change", () => {
