@@ -49,10 +49,10 @@ clearBtn.addEventListener("click", () => {
   inputEl.value = "";
 });
 inputEl.addEventListener("textInput", (e) => {
-  const numbersRegex = /[0-9 \-+]+/;
+  const regex = /[0-9 \-+\(\)]+/;
   const key = e.data;
 
-  if (!numbersRegex.test(key)) {
+  if (!regex.test(key)) {
     e.preventDefault();
   } else {
     resultEl.textContent = "";
@@ -66,4 +66,12 @@ inputEl.addEventListener("keydown", (e) => {
 });
 selectEl.addEventListener("change", () => {
   clearBtn.click();
+  inputEl.focus();
+
+  if (selectEl.value === "usa") {
+    inputEl.setAttribute(
+      "pattern",
+      "(1?\\s?(([0-9]{3}))(\\s+|-)?([0-9]{3})(\\s+|-)?([0-9]{4})|1?\\s?(([0-9]{3}))(\\s+|-)?([0-9]{3})(\\s+|-)?([0-9]{4}))"
+    );
+  }
 });

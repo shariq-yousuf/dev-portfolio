@@ -85,6 +85,14 @@ input {
   box-shadow: 0 0 10px 2px rgb(182, 181, 181);
 }
 
+input:valid {
+  outline: 2px solid rgb(61, 211, 61);
+}
+
+input:invalid {
+  outline: 2px solid red;
+}
+
 .btn-container {
   width: 90%;
   display: flex;
