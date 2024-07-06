@@ -48,17 +48,20 @@ clearBtn.addEventListener("click", () => {
   resultEl.textContent = "";
   inputEl.value = "";
 });
-inputEl.addEventListener("keydown", (e) => {
-  const numbersRegex = /([0-9 \-+]+|Backspace)/;
+inputEl.addEventListener("textInput", (e) => {
+  const numbersRegex = /[0-9 \-+]+/;
+  const key = e.data;
 
+  if (!numbersRegex.test(key)) {
+    e.preventDefault();
+  } else {
+    resultEl.textContent = "";
+  }
+});
+inputEl.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     e.preventDefault();
     checkUserInput();
-  } else if (!numbersRegex.test(e.key)) {
-    e.preventDefault();
-    console.log(e.key);
-  } else {
-    resultEl.textContent = "";
   }
 });
 selectEl.addEventListener("change", () => {
