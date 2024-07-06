@@ -49,17 +49,15 @@ clearBtn.addEventListener("click", () => {
   inputEl.value = "";
 });
 inputEl.addEventListener("keydown", (e) => {
-  const typingAlphabets = /^[a-z~!@#\$%\^&\*_=\[\]{}\\|/\?\.,<>;:'"]$/i.test(
-    e.key
-  );
-  const numbers = /^[0-9]$/.test(e.key);
-  console.log(e.key, typeof e.key);
+  const numbersRegex = /([0-9 \-+]+|Backspace)/;
+
   if (e.key === "Enter") {
     e.preventDefault();
     checkUserInput();
-  } else if (typingAlphabets) {
+  } else if (!numbersRegex.test(e.key)) {
     e.preventDefault();
-  } else if (numbers) {
+    console.log(e.key);
+  } else {
     resultEl.textContent = "";
   }
 });

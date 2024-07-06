@@ -24,7 +24,13 @@
             <option value="usa">USA</option>
           </select>
           <label for="user-input">Enter Mobile Number:</label>
-          <input type="text" autofocus name="" id="user-input" />
+          <input
+            type="text"
+            autofocus
+            pattern="[0-9\s\-]+"
+            name="user-input"
+            id="user-input"
+          />
           <div class="btn-container">
             <button class="btn" id="check-btn">Check</button>
             <button class="btn" id="clear-btn">Clear</button>
