@@ -94,6 +94,16 @@ const projects = [
     githubLink:
       "https://github.com/shariq-yousuf/Developer-Portfolio/tree/main/Projects/Quiz-App",
   },
+  {
+    id: 9,
+    title: "Mobile Number Validator",
+    description: "Verify numbers for Pak and US!  Valid or not?",
+    imgSrc:
+      "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/mobile-number-validator",
+    liveUrl: "./Projects/Mobile-Number-Validator/index.html",
+    githubLink:
+      "https://github.com/shariq-yousuf/Developer-Portfolio/tree/main/Projects/Mobile-Number-Validator",
+  },
 ];
 
 const skills = [

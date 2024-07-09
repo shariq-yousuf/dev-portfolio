@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Favicons/mobile-number-validator"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Mobile Number Validator</title>
+  </head>
+  <body>
+    <header>
+      <h1>Mobile Number Validator</h1>
+    </header>
+    <main>
+      <div class="mobile-body">
+        <div class="camera"></div>
+        <div class="screen">
+          <select name="select-country" id="select-country">
+            <option value="pak">Pakistan</option>
+            <option value="usa">USA</option>
+          </select>
+          <label for="user-input">Enter Mobile Number:</label>
+          <input
+            type="text"
+            autofocus
+            pattern="(((0092|\+92)(\s+|-)?|0)3[0-4][0-9](\s+|-)?[0-9]{7}|((0092|\+92)(\s+|-)?|0)355(\s+|-)?[0-9]{7}|((0092|\+92)(\s+|-)?|0)370(\s+|-)?[0-9]{7})"
+            name="user-input"
+            id="user-input"
+          />
+          <div class="btn-container">
+            <button class="btn" id="check-btn">Check</button>
+            <button class="btn" id="clear-btn">Clear</button>
+          </div>
+          <div id="results-div"></div>
+        </div>
+        <div class="home-btn"></div>
+      </div>
+    </main>
+    <footer>
+      Made by
+      <a href="https://shariq-yousuf.github.io/Developer-Portfolio/"
+        >Shariq Yousuf</a
+      >
+      &copy; 2024
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

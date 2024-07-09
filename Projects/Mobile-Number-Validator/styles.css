@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Montserrat", monospace;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100dvh;
+  text-align: center;
+  position: relative;
+  background-color: black;
+  color: white;
+}
+
+.mobile-body {
+  padding: 0.6rem;
+  margin: 3rem;
+  border-radius: 8px;
+  height: 22rem;
+  width: 15rem;
+  background-color: rgb(179, 179, 182);
+}
+
+.camera {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  margin: 5px auto;
+  background-color: black;
+  border: 2px solid white;
+}
+
+.screen {
+  background-color: rgb(206, 247, 247);
+  box-shadow: 0 0 10px 2px gray;
+  color: black;
+  height: 87%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-btn {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: black;
+  border-radius: 50%;
+  margin: 5px auto;
+  border: 4px outset;
+}
+
+#select-country {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  margin-bottom: 1rem;
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+input {
+  font-family: Montserrat, Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 500;
+  outline: none;
+  border: none;
+  font-size: 1.5rem;
+  width: 90%;
+  text-align: center;
+  padding: 5px;
+  margin: 8px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 2px rgb(182, 181, 181);
+}
+
+input:valid {
+  outline: 2px solid rgb(61, 211, 61);
+}
+
+input:invalid {
+  outline: 2px solid red;
+}
+
+.btn-container {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  font-family: "Montserrat", monospace;
+  padding: 5px 0;
+  width: 50%;
+  border: none;
+  transition: 0.5s all;
+  color: white;
+  font-weight: bold;
+}
+
+#check-btn {
+  background-color: rgb(61, 211, 61);
+  border-radius: 5px 0 0 5px;
+}
+
+#clear-btn {
+  background-color: rgb(247, 30, 30);
+  border-radius: 0 5px 5px 0;
+}
+
+#check-btn:hover,
+#clear-btn:hover {
+  background-color: black;
+}
+
+#results-div {
+  padding: 10px;
+  margin: 10px 0;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  height: 3rem;
+  width: 90%;
+}
+
+footer {
+  position: absolute;
+  bottom: 10px;
+}
+
+footer a {
+  color: white;
+  font-style: italic;
+}
+
+footer a:hover {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 720px) {
+  .mobile-body {
+    width: 90%;
+    min-height: 70dvh;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
