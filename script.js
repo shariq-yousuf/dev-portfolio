@@ -104,6 +104,42 @@ const projects = [
     githubLink:
       "https://github.com/shariq-yousuf/Developer-Portfolio/tree/main/Projects/Mobile-Number-Validator",
   },
+  {
+    id: 10,
+    title: "Statistics Calculator",
+    description:
+      "Analyze your data with ease! Mean, median, mode, variance and standard deviation. ",
+    imgSrc:
+      "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/Statistics-Calculator",
+    liveUrl:
+      "https://shariq-yousuf.github.io/my-fCC-js-cert-projects/Projects/Statistics-Calculator/index.html",
+    githubLink:
+      "https://github.com/shariq-yousuf/my-fCC-js-cert-projects/tree/main/Projects/Statistics-Calculator",
+  },
+  {
+    id: 11,
+    title: "Todo App",
+    description:
+      "This simple to-do app lets you easily add, track, and complete your tasks.",
+    imgSrc:
+      "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/Todo-App",
+    liveUrl:
+      "https://shariq-yousuf.github.io/my-fCC-js-cert-projects/Projects/Todo-App/index.html",
+    githubLink:
+      "https://github.com/shariq-yousuf/my-fCC-js-cert-projects/tree/main/Projects/Todo-App",
+  },
+  {
+    id: 12,
+    title: "Calorie Counter",
+    description:
+      "Take control of your diet.This easy-to-use calorie counter app helps you track your food intake.",
+    imgSrc:
+      "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/Calorie-Counter",
+    liveUrl:
+      "https://shariq-yousuf.github.io/my-fCC-js-cert-projects/Projects/Calorie-Counter/index.html",
+    githubLink:
+      "https://github.com/shariq-yousuf/my-fCC-js-cert-projects/tree/main/Projects/Calorie-Counter",
+  },
 ];
 
 const skills = [
