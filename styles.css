@@ -281,9 +281,24 @@ body {
   border: 0.5rem solid var(--primary-color);
 }
 
+.my-intro-title {
+  text-align: center;
+  font-family: Tahoma, sans-serif;
+}
+
 .my-intro {
   font-size: 1.5rem;
   line-height: 2.5rem;
+}
+
+.my-intro a {
+  color: inherit;
+  text-decoration: none;
+  font-style: italic;
+}
+
+.my-intro a:hover {
+  text-decoration: underline;
 }
 
 footer {
