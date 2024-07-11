@@ -9,17 +9,17 @@ const burgerIcon = document.getElementById("burger-icon");
 const burgerMenuContent = document.getElementById("burger-menu-content");
 
 const projects = [
-  {
-    id: 1,
-    title: "Digital Clock",
-    description:
-      "Stay on time, anywhere! Simple, clean digital clock. Always accurate. Check it out!",
-    imgSrc:
-      "https://res.cloudinary.com/do0pop1de/image/upload/v1718194146/src%20for%20portfolio%20website/clock.png",
-    liveUrl: "./Projects/Digital-Clock/clock.html",
-    githubLink:
-      "https://github.com/shariq-yousuf/Developer-Portfolio/tree/main/Projects/Digital-Clock",
-  },
+  // {
+  //   id: 1,
+  //   title: "Digital Clock",
+  //   description:
+  //     "Stay on time, anywhere! Simple, clean digital clock. Always accurate. Check it out!",
+  //   imgSrc:
+  //     "https://res.cloudinary.com/do0pop1de/image/upload/v1718194146/src%20for%20portfolio%20website/clock.png",
+  //   liveUrl: "./Projects/Digital-Clock/clock.html",
+  //   githubLink:
+  //     "https://github.com/shariq-yousuf/Developer-Portfolio/tree/main/Projects/Digital-Clock",
+  // },
   {
     id: 2,
     title: "Secret Chat",
@@ -104,42 +104,42 @@ const projects = [
     githubLink:
       "https://github.com/shariq-yousuf/Developer-Portfolio/tree/main/Projects/Mobile-Number-Validator",
   },
-  {
-    id: 10,
-    title: "Statistics Calculator",
-    description:
-      "Analyze your data with ease! Mean, median, mode, variance and standard deviation. ",
-    imgSrc:
-      "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/Statistics-Calculator",
-    liveUrl:
-      "https://shariq-yousuf.github.io/my-fCC-js-cert-projects/Projects/Statistics-Calculator/index.html",
-    githubLink:
-      "https://github.com/shariq-yousuf/my-fCC-js-cert-projects/tree/main/Projects/Statistics-Calculator",
-  },
-  {
-    id: 11,
-    title: "Todo App",
-    description:
-      "This simple to-do app lets you easily add, track, and complete your tasks.",
-    imgSrc:
-      "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/Todo-App",
-    liveUrl:
-      "https://shariq-yousuf.github.io/my-fCC-js-cert-projects/Projects/Todo-App/index.html",
-    githubLink:
-      "https://github.com/shariq-yousuf/my-fCC-js-cert-projects/tree/main/Projects/Todo-App",
-  },
-  {
-    id: 12,
-    title: "Calorie Counter",
-    description:
-      "Take control of your diet.This easy-to-use calorie counter app helps you track your food intake.",
-    imgSrc:
-      "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/Calorie-Counter",
-    liveUrl:
-      "https://shariq-yousuf.github.io/my-fCC-js-cert-projects/Projects/Calorie-Counter/index.html",
-    githubLink:
-      "https://github.com/shariq-yousuf/my-fCC-js-cert-projects/tree/main/Projects/Calorie-Counter",
-  },
+  // {
+  //   id: 10,
+  //   title: "Statistics Calculator",
+  //   description:
+  //     "Analyze your data with ease! Mean, median, mode, variance and standard deviation. ",
+  //   imgSrc:
+  //     "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/Statistics-Calculator",
+  //   liveUrl:
+  //     "https://shariq-yousuf.github.io/my-fCC-js-cert-projects/Projects/Statistics-Calculator/index.html",
+  //   githubLink:
+  //     "https://github.com/shariq-yousuf/my-fCC-js-cert-projects/tree/main/Projects/Statistics-Calculator",
+  // },
+  // {
+  //   id: 11,
+  //   title: "Todo App",
+  //   description:
+  //     "This simple to-do app lets you easily add, track, and complete your tasks.",
+  //   imgSrc:
+  //     "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/Todo-App",
+  //   liveUrl:
+  //     "https://shariq-yousuf.github.io/my-fCC-js-cert-projects/Projects/Todo-App/index.html",
+  //   githubLink:
+  //     "https://github.com/shariq-yousuf/my-fCC-js-cert-projects/tree/main/Projects/Todo-App",
+  // },
+  // {
+  //   id: 12,
+  //   title: "Calorie Counter",
+  //   description:
+  //     "Take control of your diet.This easy-to-use calorie counter app helps you track your food intake.",
+  //   imgSrc:
+  //     "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/Calorie-Counter",
+  //   liveUrl:
+  //     "https://shariq-yousuf.github.io/my-fCC-js-cert-projects/Projects/Calorie-Counter/index.html",
+  //   githubLink:
+  //     "https://github.com/shariq-yousuf/my-fCC-js-cert-projects/tree/main/Projects/Calorie-Counter",
+  // },
 ];
 
 const skills = [
@@ -217,17 +217,17 @@ const socialLinks = [
   },
 ];
 
-projects.push({
-  id: projects.length + 1,
-  title: "Coming Soon...",
-  description:
-    "Web just got more awesome. Our next project is cooking up. What could it be?",
-  imgSrc:
-    "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/coming%20soon",
-  liveUrl: "./Projects/Coming-Soon/coming-soon.html",
-  githubLink:
-    "https://github.com/shariq-yousuf/Developer-Portfolio/tree/main/Projects/Coming-Soon",
-});
+// projects.push({
+//   id: projects.length + 1,
+//   title: "Coming Soon...",
+//   description:
+//     "Web just got more awesome. Our next project is cooking up. What could it be?",
+//   imgSrc:
+//     "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/coming%20soon",
+//   liveUrl: "./Projects/Coming-Soon/coming-soon.html",
+//   githubLink:
+//     "https://github.com/shariq-yousuf/Developer-Portfolio/tree/main/Projects/Coming-Soon",
+// });
 
 // PUSH NEW PROJECT ABOVE THIS LINE
 
