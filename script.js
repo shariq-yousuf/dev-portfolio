@@ -140,6 +140,18 @@ const projects = [
   //   githubLink:
   //     "https://github.com/shariq-yousuf/my-fCC-js-cert-projects/tree/main/Projects/Calorie-Counter",
   // },
+  {
+    id: 13,
+    title: "Skyhop",
+    description:
+      "Jump & collect! Simple platform game for fun. (Dark & Light mode)",
+    imgSrc:
+      "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/Platformer-Game",
+    liveUrl:
+      "https://shariq-yousuf.github.io/my-fCC-js-cert-projects/Projects/Platformer-Game/index.html",
+    githubLink:
+      "https://github.com/shariq-yousuf/my-fCC-js-cert-projects/tree/main/Projects/Platformer-Game",
+  },
 ];
 
 const skills = [
