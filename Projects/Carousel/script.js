@@ -40,6 +40,38 @@ slides.forEach(() => {
   dotId += 100;
 });
 
+const slideRight = () => {
+  if (position > (slides.length - 1) * -100) {
+    position -= 100;
+    slides.forEach((slide) => {
+      slide.style.left = `${position}%`;
+    });
+  } else {
+    position = 0;
+    slides.forEach((slide) => {
+      slide.style.left = `${position}%`;
+    });
+  }
+
+  highlightDot();
+};
+
+const slideLeft = () => {
+  if (position < 0) {
+    position += 100;
+    slides.forEach((slide) => {
+      slide.style.left = `${position}%`;
+    });
+  } else {
+    position = (slides.length - 1) * -100;
+    slides.forEach((slide) => {
+      slide.style.left = `${position}%`;
+    });
+  }
+
+  highlightDot();
+};
+
 const goToSlide = (e) => {
   position = e.target.id;
 
@@ -62,38 +94,10 @@ const highlightDot = () => {
   targetDot.classList.add("focus");
 };
 
-rightBtn.addEventListener("click", () => {
-  if (position > (slides.length - 1) * -100) {
-    position -= 100;
-    slides.forEach((slide) => {
-      slide.style.left = `${position}%`;
-    });
-  } else {
-    position = 0;
-    slides.forEach((slide) => {
-      slide.style.left = `${position}%`;
-    });
-  }
+rightBtn.addEventListener("click", slideRight);
 
-  highlightDot();
-});
-
-leftBtn.addEventListener("click", () => {
-  if (position < 0) {
-    position += 100;
-    slides.forEach((slide) => {
-      slide.style.left = `${position}%`;
-    });
-  } else {
-    position = (slides.length - 1) * -100;
-    slides.forEach((slide) => {
-      slide.style.left = `${position}%`;
-    });
-  }
-
-  highlightDot();
-});
-
-// document.getElementsByClassName("dot")
+leftBtn.addEventListener("click", slideLeft);
 
 highlightDot();
+
+setInterval(slideRight, 5000);
