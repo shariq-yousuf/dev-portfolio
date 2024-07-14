@@ -152,6 +152,16 @@ const projects = [
     githubLink:
       "https://github.com/shariq-yousuf/my-fCC-js-cert-projects/tree/main/Projects/Platformer-Game",
   },
+  {
+    id: 14,
+    title: "Carousel",
+    description: "Random carousel and image slider",
+    imgSrc:
+      "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/Carousel",
+    liveUrl: "./Projects/Carousel/index.html",
+    githubLink:
+      "https://github.com/shariq-yousuf/Developer-Portfolio/tree/carousel/Projects/Carousel",
+  },
 ];
 
 const skills = [
