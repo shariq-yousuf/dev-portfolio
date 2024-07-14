@@ -73,10 +73,10 @@ const slideLeft = () => {
 };
 
 const goToSlide = (e) => {
-  position = e.target.id;
+  position = -e.target.id;
 
   slides.forEach((slide) => {
-    slide.style.left = `-${position}%`;
+    slide.style.left = `${position}%`;
   });
 
   highlightDot();
