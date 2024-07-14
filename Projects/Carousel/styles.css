@@ -33,11 +33,16 @@ main {
   flex-shrink: 0;
   width: 98%;
   height: 100px;
-  background-color: green;
   position: relative;
   left: 0;
   transition: all 1s;
   margin: 0 1%;
+}
+
+.slide-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
 }
 
 button {
