@@ -33,12 +33,22 @@ rightBtn.addEventListener("click", () => {
     slides.forEach((slide) => {
       slide.style.left = `${position}%`;
     });
+  } else {
+    position = 0;
+    slides.forEach((slide) => {
+      slide.style.left = `${position}%`;
+    });
   }
 });
 
 leftBtn.addEventListener("click", () => {
   if (position < 0) {
     position += 100;
+    slides.forEach((slide) => {
+      slide.style.left = `${position}%`;
+    });
+  } else {
+    position = (slides.length - 1) * -100;
     slides.forEach((slide) => {
       slide.style.left = `${position}%`;
     });
