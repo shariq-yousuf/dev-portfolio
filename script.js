@@ -160,7 +160,17 @@ const projects = [
       "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/Carousel",
     liveUrl: "./Projects/Carousel/index.html",
     githubLink:
-      "https://github.com/shariq-yousuf/Developer-Portfolio/tree/carousel/Projects/Carousel",
+      "https://github.com/shariq-yousuf/Developer-Portfolio/tree/main/Projects/Carousel",
+  },
+  {
+    id: 15,
+    title: "Typing Pro",
+    description: "Learn to type like a pro! Our app makes it easy & engaging.",
+    imgSrc:
+      "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/typing-pro",
+    liveUrl: "./Projects/Typing-Pro/index.html",
+    githubLink:
+      "https://github.com/shariq-yousuf/Developer-Portfolio/tree/main/Projects/Typing-Pro",
   },
 ];
 
