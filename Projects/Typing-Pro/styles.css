@@ -20,9 +20,9 @@ h1 {
 }
 
 main {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-evenly; */
   /* border: 1px solid gray; */
 }
 
@@ -35,6 +35,14 @@ main {
   border: 5px solid yellow;
   border-radius: 1rem;
   font-size: 2rem;
+  overflow: hidden;
+}
+
+.highlight-char {
+  background-color: #f7f795ca;
+  padding: 0 3px;
+  border-radius: 5px;
+  border-bottom: 5px solid yellow;
 }
 
 #keyboard {

@@ -1,10 +1,6 @@
 const typingField = document.querySelector("#typing-field");
 const keyboard = document.querySelector("#keyboard");
 
-const typingText = [
-  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet fugit dignissimos ipsum corrupti odio dolorum ab architecto beatae, quae obcaecati reprehenderit dolores minima? Veniam nihil esse ipsam repellendus nam sint.",
-];
-
 const keys = {
   numsRow: [
     ["`", "~"],
@@ -82,6 +78,14 @@ const specialKeys = [
   "Space",
 ];
 
+const typingText = [
+  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet fugit dignissimos ipsum corrupti odio dolorum ab architecto beatae, quae obcaecati reprehenderit dolores minima? Veniam nihil esse ipsam repellendus nam sint.",
+];
+
+const textToArr = typingText[0].split("");
+let charIndex = 0;
+
+// create keyboard keys
 for (const row in keys) {
   const rowDiv = document.createElement("div");
 
@@ -104,6 +108,33 @@ for (const row in keys) {
   keyboard.appendChild(rowDiv);
 }
 
-typingField.innerHTML = typingText[0];
+// start typing and add text to typing field
+const startTyping = () => {
+  const keys = document.querySelectorAll(".key");
 
-// console.log(document.querySelectorAll(".key"));
+  textToArr.forEach(
+    (char) => (typingField.innerHTML += `<span>${char}</span>`)
+  );
+
+  keys.forEach((key) => {
+    key.addEventListener("click", () => {
+      charIndex++;
+      highlightChar();
+    });
+  });
+
+  highlightChar();
+};
+
+const highlightChar = () => {
+  const typingChars = document.querySelectorAll("#typing-field span");
+
+  typingChars.forEach((char) => char.classList.remove("highlight-char"));
+  typingChars[charIndex].classList.add("highlight-char");
+  //   typingChars[charIndex].style.background = "#f7f795ca";
+  //   typingChars[charIndex].style.borderBottom = "thick solid yellow";
+  //   typingChars[charIndex].style.borderRadius = "5px";
+  //   typingChars[charIndex].style.padding = "0 3px";
+};
+
+startTyping();
