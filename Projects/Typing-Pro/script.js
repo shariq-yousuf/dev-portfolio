@@ -35,7 +35,7 @@ const keys = {
     ["\\", "|"],
   ],
   capsRow: [
-    "Caps-Lock",
+    "CapsLock",
     "a",
     "s",
     "d",
@@ -69,7 +69,7 @@ const keys = {
 const specialKeys = [
   { keyName: "Backspace", id: "" },
   { keyName: "Tab", id: "" },
-  { keyName: "Caps-Lock", id: "" },
+  { keyName: "CapsLock", id: "" },
   { keyName: "Enter", id: "" },
   { keyName: "Shift", id: "" },
   { keyName: "Ctrl", id: "" },
@@ -120,13 +120,13 @@ const startTyping = () => {
     (char) => (typingField.innerHTML += `<span>${char}</span>`)
   );
 
-  keys.forEach((key) => {
-    key.addEventListener("click", () => {
-      charIndex++;
-      highlightChar();
-      highlightKeyBtn(keys);
-    });
-  });
+  //   keys.forEach((key) => {
+  //     key.addEventListener("click", () => {
+  //       charIndex++;
+  //       highlightChar();
+  //       highlightKeyBtn(keys);
+  //     });
+  //   });
 
   highlightChar();
   highlightKeyBtn(keys);
@@ -160,5 +160,29 @@ const highlightKeyBtn = (keys) => {
   targetKeyBtn.classList.add("highlight-key-btn");
   previousHighlightKeyBtn = targetKeyBtn;
 };
+
+window.addEventListener("keydown", (e) => {
+  const keys = document.querySelectorAll(".key");
+  const pressedKey = e.key;
+
+  if (pressedKey !== "Shift") {
+    if (pressedKey === typingChars[charIndex].textContent) {
+      const currentChar = typingChars[charIndex];
+      currentChar.classList.add("correct");
+      setTimeout(() => currentChar.classList.remove("correct"), 300);
+
+      console.log("yes");
+    } else {
+      const currentChar = typingChars[charIndex];
+      currentChar.classList.add("wrong");
+      setTimeout(() => currentChar.classList.remove("wrong"), 300);
+      console.log("no");
+    }
+
+    charIndex++;
+    highlightChar();
+    highlightKeyBtn(keys);
+  }
+});
 
 startTyping();
