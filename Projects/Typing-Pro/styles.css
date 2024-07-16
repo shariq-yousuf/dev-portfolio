@@ -177,6 +177,22 @@ h1 {
   gap: 1rem;
 }
 
+footer {
+  position: absolute;
+  bottom: 8px;
+  width: 100dvw;
+  margin: 0 auto;
+  text-align: center;
+}
+
+footer a {
+  color: black;
+}
+
+footer a:hover {
+  text-decoration: none;
+}
+
 @media screen and (max-width: 720px) {
   body {
     display: flex;
