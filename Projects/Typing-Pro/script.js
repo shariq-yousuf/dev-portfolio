@@ -79,7 +79,7 @@ const specialKeys = [
 ];
 
 const typingText = [
-  "Lo   rem:;1 23'\\,.<>()#@#$%\"   ipsum dolor sit amet consectetur adipisicing elit. Eveniet fugit dignissimos ipsum corrupti odio dolorum ab architecto beatae, quae obcaecati reprehenderit dolores minima? Veniam nihil esse ipsam repellendus nam sint.",
+  "Ready to test your typing skills? This quick challenge will assess your accuracy and speed. Focus on hitting the right keys without sacrificing speed. Don't worry about mistakes - the goal is to type as many words as possible. Let's see how fast your fingers can fly!",
 ];
 
 const textToArr = typingText[0].split("");
@@ -120,16 +120,9 @@ const startTyping = () => {
     (char) => (typingField.innerHTML += `<span>${char}</span>`)
   );
 
-  //   keys.forEach((key) => {
-  //     key.addEventListener("click", () => {
-  //       charIndex++;
-  //       highlightChar();
-  //       highlightKeyBtn(keys);
-  //     });
-  //   });
-
   highlightChar();
-  highlightKeyBtn(keys);
+  findKeyBtn(keys);
+  highlightShiftBtn(keys[41]);
 };
 
 const highlightChar = () => {
@@ -142,23 +135,37 @@ const highlightChar = () => {
   typingChars[charIndex].classList.add("highlight-char");
 };
 
-const highlightKeyBtn = (keys) => {
-  //   keys.forEach((key) => key.classList.remove("highlight-key-btn"));
-  if (previousHighlightKeyBtn) {
-    previousHighlightKeyBtn.classList.remove("highlight-key-btn");
-  }
-
+const findKeyBtn = (keys) => {
   const targetKeyBtn = Array.from(keys).find((key) => {
     const idArr = key.id.toLowerCase().split("");
-
     return (
       typingChars[charIndex].textContent.toLowerCase() === idArr[0] ||
       typingChars[charIndex].textContent.toLowerCase() === idArr[2]
     );
   });
 
-  targetKeyBtn.classList.add("highlight-key-btn");
-  previousHighlightKeyBtn = targetKeyBtn;
+  highlightKeyBtn(targetKeyBtn);
+};
+
+const highlightKeyBtn = (key) => {
+  if (previousHighlightKeyBtn) {
+    previousHighlightKeyBtn.classList.remove("highlight-key-btn");
+  }
+
+  key.classList.add("highlight-key-btn");
+  previousHighlightKeyBtn = key;
+};
+
+const highlightShiftBtn = (key) => {
+  if (
+    typingChars[charIndex].textContent ===
+    typingChars[charIndex].textContent.toUpperCase()
+  ) {
+    // highlight the shift key, in keys nodelist the shift key is on index 41
+    key.classList.add("highlight-key-btn");
+  } else {
+    key.classList.remove("highlight-key-btn");
+  }
 };
 
 window.addEventListener("keydown", (e) => {
@@ -183,7 +190,8 @@ window.addEventListener("keydown", (e) => {
 
     charIndex++;
     highlightChar();
-    highlightKeyBtn(keys);
+    findKeyBtn(keys);
+    highlightShiftBtn(keys[41]);
   } else if (pressedKey === "CapsLock") {
     // highlight the capslock key, in keys nodelist the capslock key is on index 28
     keys[28].classList.toggle("highlight-key-btn");
