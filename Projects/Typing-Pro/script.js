@@ -1,5 +1,9 @@
 const typingField = document.querySelector("#typing-field");
 const keyboard = document.querySelector("#keyboard");
+const startBtn = document.querySelector(".start-btn");
+const startScreen = document.querySelector("#start-screen");
+const typingScreen = document.querySelector("#typing-screen");
+const finishScreen = document.querySelector("#finish-screen");
 
 const keys = {
   numsRow: [
@@ -203,4 +207,9 @@ window.addEventListener("keydown", (e) => {
   }
 });
 
-startTyping();
+startBtn.addEventListener("click", () => {
+  startScreen.style.display = "none";
+  typingScreen.style.display = "block";
+
+  startTyping();
+});
