@@ -20,14 +20,7 @@ h1 {
   color: yellow;
 }
 
-main {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: space-evenly; */
-  /* border: 1px solid gray; */
-}
-
-#typing-field {
+#typing-field { 
   padding: 10px;
   text-align: center;
   width: 80dvw;

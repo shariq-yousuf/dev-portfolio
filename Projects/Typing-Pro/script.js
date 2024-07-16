@@ -20,44 +20,44 @@ const keys = {
   ],
   tabRow: [
     "Tab",
-    "q",
-    "w",
-    "e",
-    "r",
-    "t",
-    "y",
-    "u",
-    "i",
-    "o",
-    "p",
+    "Q",
+    "W",
+    "E",
+    "R",
+    "T",
+    "Y",
+    "U",
+    "I",
+    "O",
+    "P",
     ["[", "{"],
     ["]", "}"],
     ["\\", "|"],
   ],
   capsRow: [
     "CapsLock",
-    "a",
-    "s",
-    "d",
-    "f",
-    "g",
-    "h",
-    "j",
-    "k",
-    "l",
+    "A",
+    "S",
+    "D",
+    "F",
+    "G",
+    "H",
+    "J",
+    "K",
+    "L",
     [";", ":"],
     ["'", '"'],
     "Enter",
   ],
   shiftRow: [
     "Shift",
-    "z",
-    "x",
-    "c",
-    "v",
-    "b",
-    "n",
-    "m",
+    "Z",
+    "X",
+    "C",
+    "V",
+    "B",
+    "N",
+    "M",
     [",", "<"],
     [".", ">"],
     ["/", "?"],
@@ -69,7 +69,7 @@ const keys = {
 const specialKeys = [
   { keyName: "Backspace", id: "" },
   { keyName: "Tab", id: "" },
-  { keyName: "CapsLock", id: "" },
+  { keyName: "CapsLock", id: "CapsLock" },
   { keyName: "Enter", id: "" },
   { keyName: "Shift", id: "" },
   { keyName: "Ctrl", id: "" },
@@ -86,6 +86,7 @@ const textToArr = typingText[0].split("");
 let typingChars;
 let charIndex = 0;
 let previousHighlightKeyBtn;
+let isCapsLockOn = false;
 
 // create keyboard keys
 for (const row in keys) {
@@ -93,7 +94,6 @@ for (const row in keys) {
 
   keys[row].forEach((key) => {
     const keyEl = document.createElement("div");
-    // Array.isArray(key) ? null : (keyEl.id = key);
     keyEl.id = key;
 
     specialLoop: for (const specialKey of specialKeys) {
@@ -149,7 +149,7 @@ const highlightKeyBtn = (keys) => {
   }
 
   const targetKeyBtn = Array.from(keys).find((key) => {
-    const idArr = key.id.split("");
+    const idArr = key.id.toLowerCase().split("");
 
     return (
       typingChars[charIndex].textContent.toLowerCase() === idArr[0] ||
@@ -165,23 +165,33 @@ window.addEventListener("keydown", (e) => {
   const keys = document.querySelectorAll(".key");
   const pressedKey = e.key;
 
-  if (pressedKey !== "Shift") {
+  if (
+    pressedKey !== "Shift" &&
+    pressedKey !== "Alt" &&
+    pressedKey !== "Control" &&
+    pressedKey !== "CapsLock"
+  ) {
     if (pressedKey === typingChars[charIndex].textContent) {
       const currentChar = typingChars[charIndex];
       currentChar.classList.add("correct");
       setTimeout(() => currentChar.classList.remove("correct"), 300);
-
-      console.log("yes");
     } else {
       const currentChar = typingChars[charIndex];
       currentChar.classList.add("wrong");
       setTimeout(() => currentChar.classList.remove("wrong"), 300);
-      console.log("no");
     }
 
     charIndex++;
     highlightChar();
     highlightKeyBtn(keys);
+  } else if (pressedKey === "CapsLock") {
+    // highlight the capslock key, in keys nodelist the capslock key is on index 28
+    keys[28].classList.toggle("highlight-key-btn");
+
+    isCapsLockOn ? (isCapsLockOn = false) : (isCapsLockOn = true);
+    isCapsLockOn ? alert("Caps Lock is on!") : null;
+  } else {
+    e.preventDefault();
   }
 });
 
