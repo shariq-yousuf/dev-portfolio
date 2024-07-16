@@ -104,6 +104,6 @@ for (const row in keys) {
   keyboard.appendChild(rowDiv);
 }
 
-// typingField.innerHTML = typingText[0];
+typingField.innerHTML = typingText[0];
 
 // console.log(document.querySelectorAll(".key"));

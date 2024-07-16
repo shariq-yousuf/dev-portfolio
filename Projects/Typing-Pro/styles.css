@@ -7,9 +7,34 @@
 }
 
 body {
-  background-color: black;
-  color: white;
+  background-color: rgb(49, 186, 240);
+  color: black;
   font-family: "Quicksand", Verdana, Geneva, Tahoma, sans-serif;
+  height: 100dvh;
+}
+
+h1 {
+  margin: 1rem;
+  text-align: center;
+  color: yellow;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  /* border: 1px solid gray; */
+}
+
+#typing-field {
+  padding: 10px;
+  text-align: center;
+  width: 80dvw;
+  height: 30dvh;
+  margin: 10px auto;
+  border: 5px solid yellow;
+  border-radius: 1rem;
+  font-size: 2rem;
 }
 
 #keyboard {
@@ -32,7 +57,7 @@ body {
 
 .key {
   /* font-weight: bold; */
-  border: 1px solid white;
+  border: 2px solid white;
   width: 4rem;
   height: 3.5rem;
   display: flex;
