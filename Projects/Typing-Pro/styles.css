@@ -23,7 +23,11 @@ h1 {
 #typing-screen {
   display: none;
 }
+
 #start-screen {
+  display: none;
+  padding: 1rem;
+  text-align: center;
   width: 50dvw;
   height: 50dvh;
   margin: 4rem auto;
@@ -36,6 +40,36 @@ h1 {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+}
+
+#finish-screen {
+  display: none;
+  padding: 1rem 3rem;
+  width: 50dvw;
+  height: 50dvh;
+  margin: 4rem auto;
+  font-size: 2rem;
+  font-weight: bold;
+  color: yellow;
+  background-color: rgba(128, 128, 128, 0.459);
+  border-radius: 1rem;
+  /* display: flex; */
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#finish-screen h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.correct-hit {
+  color: green;
+}
+
+.mistakes {
+  color: red;
 }
 
 .start-btn {

@@ -4,6 +4,9 @@ const startBtn = document.querySelector(".start-btn");
 const startScreen = document.querySelector("#start-screen");
 const typingScreen = document.querySelector("#typing-screen");
 const finishScreen = document.querySelector("#finish-screen");
+const charsTypedEl = document.querySelector("#chars-typed");
+const correctEl = document.querySelector("#correct");
+const mistakesEl = document.querySelector("#mistakes");
 
 const keys = {
   numsRow: [
@@ -91,6 +94,9 @@ let typingChars;
 let charIndex = 0;
 let previousHighlightKeyBtn;
 let isCapsLockOn = false;
+let correctHits = 0;
+let mistakes = 0;
+let isTypingFinish = false;
 
 // create keyboard keys
 for (const row in keys) {
@@ -136,6 +142,7 @@ const highlightChar = () => {
   if (charIndex > 0) {
     typingChars[charIndex - 1].classList.remove("highlight-char");
   }
+
   typingChars[charIndex].classList.add("highlight-char");
 };
 
@@ -169,6 +176,15 @@ const highlightShiftBtn = (key) => {
   }
 };
 
+const displayFinishScreen = () => {
+  typingScreen.style.display = "none";
+  finishScreen.style.display = "flex";
+
+  charsTypedEl.textContent = typingChars.length;
+  correctEl.textContent = correctHits;
+  mistakesEl.textContent = mistakes;
+};
+
 window.addEventListener("keydown", (e) => {
   const keys = document.querySelectorAll(".key");
   const pressedKey = e.key;
@@ -179,20 +195,29 @@ window.addEventListener("keydown", (e) => {
     pressedKey !== "Control" &&
     pressedKey !== "CapsLock"
   ) {
-    if (pressedKey === typingChars[charIndex].textContent) {
-      const currentChar = typingChars[charIndex];
-      currentChar.classList.add("correct");
-      setTimeout(() => currentChar.classList.remove("correct"), 300);
-    } else {
-      const currentChar = typingChars[charIndex];
-      currentChar.classList.add("wrong");
-      setTimeout(() => currentChar.classList.remove("wrong"), 300);
+    if (!isTypingFinish) {
+      if (pressedKey === typingChars[charIndex].textContent) {
+        const currentChar = typingChars[charIndex];
+        currentChar.classList.add("correct");
+        setTimeout(() => currentChar.classList.remove("correct"), 300);
+        correctHits++;
+      } else {
+        const currentChar = typingChars[charIndex];
+        currentChar.classList.add("wrong");
+        setTimeout(() => currentChar.classList.remove("wrong"), 300);
+        mistakes++;
+      }
     }
 
-    charIndex++;
-    highlightChar();
-    findKeyBtn(keys);
-    highlightShiftBtn(keys[41]);
+    if (charIndex < typingChars.length - 1) {
+      charIndex++;
+      highlightChar();
+      findKeyBtn(keys);
+      highlightShiftBtn(keys[41]);
+    } else {
+      isTypingFinish = true;
+      displayFinishScreen();
+    }
   } else if (pressedKey === "CapsLock") {
     // highlight the capslock key, in keys nodelist the capslock key is on index 28
     keys[28].classList.toggle("highlight-key-btn");
