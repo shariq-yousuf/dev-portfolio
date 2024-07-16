@@ -1,14 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background-color: black;
-    color: white;
+  background-color: black;
+  color: white;
+  font-family: "Quicksand", Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#keyboard {
+  /* border: 10px solid red; */
+  /* display: inline-block; */
+}
+
+#keyboard > div {
+  display: flex;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+
+#keyboard > div:first-child,
+#keyboard > div:last-child,
+#keyboard div:first-child {
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .key {
-    border: 1px solid white;
+  /* font-weight: bold; */
+  border: 1px solid white;
+  width: 4rem;
+  height: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.Backspace {
+  width: 8rem;
+}
+
+.Tab {
+  width: 6rem;
+}
+
+.Caps-Lock {
+  width: 6rem;
+}
+
+.Enter {
+  font-size: 1rem;
+  width: 8rem;
+}
+
+.Shift {
+  font-size: 1rem;
+  width: 8rem;
+}
+
+.Ctrl {
+  width: 6rem;
+}
+
+.Space {
+  width: 22rem;
 }
