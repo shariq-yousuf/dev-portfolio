@@ -161,10 +161,7 @@ const highlightKeyBtn = (key) => {
 };
 
 const highlightShiftBtn = (key) => {
-  if (
-    typingChars[charIndex].textContent ===
-    typingChars[charIndex].textContent.toUpperCase()
-  ) {
+  if (/[A-Z]/.test(typingChars[charIndex].textContent)) {
     // highlight the shift key, in keys nodelist the shift key is on index 41
     key.classList.add("highlight-key-btn");
   } else {
