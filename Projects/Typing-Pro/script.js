@@ -87,8 +87,7 @@ const specialKeys = [
 ];
 
 const typingText = [
-  "aADga",
-  //   "Ready to test your typing skills? This quick challenge will assess your accuracy and speed. Focus on hitting the right keys without sacrificing speed. Don't worry about mistakes - the goal is to type as many words as possible. Let's see how fast your fingers can fly!",
+  "Ready to test your typing skills? This quick challenge will assess your accuracy and speed. Focus on hitting the right keys without sacrificing speed. Don't worry about mistakes - the goal is to type as many words as possible. Let's see how fast your fingers can fly!",
 ];
 
 const textToArr = typingText[0].split("");
