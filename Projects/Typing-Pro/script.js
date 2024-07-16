@@ -7,6 +7,7 @@ const finishScreen = document.querySelector("#finish-screen");
 const charsTypedEl = document.querySelector("#chars-typed");
 const correctEl = document.querySelector("#correct");
 const mistakesEl = document.querySelector("#mistakes");
+const retryBtn = document.querySelector(".retry-btn");
 
 const keys = {
   numsRow: [
@@ -86,7 +87,8 @@ const specialKeys = [
 ];
 
 const typingText = [
-  "Ready to test your typing skills? This quick challenge will assess your accuracy and speed. Focus on hitting the right keys without sacrificing speed. Don't worry about mistakes - the goal is to type as many words as possible. Let's see how fast your fingers can fly!",
+  "aADga",
+  //   "Ready to test your typing skills? This quick challenge will assess your accuracy and speed. Focus on hitting the right keys without sacrificing speed. Don't worry about mistakes - the goal is to type as many words as possible. Let's see how fast your fingers can fly!",
 ];
 
 const textToArr = typingText[0].split("");
@@ -97,6 +99,7 @@ let isCapsLockOn = false;
 let correctHits = 0;
 let mistakes = 0;
 let isTypingFinish = false;
+let isTypingStart = false;
 
 // create keyboard keys
 for (const row in keys) {
@@ -186,51 +189,68 @@ const displayFinishScreen = () => {
 };
 
 window.addEventListener("keydown", (e) => {
-  const keys = document.querySelectorAll(".key");
-  const pressedKey = e.key;
+  if (isTypingStart) {
+    const keys = document.querySelectorAll(".key");
+    const pressedKey = e.key;
 
-  if (
-    pressedKey !== "Shift" &&
-    pressedKey !== "Alt" &&
-    pressedKey !== "Control" &&
-    pressedKey !== "CapsLock"
-  ) {
-    if (!isTypingFinish) {
-      if (pressedKey === typingChars[charIndex].textContent) {
-        const currentChar = typingChars[charIndex];
-        currentChar.classList.add("correct");
-        setTimeout(() => currentChar.classList.remove("correct"), 300);
-        correctHits++;
-      } else {
-        const currentChar = typingChars[charIndex];
-        currentChar.classList.add("wrong");
-        setTimeout(() => currentChar.classList.remove("wrong"), 300);
-        mistakes++;
+    if (
+      pressedKey !== "Shift" &&
+      pressedKey !== "Alt" &&
+      pressedKey !== "Control" &&
+      pressedKey !== "CapsLock"
+    ) {
+      if (!isTypingFinish) {
+        if (pressedKey === typingChars[charIndex].textContent) {
+          const currentChar = typingChars[charIndex];
+          currentChar.classList.add("correct");
+          setTimeout(() => currentChar.classList.remove("correct"), 300);
+          correctHits++;
+        } else {
+          const currentChar = typingChars[charIndex];
+          currentChar.classList.add("wrong");
+          setTimeout(() => currentChar.classList.remove("wrong"), 300);
+          mistakes++;
+        }
       }
-    }
 
-    if (charIndex < typingChars.length - 1) {
-      charIndex++;
-      highlightChar();
-      findKeyBtn(keys);
-      highlightShiftBtn(keys[41]);
+      if (charIndex < typingChars.length - 1) {
+        charIndex++;
+        highlightChar();
+        findKeyBtn(keys);
+        highlightShiftBtn(keys[41]);
+      } else {
+        isTypingFinish = true;
+        isTypingStart = false;
+        displayFinishScreen();
+      }
+    } else if (pressedKey === "CapsLock") {
+      // highlight the capslock key, in keys nodelist the capslock key is on index 28
+      keys[28].classList.toggle("highlight-key-btn");
+
+      isCapsLockOn ? (isCapsLockOn = false) : (isCapsLockOn = true);
+      isCapsLockOn ? alert("Caps Lock is on!") : null;
     } else {
-      isTypingFinish = true;
-      displayFinishScreen();
+      e.preventDefault();
     }
-  } else if (pressedKey === "CapsLock") {
-    // highlight the capslock key, in keys nodelist the capslock key is on index 28
-    keys[28].classList.toggle("highlight-key-btn");
-
-    isCapsLockOn ? (isCapsLockOn = false) : (isCapsLockOn = true);
-    isCapsLockOn ? alert("Caps Lock is on!") : null;
-  } else {
-    e.preventDefault();
   }
 });
 
 startBtn.addEventListener("click", () => {
+  isTypingStart = true;
   startScreen.style.display = "none";
+  typingScreen.style.display = "block";
+
+  startTyping();
+});
+
+retryBtn.addEventListener("click", () => {
+  typingField.innerHTML = "";
+  charIndex = 0;
+  correctHits = 0;
+  mistakes = 0;
+  isTypingStart = true;
+  isTypingFinish = false;
+  finishScreen.style.display = "none";
   typingScreen.style.display = "block";
 
   startTyping();
