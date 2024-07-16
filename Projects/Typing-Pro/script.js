@@ -67,48 +67,52 @@ const keys = {
 };
 
 const specialKeys = [
-  "Backspace",
-  "Tab",
-  "Caps-Lock",
-  "Enter",
-  "Shift",
-  "Ctrl",
-  "Alt",
-  "Cmd",
-  "Space",
+  { keyName: "Backspace", id: "" },
+  { keyName: "Tab", id: "" },
+  { keyName: "Caps-Lock", id: "" },
+  { keyName: "Enter", id: "" },
+  { keyName: "Shift", id: "" },
+  { keyName: "Ctrl", id: "" },
+  { keyName: "Alt", id: "" },
+  { keyName: "Cmd", id: "" },
+  { keyName: "Space", id: " " },
 ];
 
 const typingText = [
-  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet fugit dignissimos ipsum corrupti odio dolorum ab architecto beatae, quae obcaecati reprehenderit dolores minima? Veniam nihil esse ipsam repellendus nam sint.",
+  "Lo   rem:;1 23'\\,.<>()#@#$%\"   ipsum dolor sit amet consectetur adipisicing elit. Eveniet fugit dignissimos ipsum corrupti odio dolorum ab architecto beatae, quae obcaecati reprehenderit dolores minima? Veniam nihil esse ipsam repellendus nam sint.",
 ];
 
 const textToArr = typingText[0].split("");
+let typingChars;
 let charIndex = 0;
+let previousHighlightKeyBtn;
 
 // create keyboard keys
 for (const row in keys) {
-  const rowDiv = document.createElement("div");
+  const rowEl = document.createElement("div");
 
   keys[row].forEach((key) => {
-    const keyDiv = document.createElement("div");
+    const keyEl = document.createElement("div");
+    // Array.isArray(key) ? null : (keyEl.id = key);
+    keyEl.id = key;
 
     specialLoop: for (const specialKey of specialKeys) {
-      if (key === specialKey) {
-        keyDiv.classList.add(key);
+      if (key === specialKey.keyName) {
+        keyEl.classList.add(key);
+        keyEl.id = specialKey.id;
         break specialLoop;
       }
     }
 
-    keyDiv.classList.add("key");
-    keyDiv.innerHTML = Array.isArray(key) ? `${key[1]}<br>${key[0]}` : `${key}`;
+    keyEl.classList.add("key");
+    keyEl.innerHTML = Array.isArray(key) ? `${key[1]}<br>${key[0]}` : `${key}`;
 
-    rowDiv.appendChild(keyDiv);
+    rowEl.appendChild(keyEl);
   });
 
-  keyboard.appendChild(rowDiv);
+  keyboard.appendChild(rowEl);
 }
 
-// start typing and add text to typing field
 const startTyping = () => {
   const keys = document.querySelectorAll(".key");
 
@@ -120,21 +124,41 @@ const startTyping = () => {
     key.addEventListener("click", () => {
       charIndex++;
       highlightChar();
+      highlightKeyBtn(keys);
     });
   });
 
   highlightChar();
+  highlightKeyBtn(keys);
 };
 
 const highlightChar = () => {
-  const typingChars = document.querySelectorAll("#typing-field span");
+  typingChars = document.querySelectorAll("#typing-field span");
 
-  typingChars.forEach((char) => char.classList.remove("highlight-char"));
+  //   typingChars.forEach((char) => char.classList.remove("highlight-char"));
+  if (charIndex > 0) {
+    typingChars[charIndex - 1].classList.remove("highlight-char");
+  }
   typingChars[charIndex].classList.add("highlight-char");
-  //   typingChars[charIndex].style.background = "#f7f795ca";
-  //   typingChars[charIndex].style.borderBottom = "thick solid yellow";
-  //   typingChars[charIndex].style.borderRadius = "5px";
-  //   typingChars[charIndex].style.padding = "0 3px";
+};
+
+const highlightKeyBtn = (keys) => {
+  //   keys.forEach((key) => key.classList.remove("highlight-key-btn"));
+  if (previousHighlightKeyBtn) {
+    previousHighlightKeyBtn.classList.remove("highlight-key-btn");
+  }
+
+  const targetKeyBtn = Array.from(keys).find((key) => {
+    const idArr = key.id.split("");
+
+    return (
+      typingChars[charIndex].textContent.toLowerCase() === idArr[0] ||
+      typingChars[charIndex].textContent.toLowerCase() === idArr[2]
+    );
+  });
+
+  targetKeyBtn.classList.add("highlight-key-btn");
+  previousHighlightKeyBtn = targetKeyBtn;
 };
 
 startTyping();
