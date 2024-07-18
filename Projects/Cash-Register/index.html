@@ -36,13 +36,18 @@
             once:
           </p>
           <div id="price-container">
-            <input type="number" class="input" id="price" placeholder="Price" />
+            <input
+              type="number"
+              class="input"
+              id="price"
+              placeholder="Enter price"
+            />
           </div>
           <button id="add-price-input-btn" class="btn">+</button>
           <div>Total amount: Rs. <span id="total-amount">0</span></div>
         </div>
 
-        <div class="currency-section">
+        <div class="cid-section">
           <div class="select-container">
             <p>Cash in drawer</p>
             <select name="currency-type" id="currency-type">
@@ -50,87 +55,15 @@
               <option value="usd">USD</option>
             </select>
           </div>
-          <div class="currency-container">
+          <div class="cid-container">
             <table>
-              <tbody>
-                <tr>
-                  <td><label for="one">ONE</label></td>
-                  <td>x</td>
-                  <td><input type="number" name="one" id="one" /></td>
-                  <td><span id="one-total">Rs. </span></td>
-                </tr>
-                <tr>
-                  <td><label for="two">TWO</label></td>
-                  <td>x</td>
-                  <td><input type="number" name="two" id="two" /></td>
-                  <td><span id="two-total">Rs. </span></td>
-                </tr>
-                <tr>
-                  <td><label for="five">FIVE</label></td>
-                  <td>x</td>
-                  <td><input type="number" name="five" id="five" /></td>
-                  <td><span id="five-total">Rs. </span></td>
-                </tr>
-                <tr>
-                  <td><label for="ten">TEN</label></td>
-                  <td>x</td>
-                  <td><input type="number" name="ten" id=ten"" /></td>
-                  <td><span id="ten-total">Rs. </span></td>
-                </tr>
-                <tr>
-                  <td><label for="twenty">TWENTY</label></td>
-                  <td>x</td>
-                  <td><input type="number" name="twenty" id="twenty" /></td>
-                  <td><span id="twenty-total">Rs. </span></td>
-                </tr>
-                <tr>
-                  <td><label for="fifty">FIFTY</label></td>
-                  <td>x</td>
-                  <td><input type="number" name="fifty" id="fifty" /></td>
-                  <td><span id="fifty-total">Rs. </span></td>
-                </tr>
-                <tr>
-                  <td><label for="hundred">HUNDRED</label></td>
-                  <td>x</td>
-                  <td><input type="number" name="hundred" id="hundred" /></td>
-                  <td><span id="hundred-total">Rs. </span></td>
-                </tr>
-                <tr>
-                  <td><label for="five-hundred">FIVE HUNDRED</label></td>
-                  <td>x</td>
-                  <td>
-                    <input
-                      type="number"
-                      name="five-hundred"
-                      id="five-hundred"
-                    />
-                  </td>
-                  <td><span id="five-hundred-total">Rs. </span></td>
-                </tr>
-                <tr>
-                  <td><label for="thousand">THOUSAND</label></td>
-                  <td>x</td>
-                  <td><input type="number" name="thousand" id="thousand" /></td>
-                  <td><span id="thousand-total">Rs. </span></td>
-                </tr>
-                <tr>
-                  <td><label for="five-thousand">FIVE THOUSAND</label></td>
-                  <td>x</td>
-                  <td>
-                    <input
-                      type="number"
-                      name="five-thousand"
-                      id="five-thousand"
-                    />
-                  </td>
-                  <td><span id="five-thousand-total">Rs. </span></td>
-                </tr>
-                <tr>
-                  <td style="text-transform: uppercase" colspan="3">
+              <tbody id="cid-table">
+                <!-- <tr id="total-cid-tr"> -->
+                <!-- <td style="text-transform: uppercase" colspan="3">
                     Total cash in drawer:
                   </td>
-                  <td id="total-cid">Rs.</td>
-                </tr>
+                  <td id="total-cid">Rs.</td> -->
+                <!-- </tr> -->
               </tbody>
             </table>
             <button id="save-btn" class="btn">Save</button>
@@ -143,6 +76,7 @@
       <p>&copy; 2024 | <a href="#">Shariq Yousuf</a></p>
     </footer>
 
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
+    <!-- <script src="_user-input.js"></script> -->
   </body>
 </html>

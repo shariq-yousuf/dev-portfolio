@@ -1,63 +1,71 @@
-const inputEl = document.querySelector("#cash");
-const changeDueEl = document.querySelector("#change-due");
+import {
+  cidArr,
+  currencyValues,
+  isPKR,
+  inputEl,
+  changeDueEl,
+} from "./_user-input.js";
+
+// const inputEl = document.querySelector("#cash");
+// const changeDueEl = document.querySelector("#change-due");
 const purchaseBtn = document.querySelector("#purchase-btn");
-const clearBtn = document.querySelector("#clear-btn");
-const currencyType = document.querySelector("#currency-type");
+// const clearBtn = document.querySelector("#clear-btn");
+// const currencyType = document.querySelector("#currency-type");
 
-let cid = {
-  PKR: [
-    ["ONE", 60],
-    ["TWO", 40],
-    ["FIVE", 70],
-    ["TEN", 330],
-    ["TWENTY", 480],
-    ["FIFTY", 750],
-    ["HUNDRED", 1600],
-    ["FIVE HUNDRED", 2500],
-    ["THOUSAND", 5000],
-    ["FIVE THOUSAND", 10000],
-  ],
-  USD: [
-    ["PENNY", 1.01],
-    ["NICKEL", 2.05],
-    ["DIME", 3.1],
-    ["QUARTER", 4.25],
-    ["ONE", 90],
-    ["FIVE", 55],
-    ["TEN", 20],
-    ["TWENTY", 60],
-    ["ONE HUNDRED", 100],
-  ],
-};
+// let cid = {
+//   PKR: [
+//     ["ONE", 60],
+//     ["TWO", 40],
+//     ["FIVE", 70],
+//     ["TEN", 330],
+//     ["TWENTY", 480],
+//     ["FIFTY", 750],
+//     ["HUNDRED", 1600],
+//     ["FIVE HUNDRED", 2500],
+//     ["THOUSAND", 5000],
+//     ["FIVE THOUSAND", 10000],
+//   ],
+//   USD: [
+//     ["PENNY", 1.01],
+//     ["NICKEL", 2.05],
+//     ["DIME", 3.1],
+//     ["QUARTER", 4.25],
+//     ["ONE", 90],
+//     ["FIVE", 55],
+//     ["TEN", 20],
+//     ["TWENTY", 60],
+//     ["ONE HUNDRED", 100],
+//   ],
+// };
 
-const currencyValues = [
-  {
-    ONE: 1,
-    TWO: 2,
-    FIVE: 5,
-    TEN: 10,
-    TWENTY: 20,
-    FIFTY: 50,
-    HUNDRED: 100,
-    "FIVE HUNDRED": 500,
-    THOUSAND: 1000,
-    "FIVE THOUSAND": 5000,
-  },
-  {
-    PENNY: 0.01,
-    NICKEL: 0.05,
-    DIME: 0.1,
-    QUARTER: 0.25,
-    ONE: 1,
-    FIVE: 5,
-    TEN: 10,
-    TWENTY: 20,
-    "ONE HUNDRED": 100,
-  },
-];
+// const currencyValues = [
+//   {
+//     ONE: 1,
+//     TWO: 2,
+//     FIVE: 5,
+//     TEN: 10,
+//     TWENTY: 20,
+//     FIFTY: 50,
+//     HUNDRED: 100,
+//     "FIVE HUNDRED": 500,
+//     THOUSAND: 1000,
+//     "FIVE THOUSAND": 5000,
+//   },
+//   {
+//     PENNY: 0.01,
+//     NICKEL: 0.05,
+//     DIME: 0.1,
+//     QUARTER: 0.25,
+//     ONE: 1,
+//     FIVE: 5,
+//     TEN: 10,
+//     TWENTY: 20,
+//     "ONE HUNDRED": 100,
+//   },
+// ];
 
 let price = 52;
-let isPKR = true;
+// let isPKR = true;
 let changeDue;
 
 const checkPurchase = (val) => {
@@ -72,7 +80,8 @@ const checkPurchase = (val) => {
 
 const checkDrawer = (val) => {
   const cashDue = val - price;
-  const cidType = isPKR ? cid.PKR : cid.USD;
+  // const cidType = isPKR ? cid.PKR : cid.USD;
+  const cidType = cidArr;
   const drawerCash = cidType.reduce((acc, item) => item[1] + acc, 0);
 
   if (cashDue > drawerCash) {
@@ -134,10 +143,10 @@ const displayChange = (cid) => {
   });
 };
 
-const reset = () => {
-  inputEl.value = "";
-  changeDueEl.innerHTML = "";
-};
+// const reset = () => {
+//   inputEl.value = "";
+//   changeDueEl.innerHTML = "";
+// };
 
 purchaseBtn.addEventListener("click", () => {
   const inputValue = parseFloat(inputEl.value);
@@ -153,9 +162,9 @@ window.addEventListener("keydown", (e) => {
   }
 });
 
-currencyType.addEventListener("change", () => {
-  isPKR = false;
-  reset();
-});
+// currencyType.addEventListener("change", () => {
+//   isPKR = false;
+//   reset();
+// });
 
-clearBtn.addEventListener("click", reset);
+// clearBtn.addEventListener("click", reset);

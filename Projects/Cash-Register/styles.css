@@ -13,7 +13,7 @@
 }
 
 .input {
-  border: none;
+  /* border: none; */
   padding: 5px;
   outline: none;
 }
@@ -31,6 +31,8 @@
 body {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
+  background-color: black;
+  /* color: white; */
 }
 
 header {
@@ -101,9 +103,8 @@ section:nth-child(2) {
   margin: 4px;
 }
 
-.currency-section {
-  width: 30%;
-  /* flex-direction: column; */
+.cid-section {
+  width: 40%;
 }
 
 .select-container {
@@ -115,18 +116,33 @@ section:nth-child(2) {
 select {
   background-color: transparent;
   border: none;
+  outline: none;
 }
 
 table {
   width: 100%;
+  border-collapse: collapse;
 }
 
 table input {
   width: 50px;
+  outline: none;
 }
 
 tr:hover {
   background-color: rgba(128, 128, 128, 0.266);
+}
+
+tr:last-child {
+  background-color: rgba(128, 128, 128, 0.266);
+}
+
+#total-cid {
+  min-width: 80px;
+}
+
+#edit-btn {
+  display: none;
 }
 
 footer {
