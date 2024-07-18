@@ -1,10 +1,19 @@
+const cashInputEl = document.querySelector("#cash");
+const clearBtn = document.querySelector("#clear-btn");
+
+const priceContainer = document.querySelector("#price-container");
+// const priceInputEls = document.querySelectorAll(".price");
+const addPriceInputBtn = document.querySelector("#add-price-input-btn");
+const totalAmountEl = document.querySelector("#total-amount");
+
+const changeDueEl = document.querySelector("#change-due");
+
+const currencyType = document.querySelector("#currency-type");
+const cidTable = document.querySelector("#cid-table");
 const saveBtn = document.querySelector("#save-btn");
 const editBtn = document.querySelector("#edit-btn");
-const currencyType = document.querySelector("#currency-type");
-const clearBtn = document.querySelector("#clear-btn");
-const inputEl = document.querySelector("#cash");
-const changeDueEl = document.querySelector("#change-due");
-const cidTable = document.querySelector("#cid-table");
+
+let prices = [];
 
 const cid = {
   PKR: [
@@ -61,6 +70,37 @@ const currencyValues = [
 let isPKR = true;
 let cidArr = cid.PKR;
 let cidInputs;
+let priceInputEls;
+let totalAmount;
+
+const getTotalAmount = () => {
+  priceInputEls.forEach((priceEl, index) => {
+    prices[index] = parseFloat(priceEl.value);
+  });
+
+  totalAmount = prices.reduce((acc, price) => price + acc, 0);
+  totalAmountEl.textContent = `${isPKR ? "Rs." : "$"} ${totalAmount}`;
+};
+
+const createPriceInputEl = () => {
+  if (priceInputEls.length < 10) {
+    const input = document.createElement("input");
+    input.classList.add("price", "input");
+    input.placeholder = "Enter price";
+
+    priceContainer.appendChild(input);
+
+    addEventToPriceInput();
+  }
+};
+
+const addEventToPriceInput = () => {
+  priceInputEls = document.querySelectorAll(".price");
+
+  priceInputEls.forEach((priceEl) => {
+    priceEl.addEventListener("input", getTotalAmount);
+  });
+};
 
 const createCidTable = () => {
   cidTable.innerHTML = "";
@@ -91,7 +131,14 @@ const createCidTable = () => {
   cidInputs = document.querySelectorAll(".cid-container input");
 };
 
-const getData = () => {
+const removePrices = () => {
+  prices = [];
+  priceInputEls.forEach((priceEl) => (priceEl.value = ""));
+  totalAmount = 0;
+  totalAmountEl.textContent = totalAmount;
+};
+
+const getCid = () => {
   const currValues = isPKR ? currencyValues[0] : currencyValues[1];
 
   cidInputs.forEach((item, index) => {
@@ -100,6 +147,7 @@ const getData = () => {
   });
 
   calculateAndSaveCid();
+  reset();
 };
 
 const calculateAndSaveCid = () => {
@@ -114,7 +162,7 @@ const calculateAndSaveCid = () => {
   totalCidEl.textContent = `${isPKR ? "Rs." : "$"} ${totalCid}`;
 
   changeEnableStateOfCidInputs(true);
-  saveBtn.removeEventListener("click", getData);
+  saveBtn.removeEventListener("click", getCid);
   saveBtn.textContent = "Save";
   editBtn.style.display = "inline";
 };
@@ -124,17 +172,21 @@ const changeEnableStateOfCidInputs = (state) => {
 };
 
 const reset = () => {
-  inputEl.value = "";
+  cashInputEl.value = "";
   changeDueEl.innerHTML = "";
+  cidInputs.forEach((item) => (item.value = 0));
 };
 
 // EventListeners
-saveBtn.addEventListener("click", getData);
+
+addPriceInputBtn.addEventListener("click", createPriceInputEl);
+
+saveBtn.addEventListener("click", getCid);
 
 editBtn.addEventListener("click", () => {
   changeEnableStateOfCidInputs(false);
   saveBtn.textContent = "Update";
-  saveBtn.addEventListener("click", getData);
+  saveBtn.addEventListener("click", getCid);
 
   reset();
 });
@@ -145,16 +197,28 @@ currencyType.addEventListener("change", (e) => {
   createCidTable();
 
   changeEnableStateOfCidInputs(false);
-  saveBtn.addEventListener("click", getData);
+  saveBtn.addEventListener("click", getCid);
   saveBtn.textContent = "Save";
   editBtn.style.display = "none";
 
   reset();
+  removePrices();
 });
 
 clearBtn.addEventListener("click", reset);
 
-// window.addEventListener("load", createCidTable);
-createCidTable();
+window.addEventListener("load", () => {
+  createCidTable();
+  addEventToPriceInput();
+});
 
-export { cidArr, currencyValues, isPKR, inputEl, changeDueEl };
+export {
+  cidArr,
+  currencyValues,
+  isPKR,
+  cashInputEl,
+  changeDueEl,
+  totalAmount,
+  calculateAndSaveCid,
+  removePrices,
+};

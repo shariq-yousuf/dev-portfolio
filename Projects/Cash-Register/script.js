@@ -2,11 +2,14 @@ import {
   cidArr,
   currencyValues,
   isPKR,
-  inputEl,
+  cashInputEl,
   changeDueEl,
+  totalAmount,
+  calculateAndSaveCid,
+  removePrices,
 } from "./_user-input.js";
 
-// const inputEl = document.querySelector("#cash");
+// const cashInputEl = document.querySelector("#cash");
 // const changeDueEl = document.querySelector("#change-due");
 const purchaseBtn = document.querySelector("#purchase-btn");
 // const clearBtn = document.querySelector("#clear-btn");
@@ -64,22 +67,23 @@ const purchaseBtn = document.querySelector("#purchase-btn");
 //   },
 // ];
 
-let price = 52;
+// let totalAmount = 52;
 // let isPKR = true;
 let changeDue;
 
 const checkPurchase = (val) => {
-  if (val < price) {
+  if (val < totalAmount) {
     alert("Customer does not have enough money to purchase the item");
-  } else if (val === price) {
+  } else if (val === totalAmount) {
     changeDueEl.textContent = "No change due - customer paid with exact cash";
+    removePrices();
   } else {
     checkDrawer(val);
   }
 };
 
 const checkDrawer = (val) => {
-  const cashDue = val - price;
+  const cashDue = val - totalAmount;
   // const cidType = isPKR ? cid.PKR : cid.USD;
   const cidType = cidArr;
   const drawerCash = cidType.reduce((acc, item) => item[1] + acc, 0);
@@ -130,6 +134,8 @@ const withdrawFromDrawer = (cid) => {
   });
 
   displayChange(cid);
+  calculateAndSaveCid();
+  removePrices();
 };
 
 const displayChange = (cid) => {
@@ -144,15 +150,15 @@ const displayChange = (cid) => {
 };
 
 // const reset = () => {
-//   inputEl.value = "";
+//   cashInputEl.value = "";
 //   changeDueEl.innerHTML = "";
 // };
 
 purchaseBtn.addEventListener("click", () => {
-  const inputValue = parseFloat(inputEl.value);
+  const inputValue = parseFloat(cashInputEl.value);
 
   checkPurchase(inputValue);
-  inputEl.value = "";
+  cashInputEl.value = "";
 });
 
 window.addEventListener("keydown", (e) => {
