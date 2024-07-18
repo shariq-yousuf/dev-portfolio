@@ -128,7 +128,7 @@ const displayChange = (cid) => {
   changeDueEl.innerHTML = `Status: ${drawerCash > 0 ? "OPEN" : "CLOSED"}`;
 
   changeDue.forEach((item) => {
-    changeDueEl.innerHTML += `<br><span>${item[0]}: ${
+    changeDueEl.innerHTML += `<span>${item[0]}: ${
       isPKR ? `Rs. ${item[1]}` : `$${item[1]}`
     }`;
   });

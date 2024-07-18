@@ -3,30 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Cash Register</title>
   </head>
-  <body style="background-color: black; color: white">
+  <body>
     <header>
-      <h1>Cash Register</h1>
+      <h2>Cash Register</h2>
     </header>
     <main>
       <section>
-        <div class="customer-section">
+        <div class="customer-section flex-center">
           <label for="cash">Enter customer cash:</label>
-          <input
-            type="number"
-            id="cash"
-            placeholder="Customer Cash"
-            autofocus
-            required
-          />
-          <button id="purchase-btn">Calculate Change</button>
+          <input type="number" id="cash" class="input" autofocus required />
+          <!-- placeholder="Customer Cash" -->
+          <div>
+            <button id="purchase-btn" class="btn">Calculate Change</button>
+            <button id="clear-btn" class="btn">Clear</button>
+          </div>
+          <div>Total Due: Rs. <span id="total-due"></span></div>
         </div>
 
-        <div class="change-due-section">
+        <div class="change-due-section flex-center">
           <p>Change Due</p>
-          <div id="change-due"></div>
-          <button id="clear-btn">Clear</button>
+          <div id="change-due" class="flex-center"></div>
         </div>
       </section>
 
@@ -37,22 +36,22 @@
             once:
           </p>
           <div id="price-container">
-            <input type="number" placeholder="Price" />
+            <input type="number" class="input" id="price" placeholder="Price" />
           </div>
-          <button id="add-price-input-btn">+</button>
+          <button id="add-price-input-btn" class="btn">+</button>
           <div>Total amount: Rs. <span id="total-amount">0</span></div>
-          <!-- <label for="total-amount">Enter total amount:</label> -->
-          <!-- <input type="number" name="total-amount" id="total-amount" /> -->
         </div>
 
         <div class="currency-section">
-          <p>Cash in drawer</p>
-          <select name="currency-type" id="currency-type">
-            <option value="pkr">PKR</option>
-            <option value="usd">USD</option>
-          </select>
+          <div class="select-container">
+            <p>Cash in drawer</p>
+            <select name="currency-type" id="currency-type">
+              <option value="pkr">PKR</option>
+              <option value="usd">USD</option>
+            </select>
+          </div>
           <div class="currency-container">
-            <table border>
+            <table>
               <tbody>
                 <tr>
                   <td><label for="one">ONE</label></td>
@@ -134,8 +133,8 @@
                 </tr>
               </tbody>
             </table>
-            <button id="save-btn">Save</button>
-            <button id="edit-btn">Edit</button>
+            <button id="save-btn" class="btn">Save</button>
+            <button id="edit-btn" class="btn">Edit</button>
           </div>
         </div>
       </section>
