@@ -6,8 +6,13 @@
     <title>Cash Register</title>
   </head>
   <body style="background-color: black; color: white">
+    <select name="currency-type" id="currency-type">
+      <option value="pkr">PKR</option>
+      <option value="usd">USD</option>
+    </select>
     <input type="number" id="cash" autofocus required />
     <button id="purchase-btn">Purchase</button>
+    <button id="clear-btn">Clear All</button>
     <div id="change-due"></div>
 
     <script src="script.js"></script>
