@@ -147,7 +147,7 @@ const getCid = () => {
   });
 
   calculateAndSaveCid();
-  reset();
+  cidInputs.forEach((item) => (item.value = 0));
 };
 
 const calculateAndSaveCid = () => {
@@ -222,4 +222,5 @@ export {
   totalAmount,
   calculateAndSaveCid,
   removePrices,
+  getCid,
 };

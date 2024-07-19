@@ -7,68 +7,10 @@ import {
   totalAmount,
   calculateAndSaveCid,
   removePrices,
+  getCid,
 } from "./_user-input.js";
 
-// const cashInputEl = document.querySelector("#cash");
-// const changeDueEl = document.querySelector("#change-due");
-const purchaseBtn = document.querySelector("#purchase-btn");
-// const clearBtn = document.querySelector("#clear-btn");
-// const currencyType = document.querySelector("#currency-type");
-
-// let cid = {
-//   PKR: [
-//     ["ONE", 60],
-//     ["TWO", 40],
-//     ["FIVE", 70],
-//     ["TEN", 330],
-//     ["TWENTY", 480],
-//     ["FIFTY", 750],
-//     ["HUNDRED", 1600],
-//     ["FIVE HUNDRED", 2500],
-//     ["THOUSAND", 5000],
-//     ["FIVE THOUSAND", 10000],
-//   ],
-//   USD: [
-//     ["PENNY", 1.01],
-//     ["NICKEL", 2.05],
-//     ["DIME", 3.1],
-//     ["QUARTER", 4.25],
-//     ["ONE", 90],
-//     ["FIVE", 55],
-//     ["TEN", 20],
-//     ["TWENTY", 60],
-//     ["ONE HUNDRED", 100],
-//   ],
-// };
-
-// const currencyValues = [
-//   {
-//     ONE: 1,
-//     TWO: 2,
-//     FIVE: 5,
-//     TEN: 10,
-//     TWENTY: 20,
-//     FIFTY: 50,
-//     HUNDRED: 100,
-//     "FIVE HUNDRED": 500,
-//     THOUSAND: 1000,
-//     "FIVE THOUSAND": 5000,
-//   },
-//   {
-//     PENNY: 0.01,
-//     NICKEL: 0.05,
-//     DIME: 0.1,
-//     QUARTER: 0.25,
-//     ONE: 1,
-//     FIVE: 5,
-//     TEN: 10,
-//     TWENTY: 20,
-//     "ONE HUNDRED": 100,
-//   },
-// ];
-
-// let totalAmount = 52;
-// let isPKR = true;
+const calculateBtn = document.querySelector("#calculate-btn");
 let changeDue;
 
 const checkPurchase = (val) => {
@@ -84,7 +26,6 @@ const checkPurchase = (val) => {
 
 const checkDrawer = (val) => {
   const cashDue = val - totalAmount;
-  // const cidType = isPKR ? cid.PKR : cid.USD;
   const cidType = cidArr;
   const drawerCash = cidType.reduce((acc, item) => item[1] + acc, 0);
 
@@ -106,7 +47,7 @@ const returnChange = (cashDue, cid) => {
   cid.toReversed().forEach((item, index) => {
     const name = item[0];
     let cash = item[1];
-    const currency = currencyValues[0][name];
+    const currency = isPKR ? currencyValues[0][name] : currencyValues[1][name];
 
     while (parseFloat(remainingDue.toFixed(2)) >= currency && cash > 0) {
       changeDue[index]
@@ -134,7 +75,7 @@ const withdrawFromDrawer = (cid) => {
   });
 
   displayChange(cid);
-  calculateAndSaveCid();
+  getCid();
   removePrices();
 };
 
@@ -142,19 +83,19 @@ const displayChange = (cid) => {
   const drawerCash = cid.reduce((acc, item) => item[1] + acc, 0);
   changeDueEl.innerHTML = `Status: ${drawerCash > 0 ? "OPEN" : "CLOSED"}`;
 
-  changeDue.forEach((item) => {
-    changeDueEl.innerHTML += `<span>${item[0]}: ${
-      isPKR ? `Rs. ${item[1]}` : `$${item[1]}`
-    }`;
+  changeDue.forEach((item, index) => {
+    setTimeout(() => {
+      changeDueEl.innerHTML += `
+          <div class="flex-between">
+          <span>${item[0]}:</span>
+          <span>${isPKR ? "Rs. " : "$ "}${item[1].toFixed(2)}</span>
+          </div>
+        `;
+    }, index * 100);
   });
 };
 
-// const reset = () => {
-//   cashInputEl.value = "";
-//   changeDueEl.innerHTML = "";
-// };
-
-purchaseBtn.addEventListener("click", () => {
+calculateBtn.addEventListener("click", () => {
   const inputValue = parseFloat(cashInputEl.value);
 
   checkPurchase(inputValue);
@@ -164,13 +105,6 @@ purchaseBtn.addEventListener("click", () => {
 window.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     e.preventDefault();
-    purchaseBtn.click();
+    calculateBtn.click();
   }
 });
-
-// currencyType.addEventListener("change", () => {
-//   isPKR = false;
-//   reset();
-// });
-
-// clearBtn.addEventListener("click", reset);

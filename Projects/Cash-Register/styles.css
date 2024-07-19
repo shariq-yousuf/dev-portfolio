@@ -12,11 +12,15 @@
   align-items: center;
 }
 
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+
 .input {
-  /* border: none; */
   padding: 5px;
   outline: none;
-  /* margin-right: 5px; */
 }
 
 .btn {
@@ -33,7 +37,6 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
   background-color: black;
-  /* color: white; */
 }
 
 header {
@@ -83,7 +86,12 @@ section:first-child {
   border: 3px solid orangered;
   border-radius: 1rem;
   margin: 5px;
+  display: flex;
   flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding: 5px 0;
+  font-weight: bold;
 }
 
 .change-due-section p {
