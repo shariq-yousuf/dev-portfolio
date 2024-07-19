@@ -2,8 +2,8 @@ const cashInputEl = document.querySelector("#cash");
 const clearBtn = document.querySelector("#clear-btn");
 
 const priceContainer = document.querySelector("#price-container");
-// const priceInputEls = document.querySelectorAll(".price");
 const addPriceInputBtn = document.querySelector("#add-price-input-btn");
+const clearPricesBtn = document.querySelector("#clear-prices-btn");
 const totalAmountEl = document.querySelector("#total-amount");
 
 const changeDueEl = document.querySelector("#change-due");
@@ -102,6 +102,13 @@ const addEventToPriceInput = () => {
   });
 };
 
+const removePrices = () => {
+  prices = [];
+  priceInputEls.forEach((priceEl) => (priceEl.value = 0));
+  totalAmount = 0;
+  totalAmountEl.textContent = totalAmount;
+};
+
 const createCidTable = () => {
   cidTable.innerHTML = "";
 
@@ -129,13 +136,6 @@ const createCidTable = () => {
   cidTable.appendChild(tr);
 
   cidInputs = document.querySelectorAll(".cid-container input");
-};
-
-const removePrices = () => {
-  prices = [];
-  priceInputEls.forEach((priceEl) => (priceEl.value = ""));
-  totalAmount = 0;
-  totalAmountEl.textContent = totalAmount;
 };
 
 const getCid = () => {
@@ -178,8 +178,9 @@ const reset = () => {
 };
 
 // EventListeners
-
 addPriceInputBtn.addEventListener("click", createPriceInputEl);
+
+clearPricesBtn.addEventListener("click", removePrices);
 
 saveBtn.addEventListener("click", getCid);
 
