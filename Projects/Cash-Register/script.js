@@ -11,21 +11,25 @@ import {
 } from "./_user-input.js";
 
 const calculateBtn = document.querySelector("#calculate-btn");
+const totalDueEl = document.querySelector("#total-due");
 let changeDue;
+let cashDue;
 
 const checkPurchase = (val) => {
-  if (val < totalAmount) {
-    alert("Customer does not have enough money to purchase the item");
-  } else if (val === totalAmount) {
-    changeDueEl.textContent = "No change due - customer paid with exact cash";
-    removePrices();
-  } else {
-    checkDrawer(val);
+  if (totalAmount > 0) {
+    if (val < totalAmount) {
+      alert("Customer does not have enough money to purchase the item");
+    } else if (val === totalAmount) {
+      changeDueEl.textContent = "No change due - customer paid with exact cash";
+      removePrices();
+    } else {
+      cashDue = val - totalAmount;
+      checkDrawer();
+    }
   }
 };
 
-const checkDrawer = (val) => {
-  const cashDue = val - totalAmount;
+const checkDrawer = () => {
   const cidType = cidArr;
   const drawerCash = cidType.reduce((acc, item) => item[1] + acc, 0);
 
@@ -34,6 +38,8 @@ const checkDrawer = (val) => {
   } else {
     returnChange(cashDue, cidType);
   }
+
+  totalDueEl.textContent = cashDue;
 };
 
 const showStatus = (status) => {
@@ -77,6 +83,8 @@ const withdrawFromDrawer = (cid) => {
   displayChange(cid);
   getCid();
   removePrices();
+  cashDue = 0;
+  totalDueEl.textContent = cashDue;
 };
 
 const displayChange = (cid) => {
@@ -91,15 +99,22 @@ const displayChange = (cid) => {
           <span>${isPKR ? "Rs. " : "$ "}${item[1].toFixed(2)}</span>
           </div>
         `;
-    }, index * 100);
+    }, index * 80);
   });
 };
 
 calculateBtn.addEventListener("click", () => {
   const inputValue = parseFloat(cashInputEl.value);
 
-  checkPurchase(inputValue);
-  cashInputEl.value = "";
+  if (inputValue) {
+    checkPurchase(inputValue);
+    cashInputEl.value = "";
+  } else if (cashDue) {
+    getCid();
+    checkDrawer();
+  } else {
+    getCid();
+  }
 });
 
 window.addEventListener("keydown", (e) => {
