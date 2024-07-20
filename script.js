@@ -172,6 +172,17 @@ const projects = [
     githubLink:
       "https://github.com/shariq-yousuf/Developer-Portfolio/tree/main/Projects/Typing-Pro",
   },
+  {
+    id: 16,
+    title: "Change Champ",
+    description:
+      " All-in-one cash register app for smooth transactions. Calculate exact change, and track sales.",
+    imgSrc:
+      "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/change-champ",
+    liveUrl: "./Projects/Change-Champ/index.html",
+    githubLink:
+      "https://github.com/shariq-yousuf/Developer-Portfolio/tree/cashReg/Projects/Change-Champ",
+  },
 ];
 
 const skills = [
