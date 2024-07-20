@@ -1,5 +1,6 @@
 const cashInputEl = document.querySelector("#cash");
 const clearBtn = document.querySelector("#clear-btn");
+const totalDueEl = document.querySelector("#total-due");
 
 const priceContainer = document.querySelector("#price-container");
 const addPriceInputBtn = document.querySelector("#add-price-input-btn");
@@ -72,6 +73,7 @@ let cidArr = cid.PKR;
 let cidInputs;
 let priceInputEls;
 let totalAmount;
+let cashDue;
 
 const getTotalAmount = () => {
   priceInputEls.forEach((priceEl, index) => {
@@ -117,7 +119,9 @@ const createCidTable = () => {
     tr.innerHTML = `
       <td><label for="${item[0]}">${item[0]}</label></td>
       <td>x</td>
-      <td><input type="number" name="${item[0]}" id="${item[0]}" /></td>
+      <td>
+      <input autofocus type="number" name="${item[0]}" id="${item[0]}" />
+      </td>
       <td>${isPKR ? "Rs." : "$"} 
       <span id="${item[0]}-total">${item[1]}</span>
       </td>
@@ -175,6 +179,13 @@ const reset = () => {
   cashInputEl.value = "";
   changeDueEl.innerHTML = "";
   cidInputs.forEach((item) => (item.value = 0));
+  cashDue = 0;
+  totalDueEl.textContent = 0;
+};
+
+const setCashDue = (val) => {
+  // this function made just for allowing script.js to modify imported variable cashDue
+  cashDue = val;
 };
 
 // EventListeners
@@ -223,4 +234,7 @@ export {
   calculateAndSaveCid,
   removePrices,
   getCid,
+  totalDueEl,
+  cashDue,
+  setCashDue,
 };

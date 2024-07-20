@@ -8,12 +8,13 @@ import {
   calculateAndSaveCid,
   removePrices,
   getCid,
+  totalDueEl,
+  cashDue,
+  setCashDue,
 } from "./_user-input.js";
 
 const calculateBtn = document.querySelector("#calculate-btn");
-const totalDueEl = document.querySelector("#total-due");
 let changeDue;
-let cashDue;
 
 const checkPurchase = (val) => {
   if (totalAmount > 0) {
@@ -23,7 +24,7 @@ const checkPurchase = (val) => {
       changeDueEl.textContent = "No change due - customer paid with exact cash";
       removePrices();
     } else {
-      cashDue = val - totalAmount;
+      setCashDue(val - totalAmount);
       checkDrawer();
     }
   }
@@ -83,8 +84,6 @@ const withdrawFromDrawer = (cid) => {
   displayChange(cid);
   getCid();
   removePrices();
-  cashDue = 0;
-  totalDueEl.textContent = cashDue;
 };
 
 const displayChange = (cid) => {
@@ -103,23 +102,20 @@ const displayChange = (cid) => {
   });
 };
 
+// event listeners
 calculateBtn.addEventListener("click", () => {
   const inputValue = parseFloat(cashInputEl.value);
 
   if (inputValue) {
     checkPurchase(inputValue);
     cashInputEl.value = "";
-  } else if (cashDue) {
-    getCid();
-    checkDrawer();
-  } else {
-    getCid();
   }
 });
 
 window.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     e.preventDefault();
+    getCid();
     calculateBtn.click();
   }
 });
