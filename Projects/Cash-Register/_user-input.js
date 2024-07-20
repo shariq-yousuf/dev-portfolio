@@ -117,7 +117,7 @@ const createCidTable = () => {
   cidArr.forEach((item) => {
     const tr = document.createElement("tr");
     tr.innerHTML = `
-      <td><label for="${item[0]}">${item[0]}</label></td>
+      <td class="label-td"><label for="${item[0]}">${item[0]}</label></td>
       <td>x</td>
       <td>
       <input autofocus type="number" name="${item[0]}" id="${item[0]}" />
@@ -180,7 +180,7 @@ const reset = () => {
   changeDueEl.innerHTML = "";
   cidInputs.forEach((item) => (item.value = 0));
   cashDue = 0;
-  totalDueEl.textContent = 0;
+  totalDueEl.textContent = `${isPKR ? "Rs. " : "$ "}${cashDue}`;
 };
 
 const setCashDue = (val) => {

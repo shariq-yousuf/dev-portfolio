@@ -24,31 +24,44 @@
 }
 
 .btn {
-  padding: 5px 1rem;
+  padding: 8px 1rem;
   border: none;
   border-radius: 5px;
   font-family: "Roboto", sans-serif;
   cursor: pointer;
   margin: 5px;
   font-size: 16px;
+  background-color: orangered;
+  color: white;
+}
+
+.btn:hover {
+  background-color: white;
+  color: black;
+  font-weight: bold;
 }
 
 body {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
-  background-color: black;
+  background-image: url(bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  font-weight: bold;
 }
 
 header {
   padding: 0.5rem;
-  background-color: gray;
+  color: white;
+  background-color: orangered;
 }
 
 main {
   max-width: 1100px;
   margin: 1rem auto;
   padding: 1rem;
-  background-color: rgb(235, 197, 101);
+  background: linear-gradient(90deg, rgb(238, 215, 156), rgb(249, 184, 149));
   border-radius: 0.5rem;
 }
 
@@ -99,7 +112,7 @@ section:first-child {
 }
 
 section:nth-child(2) {
-  border-top: 3px solid red;
+  border-top: 3px solid orangered;
   padding-top: 10px;
 }
 
@@ -119,7 +132,7 @@ section:nth-child(2) {
 }
 
 .cid-section {
-  width: 40%;
+  min-width: 50%;
 }
 
 .select-container {
@@ -135,7 +148,7 @@ select {
 }
 
 table {
-  width: 100%;
+  min-width: 70%;
   border-collapse: collapse;
 }
 
@@ -144,12 +157,17 @@ table input {
   outline: none;
 }
 
+.label-td {
+  width: 50%;
+}
+
 tr:hover {
-  background-color: rgba(128, 128, 128, 0.266);
+  background-color: rgba(246, 164, 134, 0.784);
 }
 
 tr:last-child {
-  background-color: rgba(128, 128, 128, 0.266);
+  background-color: rgb(243, 84, 26);
+  color: white;
 }
 
 #total-cid {
@@ -163,4 +181,13 @@ tr:last-child {
 footer {
   margin-top: 5px;
   text-align: center;
+  font-weight: normal;
+}
+
+footer a {
+  color: black;
+}
+
+footer a:hover {
+  text-decoration: none;
 }

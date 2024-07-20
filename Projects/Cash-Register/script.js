@@ -40,7 +40,7 @@ const checkDrawer = () => {
     returnChange(cashDue, cidType);
   }
 
-  totalDueEl.textContent = cashDue;
+  totalDueEl.textContent = `${isPKR ? "Rs. " : "$ "}${cashDue}`;
 };
 
 const showStatus = (status) => {
@@ -98,7 +98,7 @@ const displayChange = (cid) => {
           <span>${isPKR ? "Rs. " : "$ "}${item[1].toFixed(2)}</span>
           </div>
         `;
-    }, index * 80);
+    }, index * 50);
   });
 };
 
