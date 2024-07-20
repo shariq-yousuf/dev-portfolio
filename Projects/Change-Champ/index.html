@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Change Champ</title>
+  </head>
+  <body>
+    <header>
+      <h2>Change Champ</h2>
+    </header>
+    <main>
+      <div id="intro-section">
+        <div class="intro-container">
+          <button class="close-btn">X</button>
+          <div class="intro">
+            &emsp;<span class="bold">
+              Tired of manually calculating change and keeping track of your
+              cash drawer?
+            </span>
+            Introducing <span class="bold">Change Champ</span>, your one-stop
+            shop for efficient and accurate cash register management! This handy
+            app not only calculates the exact change you owe customers based on
+            your current drawer balance, but it also tracks your transactions
+            and provides detailed breakdowns of your coin inventory.
+          </div>
+          <div class="instructions">
+            <h3>How to Use:</h3>
+            <h4>Set Up Your Drawer:</h4>
+            <ul>
+              <li>Open the app and start by setting up your cash drawer.</li>
+              <li>
+                Simply enter the amount of each coin and bill you have on hand.
+              </li>
+              <li>
+                Click "Save" to lock this information and ensure accurate change
+                calculations. Need to adjust your drawer later? No problem!
+                Click "Edit" to update your cash amounts at any time.
+              </li>
+            </ul>
+            <h4>Add Items:</h4>
+            <ul>
+              <li>
+                Once your drawer is set, enter the cost of each item the
+                customer has purchased.
+              </li>
+              <li>
+                You can add items one by one for more complex transactions, or
+                enter the total amount for a quick checkout.
+              </li>
+            </ul>
+            <h4>Calculate Change with Confidence:</h4>
+            <ul>
+              <li>Enter the amount of cash the customer pays.</li>
+              <li>
+                With a tap of the "Calculate Change" button, the app takes over!
+              </li>
+              <li>
+                It analyzes your drawer balance and displays the exact change
+                you can return, ensuring you always have the necessary
+                denominations available.
+              </li>
+            </ul>
+            <h4>Additional Features: (coming soon)</h4>
+            <ul>
+              <li>Track your sales history for better inventory management.</li>
+              <li>Export transaction data for easy record-keeping.</li>
+              <li>
+                Manage multiple cash drawers (perfect for businesses with
+                multiple registers).
+              </li>
+            </ul>
+            <p class="bold">
+              Say goodbye to checkout headaches and hello to a smoother, more
+              efficient way to handle cash transactions!
+            </p>
+          </div>
+        </div>
+      </div>
+      <section>
+        <div class="customer-section flex-center">
+          <label for="cash">Enter customer cash:</label>
+          <input type="number" id="cash" class="input" required />
+          <div>
+            <button id="calculate-btn" class="btn">Calculate Change</button>
+            <button id="clear-btn" class="btn">Clear</button>
+          </div>
+          <div>Total Due: <span id="total-due">Rs. 0</span></div>
+        </div>
+
+        <div class="change-due-section flex-center">
+          <p>Change Due</p>
+          <div id="change-due"></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="amount-section">
+          <p>
+            Enter each item price individually or enter the total amount at
+            once:
+          </p>
+          <div id="price-container">
+            <input
+              type="number"
+              class="price input"
+              placeholder="Enter price"
+            />
+          </div>
+          <button id="add-price-input-btn" class="btn">+</button>
+          <button id="clear-prices-btn" class="btn">Clear All</button>
+          <div>Total amount: <span id="total-amount">Rs. 0</span></div>
+        </div>
+
+        <div class="cid-section">
+          <div class="select-container">
+            <p>Cash in drawer</p>
+            <select name="currency-type" id="currency-type">
+              <option value="pkr">PKR</option>
+              <option value="usd">USD</option>
+            </select>
+          </div>
+          <div class="cid-container">
+            <table>
+              <tbody id="cid-table">
+                <!-- <tr id="total-cid-tr"> -->
+                <!-- <td style="text-transform: uppercase" colspan="3">
+                    Total cash in drawer:
+                  </td>
+                  <td id="total-cid">Rs.</td> -->
+                <!-- </tr> -->
+              </tbody>
+            </table>
+            <button id="save-btn" class="btn">Save</button>
+            <button id="edit-btn" class="btn">Edit</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2024 | <a href="#">Shariq Yousuf</a></p>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

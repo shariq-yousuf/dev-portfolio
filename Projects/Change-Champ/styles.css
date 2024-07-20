@@ -49,6 +49,7 @@ body {
   background-position: center;
   background-size: cover;
   font-weight: bold;
+  position: relative;
 }
 
 header {
@@ -63,6 +64,65 @@ main {
   padding: 1rem;
   background: linear-gradient(90deg, rgb(238, 215, 156), rgb(249, 184, 149));
   border-radius: 0.5rem;
+}
+
+#intro-section {
+  /* display: none; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100dvw;
+  height: 100dvh;
+  background-color: rgba(239, 149, 116, 0.659);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-container {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  background-color: orangered;
+  padding: 30px;
+  border-radius: 10px;
+  color: white;
+  font-weight: normal;
+  font-size: 1.2rem;
+}
+
+.bold {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.intro-container li {
+  margin-left: 2rem;
+}
+
+.intro-container h3,
+.intro-container p {
+  margin: 5px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 16px;
+  right: -3.5rem;
+  background-color: rgba(127, 116, 116, 0.769);
+  border: none;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  color: white;
+}
+
+.close-btn:hover {
+  background-color: rgb(75, 74, 74);
 }
 
 section {
@@ -111,7 +171,7 @@ section:first-child {
   font-size: 1.3rem;
 }
 
-section:nth-child(2) {
+section:nth-child(3) {
   border-top: 3px solid orangered;
   padding-top: 10px;
 }

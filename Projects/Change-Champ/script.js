@@ -14,6 +14,8 @@ import {
 } from "./_user-input.js";
 
 const calculateBtn = document.querySelector("#calculate-btn");
+const introSection = document.querySelector("#intro-section");
+const closeBtn = document.querySelector(".close-btn");
 let changeDue;
 
 const checkPurchase = (val) => {
@@ -118,4 +120,8 @@ window.addEventListener("keydown", (e) => {
     getCid();
     calculateBtn.click();
   }
+});
+
+closeBtn.addEventListener("click", () => {
+  introSection.style.display = "none";
 });
