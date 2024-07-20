@@ -16,6 +16,7 @@ import {
 const calculateBtn = document.querySelector("#calculate-btn");
 const introSection = document.querySelector("#intro-section");
 const closeBtn = document.querySelector(".close-btn");
+const howToUseBtn = document.querySelector(".how-to-use");
 let changeDue;
 
 const checkPurchase = (val) => {
@@ -124,4 +125,8 @@ window.addEventListener("keydown", (e) => {
 
 closeBtn.addEventListener("click", () => {
   introSection.style.display = "none";
+});
+
+howToUseBtn.addEventListener("click", () => {
+  introSection.style.display = "flex";
 });
