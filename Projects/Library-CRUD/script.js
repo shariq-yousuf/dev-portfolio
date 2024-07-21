@@ -149,6 +149,8 @@ const codingBooks = [
 ];
 
 const booksEl = document.querySelector(".books");
+const sideMenuBtn = document.querySelector("#side-menu-btn");
+const sideMenu = document.querySelector(".side-menu");
 
 codingBooks.forEach((book) => {
   const bookContainer = document.createElement("div");
@@ -167,4 +169,16 @@ codingBooks.forEach((book) => {
     `;
 
   booksEl.appendChild(bookContainer);
+});
+
+sideMenuBtn.addEventListener("click", () => {
+  sideMenu.classList.toggle("hidden");
+
+  if (Array.from(sideMenuBtn.classList).includes("fa-bars")) {
+    sideMenuBtn.classList.remove("fa-bars");
+    sideMenuBtn.classList.add("fa-xmark");
+  } else {
+    sideMenuBtn.classList.remove("fa-xmark");
+    sideMenuBtn.classList.add("fa-bars");
+  }
 });

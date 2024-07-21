@@ -3,14 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/f17227871b.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="styles.css" />
     <title>Library</title>
   </head>
   <body>
     <header>
       <h1>Books about coding</h1>
+      <i id="side-menu-btn" class="fa-solid fa-bars icon"></i>
     </header>
     <main>
+      <aside class="side-menu hidden">
+        <ul>
+          <li>Add New Book</li>
+          <li>Remove Book</li>
+          <li>Borrowed Books</li>
+          <li>Borrowers</li>
+        </ul>
+      </aside>
       <div class="books"></div>
     </main>
     <footer>

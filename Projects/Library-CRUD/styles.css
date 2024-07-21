@@ -11,7 +11,6 @@
 body {
   font-family: cursive;
   font-size: 1rem;
-  /* color: white; */
 }
 
 header {
@@ -23,21 +22,62 @@ header {
     var(--bg-color)
   );
   color: white;
-  padding: 1rem;
+  padding: 1rem 2rem;
   text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.icon:hover {
+  transform: scale(1.1);
 }
 
 main {
-  width: 100%;
-  max-width: 1200px;
-  margin: 10px auto;
-  /* padding: 10px; */
+  position: relative;
+  padding: 1px;
+}
+
+.side-menu {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 3;
+  width: 300px;
+  height: 100dvh;
+  background-color: rgb(16, 12, 68);
+  padding-top: 2rem;
+}
+
+.hidden {
+  display: none;
+}
+
+li {
+  list-style-type: none;
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+  color: white;
+  font-size: 1.1rem;
+}
+
+li:hover {
+  background-color: rgb(13, 10, 57);
 }
 
 .books {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 10px auto;
 }
 
 .book-container {
