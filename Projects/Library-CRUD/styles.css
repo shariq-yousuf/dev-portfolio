@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-color: rgb(141, 82, 242);
+}
+
+body {
+  font-family: cursive;
+  font-size: 1rem;
+  /* color: white; */
+}
+
+header {
+  background-color: var(--bg-color);
+  background-image: linear-gradient(
+    90deg,
+    var(--bg-color),
+    #3e9ebb,
+    var(--bg-color)
+  );
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 10px auto;
+  /* padding: 10px; */
+}
+
+.books {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.book-container {
+  background-color: var(--bg-color);
+  background-image: linear-gradient(90deg, var(--bg-color) 50%, #3e9ebb);
+  border-radius: 0.2rem;
+  width: 49%;
+  height: 330px;
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  position: relative;
+}
+
+.cover-img {
+  width: 40%;
+  margin: 10px;
+  box-shadow: 0 0 10px 10px rgba(187, 186, 186, 0.697);
+}
+
+.title {
+  color: white;
+}
+
+.author {
+  /* font-weight: bold; */
+  color: yellow;
+}
+
+.description {
+  line-height: 1.3rem;
+}
+
+.info * {
+  margin: 5px;
+}
+
+.borrow-btn {
+  border: none;
+  padding: 8px 2rem;
+  margin: 1rem auto 0 auto;
+  display: block;
+  border-radius: 2rem;
+  position: absolute;
+  bottom: 10px;
+  left: 60%;
+  background-color: yellow;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.borrow-btn:hover {
+  background-color: white;
+}
+
+footer {
+  margin-top: 5px;
+  text-align: center;
+  font-weight: normal;
+}
+
+footer a {
+  color: black;
+}
+
+footer a:hover {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 720px) {
+  .book-container {
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+}
