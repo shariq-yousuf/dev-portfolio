@@ -26,9 +26,20 @@ const codingBooks = [
     new CodingBook(9, "The Linux Command Line: A Complete Introduction", "William Shotts", 2014, "No Starch Press", "9781593279510", 688, "Master the power of the Linux command line", "This comprehensive guide covers all aspects of using the Linux command line, from basic commands to advanced scripting.", "./imgs/The Linux Command Line A Complete Introduction.jpg"),
     new CodingBook(10, "Frontend Developer Handbook", "Adam Freeman", 2023, "O'Reilly Media", "9781492093370", 912, "A comprehensive guide to modern front-end development practices", "This book covers essential topics like HTML, CSS, JavaScript, frameworks like React, and best practices for building user interfaces.", "./imgs/Frontend Developer Handbook.jpeg"),
 ];
+class Library {
+    constructor() {
+        this.booklist = [];
+    }
+    addBook(book) {
+        codingBooks.push(book);
+    }
+}
 const booksEl = document.querySelector(".books");
 const sideMenuBtn = document.querySelector("#side-menu-btn");
 const sideMenu = document.querySelector(".side-menu");
+const addBookEl = document.querySelector("#add-book");
+const newBookContainer = document.querySelector(".new-book-container");
+const cancelNewBtn = document.querySelector(".cancel-new-book-btn");
 codingBooks.forEach((book) => {
     const bookContainer = document.createElement("div");
     bookContainer.classList.add("book-container");
@@ -41,7 +52,7 @@ codingBooks.forEach((book) => {
               <span class="isbn">ISBN: ${book.ISBN}</span>
               <span class="pages">Pages: ${book.pages}</span>
               <p class="description">${book.description}</p>
-              <button class="borrow-btn">Borrow</button>
+              <button class="borrow-btn btn">Borrow</button>
       `;
     booksEl.appendChild(bookContainer);
 });
@@ -55,4 +66,10 @@ sideMenuBtn.addEventListener("click", () => {
         sideMenuBtn.classList.remove("fa-xmark");
         sideMenuBtn.classList.add("fa-bars");
     }
+});
+addBookEl.addEventListener("click", () => {
+    newBookContainer.style.display = "flex";
+});
+cancelNewBtn.addEventListener("click", () => {
+    newBookContainer.style.display = "none";
 });

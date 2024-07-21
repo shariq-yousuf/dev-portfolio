@@ -8,6 +8,23 @@
   --bg-color: rgb(141, 82, 242);
 }
 
+.btn {
+  padding: 0.5rem 2rem;
+  border: none;
+  border-radius: 2rem;
+  margin-left: auto;
+  background-color: yellow;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  background-color: white;
+  color: black;
+}
+
 body {
   font-family: cursive;
   font-size: 1rem;
@@ -103,7 +120,6 @@ li:hover {
 }
 
 .author {
-  /* font-weight: bold; */
   color: yellow;
 }
 
@@ -116,23 +132,59 @@ li:hover {
 }
 
 .borrow-btn {
-  border: none;
-  padding: 8px 2rem;
   margin: 1rem auto 0 auto;
-  display: block;
-  border-radius: 2rem;
   position: absolute;
   bottom: 10px;
   left: 60%;
-  background-color: yellow;
-  font-weight: bold;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.2s;
 }
 
-.borrow-btn:hover {
-  background-color: white;
+.new-book-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  width: 100dvw;
+  height: 90dvh;
+  background-color: rgba(255, 255, 255, 0.689);
+  justify-content: center;
+  align-items: center;
+}
+
+.new-book-bg {
+  width: 60%;
+  min-height: 60%;
+  background-image: linear-gradient(
+    90deg,
+    var(--bg-color),
+    #3e9ebb,
+    var(--bg-color)
+  );
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.new-book-bg h3 {
+  color: white;
+  padding: 8px;
+}
+
+.new-book-bg input,
+.new-book-bg textarea {
+  font-size: 1rem;
+  outline: none;
+  border: none;
+  padding: 8px;
+  margin: 8px;
+}
+
+.btn-container {
+  width: fit-content;
+  margin-left: auto;
+}
+
+.cancel-new-book-btn {
+  background-color: red;
+  color: white;
 }
 
 footer {

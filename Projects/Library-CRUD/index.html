@@ -18,13 +18,57 @@
     <main>
       <aside class="side-menu hidden">
         <ul>
-          <li>Add New Book</li>
+          <li id="add-book">Add New Book</li>
           <li>Remove Book</li>
           <li>Borrowed Books</li>
           <li>Borrowers</li>
         </ul>
       </aside>
       <div class="books"></div>
+      <div class="new-book-container hidden">
+        <div class="new-book-bg">
+          <h3>Enter new book details</h3>
+          <form action="javascript:void(0)">
+            <input type="text" name="title" placeholder="Enter Book title" />
+            <input type="text" name="author" placeholder="Author name" />
+            <input
+              type="number"
+              name="publish-year"
+              placeholder="Publication year"
+            />
+            <input type="text" name="publisher" placeholder="Publisher name" />
+            <input type="text" name="isbn" placeholder="ISBN" />
+            <input type="number" name="pages" placeholder="Pages" />
+            <input
+              type="text"
+              name="cover-img-url"
+              placeholder="Cover image (url)"
+            />
+            <div class="textarea-div">
+              <textarea
+                rows="5"
+                name="description"
+                id="description"
+                placeholder="Short description"
+              ></textarea>
+              <textarea
+                rows="5"
+                name="summary"
+                id="summary"
+                placeholder="Book summary"
+              ></textarea>
+            </div>
+            <div class="btn-container">
+              <button class="add-new-book-btn btn" type="button">
+                Add Book
+              </button>
+              <button class="cancel-new-book-btn btn" type="button">
+                Cancel
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
     </main>
     <footer>
       <p>&copy; 2024 | <a href="#">Shariq Yousuf</a></p>
