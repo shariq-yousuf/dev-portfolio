@@ -96,7 +96,6 @@ const getNewBookDetails = () => {
 const removeBookFromLib = () => {
     const title = removeInput.value;
     library.removeBook(title);
-    removeBookContainer.style.display = "none";
     sideMenuBtn.click(); // hide sidebar
 };
 // event listeners
@@ -110,6 +109,7 @@ sideMenuBtn.addEventListener("click", () => {
         sideMenuBtn.classList.remove("fa-xmark");
         sideMenuBtn.classList.add("fa-bars");
     }
+    removeBookContainer.style.display = "none";
 });
 addBookEl.addEventListener("click", () => {
     newBookContainer.style.display = "flex";
