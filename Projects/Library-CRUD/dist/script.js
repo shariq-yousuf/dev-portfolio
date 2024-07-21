@@ -14,7 +14,7 @@ class CodingBook {
     }
 }
 // Create an array of CodingBook objects with summaries
-const codingBooks = [
+let codingBooks = [
     new CodingBook(1, "Eloquent JavaScript", "Marijn Haverbeke", "2014", "No Starch Press", "9781593272848", "462", "A modern and comprehensive guide to JavaScript", "This book guides you from programming basics to advanced topics like closures and promises.", "./imgs/Eloquent JavaScript.jpg"),
     new CodingBook(2, "Clean Code: A Handbook of Agile Software Craftsmanship", "Robert C. Martin", "2008", "Prentice Hall", "0136760930", "431", "Practices for writing clean and maintainable code", "Learn best practices for naming, formatting, and structuring your code for readability and maintainability.", "./imgs/Clean Code A Handbook of Agile Software Craftsmanship.jpg"),
     new CodingBook(3, "Head First HTML & CSS", "Elisabeth Robson & Eric Freeman", "2011", "O'Reilly Media", "9780596006184", "656", "A visual and interactive guide to HTML and CSS", "This book uses a visual approach to teach you the fundamentals of building web pages with HTML and CSS.", "./imgs/Head First HTML and CSS.jpg"),
@@ -32,6 +32,12 @@ class Library {
     }
     addBook(book) {
         codingBooks.push(book);
+        renderBooks(codingBooks);
+    }
+    removeBook(title) {
+        const filteredBooksArr = codingBooks.filter((item) => item.title !== title);
+        codingBooks = filteredBooksArr;
+        renderBooks(filteredBooksArr);
     }
 }
 const library = new Library();
@@ -40,13 +46,20 @@ const booksEl = document.querySelector(".books");
 const sideMenuBtn = document.querySelector("#side-menu-btn");
 const sideMenu = document.querySelector(".side-menu");
 const addBookEl = document.querySelector("#add-book");
+const removeBookEl = document.querySelector("#remove-book");
+const newBookForm = document.querySelector("#new-book-form");
+const removeBookForm = document.querySelector("#remove-book-form");
 const newBookAddedMsg = document.querySelector(".newBookAddedMsg");
 const newBookDetails = document.querySelectorAll(".new-book-bg > form *");
 const newBookContainer = document.querySelector(".new-book-container");
-const addNewBookBtn = document.querySelector(".add-new-book-btn");
+const removeBookContainer = document.querySelector(".remove-book-container");
+// const addNewBookBtn: HTMLElement = document.querySelector(".add-new-book-btn");
+// const removeBookBtn: HTMLElement = document.querySelector("#romove-book-btn");
 const cancelNewBtn = document.querySelector(".cancel-new-book-btn");
-const renderBooks = () => {
-    codingBooks.forEach((book) => {
+const removeInput = document.querySelector("#remove-input");
+const renderBooks = (booksArr) => {
+    booksEl.innerHTML = "";
+    booksArr.forEach((book) => {
         const bookContainer = document.createElement("div");
         bookContainer.classList.add("book-container");
         bookContainer.innerHTML = `
@@ -73,13 +86,18 @@ const getNewBookDetails = () => {
         }
     });
     library.addBook(newBook);
-    renderBooks();
     cancelNewBtn.click(); // hide new book container
     sideMenuBtn.click(); // hide sidebar
     newBookAddedMsg.style.display = "block";
     setTimeout(() => {
         newBookAddedMsg.style.display = "none";
     }, 1500);
+};
+const removeBookFromLib = () => {
+    const title = removeInput.value;
+    library.removeBook(title);
+    removeBookContainer.style.display = "none";
+    sideMenuBtn.click(); // hide sidebar
 };
 // event listeners
 sideMenuBtn.addEventListener("click", () => {
@@ -96,8 +114,13 @@ sideMenuBtn.addEventListener("click", () => {
 addBookEl.addEventListener("click", () => {
     newBookContainer.style.display = "flex";
 });
-addNewBookBtn.addEventListener("click", getNewBookDetails);
+// addNewBookBtn.addEventListener("click", getNewBookDetails);
+newBookForm.addEventListener("submit", getNewBookDetails);
+removeBookEl.addEventListener("click", () => {
+    removeBookContainer.style.display = "flex";
+});
+removeBookForm.addEventListener("submit", removeBookFromLib);
 cancelNewBtn.addEventListener("click", () => {
     newBookContainer.style.display = "none";
 });
-renderBooks();
+renderBooks(codingBooks);

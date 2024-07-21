@@ -19,19 +19,31 @@
       <aside class="side-menu hidden">
         <ul>
           <li id="add-book">Add New Book</li>
-          <li>Remove Book</li>
+          <li id="remove-book">Remove Book</li>
           <li>Borrowed Books</li>
           <li>Borrowers</li>
         </ul>
       </aside>
+
       <div class="books"></div>
+
       <p class="newBookAddedMsg">New book added, Scroll down!</p>
       <div class="new-book-container hidden">
         <div class="new-book-bg">
           <h3>Enter new book details</h3>
-          <form action="javascript:void(0)">
-            <input type="text" name="title" placeholder="Enter Book title" />
-            <input type="text" name="author" placeholder="Author name" />
+          <form action="javascipt:void(0)" id="new-book-form">
+            <input
+              type="text"
+              name="title"
+              placeholder="Enter Book title"
+              required
+            />
+            <input
+              type="text"
+              name="author"
+              placeholder="Author name"
+              required
+            />
             <input type="number" name="year" placeholder="Publication year" />
             <input type="text" name="publisher" placeholder="Publisher name" />
             <input type="number" name="ISBN" placeholder="ISBN" />
@@ -56,7 +68,7 @@
               ></textarea>
             </div>
             <div class="btn-container">
-              <button class="add-new-book-btn btn" type="button">
+              <button class="add-new-book-btn btn" type="submit">
                 Add Book
               </button>
               <button class="cancel-new-book-btn btn" type="button">
@@ -66,6 +78,32 @@
           </form>
         </div>
       </div>
+
+      <div class="remove-book-container hidden">
+        <div class="remove-book-bg">
+          <form action="javascript:void(0)" id="remove-book-form">
+            <input
+              id="remove-input"
+              type="text"
+              placeholder="Enter book name"
+              required
+            />
+            <button class="btn" type="submit" id="remove-book-btn">
+              Remove Book
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- <div class="borrow-book-container">
+        <div class="borrow-book-bg">
+          <form action="javascript:void(0)">
+            <input name="name" type="text" required />
+            <input name="email" type="email" />
+            <button type="submit" id="borrow-book-btn">Borrow Book</button>
+          </form>
+        </div>
+      </div> -->
     </main>
     <footer>
       <p>&copy; 2024 | <a href="#">Shariq Yousuf</a></p>
