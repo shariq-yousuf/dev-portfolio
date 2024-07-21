@@ -183,6 +183,15 @@ const projects = [
     githubLink:
       "https://github.com/shariq-yousuf/Developer-Portfolio/tree/cashReg/Projects/Change-Champ",
   },
+  {
+    id: 17,
+    title: "Library CRUD",
+    description: " ",
+    imgSrc: "",
+    liveUrl: "./Projects/Library-CRUD/index.html",
+    githubLink:
+      "https://github.com/shariq-yousuf/Developer-Portfolio/tree/library-crud/Projects/Library-CRUD",
+  },
 ];
 
 const skills = [
