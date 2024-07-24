@@ -1,0 +1,286 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.input {
+  padding: 5px;
+  outline: none;
+}
+
+.btn {
+  padding: 8px 1rem;
+  border: none;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+  margin: 5px;
+  font-size: 16px;
+  background-color: orangered;
+  color: white;
+}
+
+.btn:hover {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  background-image: url(https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/change-champ-bg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  font-weight: bold;
+  position: relative;
+}
+
+header {
+  padding: 0.5rem;
+  color: white;
+  background-color: orangered;
+  display: flex;
+  align-items: end;
+  font-weight: normal;
+}
+
+header li {
+  font-size: 1rem;
+  display: inline-block;
+  list-style-type: none;
+  margin-left: 1.5rem;
+}
+
+.how-to-use {
+  background-color: white;
+  color: black;
+  padding: 3px 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.how-to-use:hover {
+  background-color: rgba(255, 255, 255, 0.759);
+}
+
+main {
+  max-width: 1100px;
+  margin: 1rem auto;
+  padding: 1rem;
+  background: linear-gradient(90deg, rgb(238, 215, 156), rgb(249, 184, 149));
+  border-radius: 0.5rem;
+}
+
+#intro-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100dvw;
+  min-height: 100dvh;
+  background-color: rgba(239, 149, 116, 0.659);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-container {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  background-color: orangered;
+  padding: 30px;
+  border-radius: 10px;
+  color: white;
+  font-weight: normal;
+  font-size: 1.2rem;
+}
+
+.bold {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.intro-container li {
+  margin-left: 2rem;
+}
+
+.intro-container h3,
+.intro-container p {
+  margin: 5px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 16px;
+  right: -3.5rem;
+  background-color: rgba(127, 116, 116, 0.769);
+  border: none;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  color: white;
+}
+
+.close-btn:hover {
+  background-color: rgb(75, 74, 74);
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 35dvh;
+}
+
+.customer-section {
+  font-size: 1.5rem;
+  flex-direction: column;
+  gap: 10px;
+  width: 50%;
+}
+
+#cash {
+  width: 70%;
+  font-size: 1.2rem;
+}
+
+.change-due-section {
+  padding: 0 1rem;
+  flex-direction: column;
+  width: 50%;
+  min-width: 300px;
+  min-height: 150px;
+}
+
+#change-due {
+  min-height: 70%;
+  width: 80%;
+  border: 3px solid orangered;
+  border-radius: 1rem;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding: 5px 0;
+  font-weight: bold;
+}
+
+.change-due-section p {
+  font-size: 1.3rem;
+}
+
+section:nth-child(3) {
+  border-top: 3px solid orangered;
+  padding-top: 10px;
+}
+
+.amount-section {
+  width: 50%;
+  font-size: 1rem;
+}
+
+.amount-section > * {
+  margin: 4px;
+}
+
+#price-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.cid-section {
+  min-width: 35%;
+}
+
+.cid-section p {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+select {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: white;
+}
+
+select:focus {
+  color: black;
+}
+
+table {
+  min-width: 100%;
+  border-collapse: collapse;
+}
+
+table input {
+  width: 50px;
+  outline: none;
+}
+
+.label-td {
+  width: 50%;
+}
+
+tr:hover {
+  background-color: rgba(246, 164, 134, 0.784);
+}
+
+tr:last-child {
+  background-color: rgb(243, 84, 26);
+  color: white;
+}
+
+#total-cid {
+  min-width: 80px;
+}
+
+#edit-btn {
+  display: none;
+}
+
+footer {
+  margin-top: 5px;
+  text-align: center;
+  font-weight: normal;
+}
+
+footer a {
+  color: black;
+}
+
+footer a:hover {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+  .customer-section,
+  .change-due-section,
+  .amount-section,
+  .cid-section {
+    width: 100%;
+    margin: 10px;
+  }
+}
