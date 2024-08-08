@@ -19,9 +19,9 @@ const displayData = (students) => {
             <div class="action-btn">
                 <button class="delete-btn" data-id="${id}">Delete</button>
                 <button class="edit-btn" data-id="${id}">Edit</button>
+                <a href="./pages/details.html?id=${id}" class="details-btn">details</a href="details.html">
             </div>
         `
-    // <button class="details-btn">details</button>
     container.appendChild(card)
   })
 

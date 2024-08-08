@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
+
+* {
+  box-sizing: border-box;
+  /* margin: 0; */
+  padding: 0;
+}
+
+body {
+  font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
+  font-style: normal;
+  background-color: #222222;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+}
+
+#root {
+  width: 60%;
+  max-width: 700px;
+  background-color: rgb(80, 68, 90);
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.name {
+  text-align: center;
+  border-bottom: 5px solid #d637d6;
+}
+
+.major-container {
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+tr,
+td,
+th {
+  padding: 5px;
+  border: 1px solid;
+}
+
+td:nth-child(2) {
+  text-align: center;
+}
+
+@media screen and (max-width: 720px) {
+  #root {
+    width: 100%;
+  }
+}
