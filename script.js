@@ -1,12 +1,12 @@
 const links = document.querySelectorAll(
   "#home-link, #my-projects-link, #my-skills-link, #about-link, #contact-link, #back-to-top"
-);
-const backToTopBtn = document.getElementById("back-to-top");
-const myProjectsContainer = document.getElementById("my-projects-container");
-const mySkillsContainer = document.getElementById("my-skills-container");
-const contactDiv = document.getElementById("social-links");
-const burgerIcon = document.getElementById("burger-icon");
-const burgerMenuContent = document.getElementById("burger-menu-content");
+)
+const backToTopBtn = document.getElementById("back-to-top")
+const myProjectsContainer = document.getElementById("my-projects-container")
+const mySkillsContainer = document.getElementById("my-skills-container")
+const contactDiv = document.getElementById("social-links")
+const burgerIcon = document.getElementById("burger-icon")
+const burgerMenuContent = document.getElementById("burger-menu-content")
 
 const projects = [
   // {
@@ -181,9 +181,20 @@ const projects = [
       "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/change-champ",
     liveUrl: "./Projects/Change-Champ/index.html",
     githubLink:
-      "https://github.com/shariq-yousuf/Developer-Portfolio/tree/cashReg/Projects/Change-Champ",
+      "https://github.com/shariq-yousuf/Developer-Portfolio/tree/main/Projects/Change-Champ",
   },
-];
+  {
+    id: 17,
+    title: "CRUD APP",
+    description:
+      " A simple crud app with all four methods, get, post, patch and delete.",
+    imgSrc:
+      "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/crud-app",
+    liveUrl: "./Projects/crud-app/index.html",
+    githubLink:
+      "https://github.com/shariq-yousuf/Developer-Portfolio/tree/crud/Projects/crud-app",
+  },
+]
 
 const skills = [
   {
@@ -231,7 +242,7 @@ const skills = [
     title: "GitHub",
     icon: "https://res.cloudinary.com/do0pop1de/image/upload/v1718268748/src%20for%20portfolio%20website/skills%20icons/github.svg",
   },
-];
+]
 
 const socialLinks = [
   {
@@ -258,7 +269,7 @@ const socialLinks = [
     icon: "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Social%20Icons/freeCodeCamp-icon",
     url: "https://www.freecodecamp.org/shariq-yousuf",
   },
-];
+]
 
 // projects.push({
 //   id: projects.length + 1,
@@ -275,34 +286,34 @@ const socialLinks = [
 // PUSH NEW PROJECT ABOVE THIS LINE
 
 // navbar, prevent default behavior and scroll to section without updating url
-links.forEach((link) => link.addEventListener("click", scrollIntoSection));
+links.forEach((link) => link.addEventListener("click", scrollIntoSection))
 
 function scrollIntoSection(event) {
-  event.preventDefault();
+  event.preventDefault()
 
-  const targetElementId = this.getAttribute("href").slice(1);
-  const targetElement = document.getElementById(targetElementId);
-  targetElement.scrollIntoView({ behavior: "smooth" });
+  const targetElementId = this.getAttribute("href").slice(1)
+  const targetElement = document.getElementById(targetElementId)
+  targetElement.scrollIntoView({ behavior: "smooth" })
 }
 
 // back to top btn appearance
 window.onscroll = function () {
-  const threshold = innerHeight - 150;
+  const threshold = innerHeight - 150
 
   if (window.scrollY >= threshold) {
-    backToTopBtn.style.display = "block";
+    backToTopBtn.style.display = "block"
   } else {
-    backToTopBtn.style.display = "none";
+    backToTopBtn.style.display = "none"
   }
-};
+}
 
 // add projects
-const projectsInReverseOrder = projects.reverse();
+const projectsInReverseOrder = projects.reverse()
 
 for (const project of projectsInReverseOrder) {
-  const projectCard = document.createElement("div");
-  projectCard.id = `project-${project.id}`;
-  projectCard.className = "card";
+  const projectCard = document.createElement("div")
+  projectCard.id = `project-${project.id}`
+  projectCard.className = "card"
 
   projectCard.innerHTML = `
   <img src="${project.imgSrc}" alt="${project.title}"/>
@@ -311,22 +322,22 @@ for (const project of projectsInReverseOrder) {
   <div class="link-container">
   <a class="live-link" href="${project.liveUrl}"><i class="material-symbols-outlined live-icon"> visibility</i> Live</a>
   <a class="github-link" href="${project.githubLink}">Github</a>
-  </div>`;
+  </div>`
 
-  myProjectsContainer.appendChild(projectCard);
+  myProjectsContainer.appendChild(projectCard)
 }
 
 // add skills
-const skillsInReverseOrder = skills.reverse();
+const skillsInReverseOrder = skills.reverse()
 
 for (const skill of skillsInReverseOrder) {
-  const bgEl = document.createElement("div");
-  bgEl.className = "bg";
-  const imgEl = document.createElement("img");
-  imgEl.setAttribute("src", skill.icon);
-  imgEl.setAttribute("alt", skill.title);
-  bgEl.appendChild(imgEl);
-  mySkillsContainer.appendChild(bgEl);
+  const bgEl = document.createElement("div")
+  bgEl.className = "bg"
+  const imgEl = document.createElement("img")
+  imgEl.setAttribute("src", skill.icon)
+  imgEl.setAttribute("alt", skill.title)
+  bgEl.appendChild(imgEl)
+  mySkillsContainer.appendChild(bgEl)
 }
 
 // add social links
@@ -335,18 +346,18 @@ socialLinks.forEach((link) => {
    <a href="${link.url}">
    <div class="link" title="${link.platform}"><img src="${link.icon}" alt="${link.platform}"></div>
    </a>
-  `;
+  `
 
-  contactDiv.innerHTML += linkHtml;
-});
+  contactDiv.innerHTML += linkHtml
+})
 
 // add burger menu for small screen
 burgerIcon.addEventListener("click", () => {
   if (burgerIcon.innerHTML === "menu") {
-    burgerIcon.innerHTML = "close";
+    burgerIcon.innerHTML = "close"
   } else {
-    burgerIcon.innerHTML = "menu";
+    burgerIcon.innerHTML = "menu"
   }
 
-  burgerMenuContent.classList.toggle("hidden");
-});
+  burgerMenuContent.classList.toggle("hidden")
+})
