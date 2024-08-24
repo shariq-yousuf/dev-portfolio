@@ -183,16 +183,27 @@ const projects = [
     githubLink:
       "https://github.com/shariq-yousuf/Developer-Portfolio/tree/main/Projects/Change-Champ",
   },
+  // {
+  //   id: 17,
+  //   title: "CRUD APP",
+  //   description:
+  //     " A simple crud app with all four methods, get, post, patch and delete.",
+  //   imgSrc:
+  //     "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/crud-app",
+  //   liveUrl: "./Projects/crud-app/index.html",
+  //   githubLink:
+  //     "https://github.com/shariq-yousuf/Developer-Portfolio/tree/crud/Projects/crud-app",
+  // },
   {
-    id: 17,
-    title: "CRUD APP",
+    id: 18,
+    title: "Meme Generator",
     description:
-      " A simple crud app with all four methods, get, post, patch and delete.",
+      "Create memes in seconds! Choose from a huge library of templates and add your own text.",
     imgSrc:
-      "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/crud-app",
-    liveUrl: "./Projects/crud-app/index.html",
+      "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/react_projects-scrimba/meme-generator",
+    liveUrl: "https://meme-generator-sy.netlify.app/",
     githubLink:
-      "https://github.com/shariq-yousuf/Developer-Portfolio/tree/crud/Projects/crud-app",
+      "https://github.com/shariq-yousuf/React-Projects_with-Scrimba/tree/main/Projects/meme-generator",
   },
 ]
 
