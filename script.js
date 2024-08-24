@@ -19,6 +19,7 @@ const projects = [
   //   liveUrl: "./Projects/Digital-Clock/clock.html",
   //   githubLink:
   //     "https://github.com/shariq-yousuf/Developer-Portfolio/tree/main/Projects/Digital-Clock",
+  // isReactProject: false
   // },
   {
     id: 2,
@@ -29,6 +30,7 @@ const projects = [
       "https://res.cloudinary.com/do0pop1de/image/upload/v1718191950/src%20for%20portfolio%20website/secret-chat.png",
     liveUrl: "https://shariq-yousuf.github.io/Secret-Chat/",
     githubLink: "https://github.com/shariq-yousuf/Secret-Chat",
+    isReactProject: false,
   },
   {
     id: 3,
@@ -39,6 +41,7 @@ const projects = [
       "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/tictactoe",
     liveUrl: "https://shariq-yousuf.github.io/TicTacToe/",
     githubLink: "https://github.com/shariq-yousuf/TicTacToe",
+    isReactProject: false,
   },
   {
     id: 4,
@@ -50,6 +53,7 @@ const projects = [
     liveUrl: "./Projects/Palindrome-Checker/index.html",
     githubLink:
       "https://github.com/shariq-yousuf/Developer-Portfolio/tree/main/Projects/Palindrome-Checker",
+    isReactProject: false,
   },
   {
     id: 5,
@@ -61,6 +65,7 @@ const projects = [
     liveUrl: "./Projects/Lucky-Draw/index.html",
     githubLink:
       "https://github.com/shariq-yousuf/Developer-Portfolio/tree/main/Projects/Lucky-Draw",
+    isReactProject: false,
   },
   {
     id: 6,
@@ -72,6 +77,7 @@ const projects = [
     liveUrl: "./Projects/Word-Counter/index.html",
     githubLink:
       "https://github.com/shariq-yousuf/Developer-Portfolio/tree/main/Projects/Word-Counter",
+    isReactProject: false,
   },
   {
     id: 7,
@@ -82,6 +88,7 @@ const projects = [
     liveUrl: "./Projects/Roman-Numeral-Converter/index.html",
     githubLink:
       "https://github.com/shariq-yousuf/Developer-Portfolio/tree/main/Projects/Roman-Numeral-Converter",
+    isReactProject: false,
   },
   {
     id: 8,
@@ -93,6 +100,7 @@ const projects = [
     liveUrl: "./Projects/Quiz-App/index.html",
     githubLink:
       "https://github.com/shariq-yousuf/Developer-Portfolio/tree/main/Projects/Quiz-App",
+    isReactProject: false,
   },
   {
     id: 9,
@@ -103,6 +111,7 @@ const projects = [
     liveUrl: "./Projects/Mobile-Number-Validator/index.html",
     githubLink:
       "https://github.com/shariq-yousuf/Developer-Portfolio/tree/main/Projects/Mobile-Number-Validator",
+    isReactProject: false,
   },
   // {
   //   id: 10,
@@ -115,6 +124,7 @@ const projects = [
   //     "https://shariq-yousuf.github.io/my-fCC-js-cert-projects/Projects/Statistics-Calculator/index.html",
   //   githubLink:
   //     "https://github.com/shariq-yousuf/my-fCC-js-cert-projects/tree/main/Projects/Statistics-Calculator",
+  // isReactProject: false
   // },
   // {
   //   id: 11,
@@ -127,6 +137,7 @@ const projects = [
   //     "https://shariq-yousuf.github.io/my-fCC-js-cert-projects/Projects/Todo-App/index.html",
   //   githubLink:
   //     "https://github.com/shariq-yousuf/my-fCC-js-cert-projects/tree/main/Projects/Todo-App",
+  // isReactProject: false
   // },
   // {
   //   id: 12,
@@ -139,6 +150,7 @@ const projects = [
   //     "https://shariq-yousuf.github.io/my-fCC-js-cert-projects/Projects/Calorie-Counter/index.html",
   //   githubLink:
   //     "https://github.com/shariq-yousuf/my-fCC-js-cert-projects/tree/main/Projects/Calorie-Counter",
+  // isReactProject: false
   // },
   {
     id: 13,
@@ -151,6 +163,7 @@ const projects = [
       "https://shariq-yousuf.github.io/my-fCC-js-cert-projects/Projects/Platformer-Game/index.html",
     githubLink:
       "https://github.com/shariq-yousuf/my-fCC-js-cert-projects/tree/main/Projects/Platformer-Game",
+    isReactProject: false,
   },
   {
     id: 14,
@@ -161,6 +174,7 @@ const projects = [
     liveUrl: "./Projects/Carousel/index.html",
     githubLink:
       "https://github.com/shariq-yousuf/Developer-Portfolio/tree/main/Projects/Carousel",
+    isReactProject: false,
   },
   {
     id: 15,
@@ -171,6 +185,7 @@ const projects = [
     liveUrl: "./Projects/Typing-Pro/index.html",
     githubLink:
       "https://github.com/shariq-yousuf/Developer-Portfolio/tree/main/Projects/Typing-Pro",
+    isReactProject: false,
   },
   {
     id: 16,
@@ -182,6 +197,7 @@ const projects = [
     liveUrl: "./Projects/Change-Champ/index.html",
     githubLink:
       "https://github.com/shariq-yousuf/Developer-Portfolio/tree/main/Projects/Change-Champ",
+    isReactProject: false,
   },
   // {
   //   id: 17,
@@ -193,6 +209,7 @@ const projects = [
   //   liveUrl: "./Projects/crud-app/index.html",
   //   githubLink:
   //     "https://github.com/shariq-yousuf/Developer-Portfolio/tree/crud/Projects/crud-app",
+  // isReactProject: false
   // },
   {
     id: 18,
@@ -204,6 +221,7 @@ const projects = [
     liveUrl: "https://meme-generator-sy.netlify.app/",
     githubLink:
       "https://github.com/shariq-yousuf/React-Projects_with-Scrimba/tree/main/Projects/meme-generator",
+    isReactProject: true,
   },
 ]
 
@@ -327,13 +345,25 @@ for (const project of projectsInReverseOrder) {
   projectCard.className = "card"
 
   projectCard.innerHTML = `
-  <img src="${project.imgSrc}" alt="${project.title}"/>
-  <h2>${project.title}</h2>
-  <p>${project.description}</p>
-  <div class="link-container">
-  <a class="live-link" href="${project.liveUrl}"><i class="material-symbols-outlined live-icon"> visibility</i> Live</a>
-  <a class="github-link" href="${project.githubLink}">Github</a>
-  </div>`
+    <img src="${project.imgSrc}" alt="${project.title}"/>
+    <h2>${project.title}</h2>
+    <p>${project.description}</p>
+    <div class="link-container">
+      <a class="live-link" href="${project.liveUrl}"><i class="material-symbols-outlined live-icon"> visibility</i> Live</a>
+      <a class="github-link" href="${project.githubLink}">Github</a>
+    </div>
+  `
+
+  const projectTagEl = document.createElement("span")
+  projectTagEl.className = "project-tag"
+  if (project.isReactProject) {
+    projectTagEl.textContent = "React"
+    projectTagEl.style.backgroundColor = "#61DBFB"
+  } else {
+    projectTagEl.textContent = "Vanilla JS"
+    projectTagEl.style.backgroundColor = "#f7df1e"
+  }
+  projectCard.appendChild(projectTagEl)
 
   myProjectsContainer.appendChild(projectCard)
 }
