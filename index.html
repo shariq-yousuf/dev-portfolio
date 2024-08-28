@@ -53,13 +53,18 @@
 
       <div class="intro">
         <div class="intro-container">
-          <h2 class="animate__animated animate__zoomIn">Hi, I am</h2>
-          <h1 class="my-name animate__animated animate__lightSpeedInLeft">
+          <h2>Hi, I am</h2>
+          <h1 class="my-name animate__animated animate__rollIn">
             <span class="first-name">Shariq</span> Yousuf
           </h1>
-          <h2 class="animate__animated animate__slideInUp">
+
+          <!-- before typed js -->
+          <!-- <h2>
             a <span class="role">front-end Web Developer</span>
-          </h2>
+          </h2> -->
+
+          <!-- after typed js, and inner html move to typed string in the bottom of this file -->
+          <h2 class="typed"></h2>
         </div>
       </div>
     </div>
@@ -112,6 +117,21 @@
     >
 
     <footer>&#169; 2024 Shariq Yousuf</footer>
+
+    <!-- Load typed.js library from the CDN -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <!-- Setup and start animation! -->
+    <script>
+      var typed = new Typed(".typed", {
+        strings: [
+          `
+            a <span class="role">front-end Web Developer</span>
+          `,
+        ],
+        typeSpeed: 30,
+        showCursor: false,
+      })
+    </script>
 
     <script src="script.js"></script>
   </body>
