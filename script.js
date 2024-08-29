@@ -382,10 +382,10 @@ for (const project of projectsInReverseOrder) {
   projectTagEl.className = "project-tag"
   if (project.isReactProject) {
     projectTagEl.textContent = "React"
-    projectTagEl.style.backgroundColor = "#61DBFB"
+    projectTagEl.style.backgroundColor = "#80dff7"
   } else {
     projectTagEl.textContent = "Vanilla JS"
-    projectTagEl.style.backgroundColor = "#f7df1e"
+    projectTagEl.style.backgroundColor = "#f7e45a"
   }
   projectCard.appendChild(projectTagEl)
 
