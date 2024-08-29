@@ -235,6 +235,18 @@ const projects = [
       "https://github.com/shariq-yousuf/React-Projects_with-Scrimba/tree/main/Projects/notes-app",
     isReactProject: true,
   },
+  {
+    id: 20,
+    title: "Tenzies",
+    description:
+      "TenZies is a dice-rolling game where you try to make all dice the same number. Beat your high score!",
+    imgSrc:
+      "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/react_projects-scrimba/tenzies",
+    liveUrl: "https://tenzies-sy.netlify.app/",
+    githubLink:
+      "https://github.com/shariq-yousuf/React-Projects_with-Scrimba/tree/main/Projects/tenzies",
+    isReactProject: true,
+  },
 ]
 
 const skills = [
