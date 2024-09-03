@@ -19,7 +19,9 @@ const projects = [
   //   liveUrl: "./Projects/Digital-Clock/clock.html",
   //   githubLink:
   //     "https://github.com/shariq-yousuf/Developer-Portfolio/tree/main/Projects/Digital-Clock",
-  // isReactProject: false
+  // isJS: true,
+  // isTS: false,
+  // isReact: false
   // },
   {
     id: 2,
@@ -30,7 +32,9 @@ const projects = [
       "https://res.cloudinary.com/do0pop1de/image/upload/v1718191950/src%20for%20portfolio%20website/secret-chat.png",
     liveUrl: "https://shariq-yousuf.github.io/Secret-Chat/",
     githubLink: "https://github.com/shariq-yousuf/Secret-Chat",
-    isReactProject: false,
+    isJS: true,
+    isTS: false,
+    isReact: false,
   },
   {
     id: 3,
@@ -41,7 +45,9 @@ const projects = [
       "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/tictactoe",
     liveUrl: "https://shariq-yousuf.github.io/TicTacToe/",
     githubLink: "https://github.com/shariq-yousuf/TicTacToe",
-    isReactProject: false,
+    isJS: true,
+    isTS: false,
+    isReact: false,
   },
   {
     id: 4,
@@ -53,7 +59,9 @@ const projects = [
     liveUrl: "./Projects/Palindrome-Checker/index.html",
     githubLink:
       "https://github.com/shariq-yousuf/Developer-Portfolio/tree/main/Projects/Palindrome-Checker",
-    isReactProject: false,
+    isJS: true,
+    isTS: false,
+    isReact: false,
   },
   {
     id: 5,
@@ -65,7 +73,9 @@ const projects = [
     liveUrl: "./Projects/Lucky-Draw/index.html",
     githubLink:
       "https://github.com/shariq-yousuf/Developer-Portfolio/tree/main/Projects/Lucky-Draw",
-    isReactProject: false,
+    isJS: true,
+    isTS: false,
+    isReact: false,
   },
   {
     id: 6,
@@ -77,7 +87,9 @@ const projects = [
     liveUrl: "./Projects/Word-Counter/index.html",
     githubLink:
       "https://github.com/shariq-yousuf/Developer-Portfolio/tree/main/Projects/Word-Counter",
-    isReactProject: false,
+    isJS: true,
+    isTS: false,
+    isReact: false,
   },
   {
     id: 7,
@@ -88,7 +100,9 @@ const projects = [
     liveUrl: "./Projects/Roman-Numeral-Converter/index.html",
     githubLink:
       "https://github.com/shariq-yousuf/Developer-Portfolio/tree/main/Projects/Roman-Numeral-Converter",
-    isReactProject: false,
+    isJS: true,
+    isTS: false,
+    isReact: false,
   },
   {
     id: 8,
@@ -100,7 +114,9 @@ const projects = [
     liveUrl: "./Projects/Quiz-App/index.html",
     githubLink:
       "https://github.com/shariq-yousuf/Developer-Portfolio/tree/main/Projects/Quiz-App",
-    isReactProject: false,
+    isJS: true,
+    isTS: false,
+    isReact: false,
   },
   {
     id: 9,
@@ -111,7 +127,9 @@ const projects = [
     liveUrl: "./Projects/Mobile-Number-Validator/index.html",
     githubLink:
       "https://github.com/shariq-yousuf/Developer-Portfolio/tree/main/Projects/Mobile-Number-Validator",
-    isReactProject: false,
+    isJS: true,
+    isTS: false,
+    isReact: false,
   },
   // {
   //   id: 10,
@@ -124,7 +142,9 @@ const projects = [
   //     "https://shariq-yousuf.github.io/my-fCC-js-cert-projects/Projects/Statistics-Calculator/index.html",
   //   githubLink:
   //     "https://github.com/shariq-yousuf/my-fCC-js-cert-projects/tree/main/Projects/Statistics-Calculator",
-  // isReactProject: false
+  // isJS: true,
+  // isTS: false,
+  // isReact: false
   // },
   // {
   //   id: 11,
@@ -137,7 +157,9 @@ const projects = [
   //     "https://shariq-yousuf.github.io/my-fCC-js-cert-projects/Projects/Todo-App/index.html",
   //   githubLink:
   //     "https://github.com/shariq-yousuf/my-fCC-js-cert-projects/tree/main/Projects/Todo-App",
-  // isReactProject: false
+  // isJS: true,
+  // isTS: false,
+  // isReact: false
   // },
   // {
   //   id: 12,
@@ -150,7 +172,9 @@ const projects = [
   //     "https://shariq-yousuf.github.io/my-fCC-js-cert-projects/Projects/Calorie-Counter/index.html",
   //   githubLink:
   //     "https://github.com/shariq-yousuf/my-fCC-js-cert-projects/tree/main/Projects/Calorie-Counter",
-  // isReactProject: false
+  // isJS: true,
+  // isTS: false,
+  // isReact: false
   // },
   {
     id: 13,
@@ -163,7 +187,9 @@ const projects = [
       "https://shariq-yousuf.github.io/my-fCC-js-cert-projects/Projects/Platformer-Game/index.html",
     githubLink:
       "https://github.com/shariq-yousuf/my-fCC-js-cert-projects/tree/main/Projects/Platformer-Game",
-    isReactProject: false,
+    isJS: true,
+    isTS: false,
+    isReact: false,
   },
   {
     id: 14,
@@ -174,7 +200,9 @@ const projects = [
     liveUrl: "./Projects/Carousel/index.html",
     githubLink:
       "https://github.com/shariq-yousuf/Developer-Portfolio/tree/main/Projects/Carousel",
-    isReactProject: false,
+    isJS: true,
+    isTS: false,
+    isReact: false,
   },
   {
     id: 15,
@@ -185,7 +213,9 @@ const projects = [
     liveUrl: "./Projects/Typing-Pro/index.html",
     githubLink:
       "https://github.com/shariq-yousuf/Developer-Portfolio/tree/main/Projects/Typing-Pro",
-    isReactProject: false,
+    isJS: true,
+    isTS: false,
+    isReact: false,
   },
   {
     id: 16,
@@ -197,7 +227,9 @@ const projects = [
     liveUrl: "./Projects/Change-Champ/index.html",
     githubLink:
       "https://github.com/shariq-yousuf/Developer-Portfolio/tree/main/Projects/Change-Champ",
-    isReactProject: false,
+    isJS: true,
+    isTS: false,
+    isReact: false,
   },
   // {
   //   id: 17,
@@ -209,20 +241,24 @@ const projects = [
   //   liveUrl: "./Projects/crud-app/index.html",
   //   githubLink:
   //     "https://github.com/shariq-yousuf/Developer-Portfolio/tree/crud/Projects/crud-app",
-  // isReactProject: false
+  // isJS: true,
+  // isTS: false,
+  // isReact: false
   // },
-  // {
-  //   id: 18,
-  //   title: "Meme Generator",
-  //   description:
-  //     "Create memes in seconds! Choose from a huge library of templates and add your own text.",
-  //   imgSrc:
-  //     "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/react_projects-scrimba/meme-generator",
-  //   liveUrl: "https://meme-generator-sy.netlify.app/",
-  //   githubLink:
-  //     "https://github.com/shariq-yousuf/React-Projects_with-Scrimba/tree/main/Projects/meme-generator",
-  //   isReactProject: true,
-  // },
+  {
+    id: 18,
+    title: "Meme Generator",
+    description:
+      "Create memes in seconds! Choose from a huge library of templates and add your own text.",
+    imgSrc:
+      "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/react_projects-scrimba/meme-generator",
+    liveUrl: "https://meme-generator-sy.netlify.app/",
+    githubLink:
+      "https://github.com/shariq-yousuf/React-Projects_with-Scrimba/tree/main/Projects/meme-generator",
+    isJS: false,
+    isTS: false,
+    isReact: true,
+  },
   {
     id: 19,
     title: "Notes App",
@@ -233,7 +269,9 @@ const projects = [
     liveUrl: "https://notes-app-sy.netlify.app/",
     githubLink:
       "https://github.com/shariq-yousuf/React-Projects_with-Scrimba/tree/main/Projects/notes-app",
-    isReactProject: true,
+    isJS: false,
+    isTS: false,
+    isReact: true,
   },
   {
     id: 20,
@@ -245,7 +283,9 @@ const projects = [
     liveUrl: "https://tenzies-sy.netlify.app/",
     githubLink:
       "https://github.com/shariq-yousuf/React-Projects_with-Scrimba/tree/main/Projects/tenzies",
-    isReactProject: true,
+    isJS: false,
+    isTS: false,
+    isReact: true,
   },
   {
     id: 21,
@@ -256,7 +296,9 @@ const projects = [
       "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/chaichat",
     liveUrl: "https://shariq-yousuf.github.io/ChaiChat/",
     githubLink: "https://github.com/shariq-yousuf/ChaiChat",
-    isReactProject: false,
+    isJS: false,
+    isTS: true,
+    isReact: false,
   },
 ]
 
@@ -391,12 +433,16 @@ for (const project of projectsInReverseOrder) {
 
   const projectTagEl = document.createElement("span")
   projectTagEl.className = "project-tag"
-  if (project.isReactProject) {
-    projectTagEl.textContent = "React"
-    projectTagEl.style.backgroundColor = "#80dff7"
-  } else {
+  if (project.isJS) {
     projectTagEl.textContent = "Vanilla JS"
     projectTagEl.style.backgroundColor = "#f7e45a"
+  } else if (project.isTS) {
+    projectTagEl.textContent = "TypeScript"
+    projectTagEl.style.backgroundColor = "#3178C6"
+    projectTagEl.style.color = "white"
+  } else if (project.isReact) {
+    projectTagEl.textContent = "React"
+    projectTagEl.style.backgroundColor = "#80dff7"
   }
   projectCard.appendChild(projectTagEl)
 
