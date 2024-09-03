@@ -340,13 +340,33 @@ const skills = [
   },
   {
     id: 8,
+    title: "TypeScript",
+    icon: "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/skills%20icons/typescript",
+  },
+  {
+    id: 9,
     title: "Git",
     icon: "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/skills%20icons/git",
   },
   {
-    id: 9,
+    id: 10,
     title: "GitHub",
     icon: "https://res.cloudinary.com/do0pop1de/image/upload/v1718268748/src%20for%20portfolio%20website/skills%20icons/github.svg",
+  },
+  {
+    id: 11,
+    title: "Vite",
+    icon: "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/skills%20icons/vite",
+  },
+  {
+    id: 12,
+    title: "Firebase",
+    icon: "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/skills%20icons/firebase",
+  },
+  {
+    id: 13,
+    title: "React",
+    icon: "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/skills%20icons/react",
   },
 ]
 
@@ -458,6 +478,7 @@ for (const skill of skillsInReverseOrder) {
   const imgEl = document.createElement("img")
   imgEl.setAttribute("src", skill.icon)
   imgEl.setAttribute("alt", skill.title)
+  imgEl.title = skill.title
   bgEl.appendChild(imgEl)
   mySkillsContainer.appendChild(bgEl)
 }
