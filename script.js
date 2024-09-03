@@ -247,6 +247,17 @@ const projects = [
       "https://github.com/shariq-yousuf/React-Projects_with-Scrimba/tree/main/Projects/tenzies",
     isReactProject: true,
   },
+  {
+    id: 21,
+    title: "ChaiChat",
+    description:
+      "A real-time messaging application built on Firebase platform. Features: user profiles, chats, and real-time updates.",
+    imgSrc:
+      "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/chaichat",
+    liveUrl: "https://shariq-yousuf.github.io/ChaiChat/",
+    githubLink: "https://github.com/shariq-yousuf/ChaiChat",
+    isReactProject: false,
+  },
 ]
 
 const skills = [
