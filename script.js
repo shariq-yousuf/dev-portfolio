@@ -381,7 +381,7 @@ const socialLinks = [
     id: 2,
     platform: "LinkedIn",
     icon: "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Social%20Icons/LinkedIn",
-    url: "#",
+    url: "https://www.linkedin.com/in/shariq-yousuf/",
   },
   {
     id: 3,
@@ -486,8 +486,10 @@ for (const skill of skillsInReverseOrder) {
 // add social links
 socialLinks.forEach((link) => {
   const linkHtml = `
-   <a href="${link.url}">
-   <div class="link" title="${link.platform}"><img src="${link.icon}" alt="${link.platform}"></div>
+   <a href="${link.url}" target="_blank">
+    <div class="link" title="${link.platform}">
+      <img src="${link.icon}" alt="${link.platform}" />
+    </div>
    </a>
   `
 
