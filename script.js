@@ -383,14 +383,20 @@ const socialLinks = [
     icon: "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Social%20Icons/LinkedIn",
     url: "https://www.linkedin.com/in/shariq-yousuf/",
   },
-  {
-    id: 3,
-    platform: "Gmail",
-    icon: "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Social%20Icons/Gmail-icon",
-    url: "mailto:shariqyousuf01@gmail.com",
-  },
+  // {
+  //   id: 3,
+  //   platform: "Gmail",
+  //   icon: "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Social%20Icons/Gmail-icon",
+  //   url: "mailto:shariqyousuf01@gmail.com",
+  // },
   {
     id: 4,
+    platform: "w3schools",
+    icon: "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Social%20Icons/w3schools-icon",
+    url: "https://www.w3profile.com/shariq-yousuf",
+  },
+  {
+    id: 5,
     platform: "freeCodeCamp",
     icon: "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Social%20Icons/freeCodeCamp-icon",
     url: "https://www.freecodecamp.org/shariq-yousuf",
