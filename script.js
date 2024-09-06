@@ -512,3 +512,14 @@ burgerIcon.addEventListener("click", () => {
 
   burgerMenuContent.classList.toggle("hidden")
 })
+
+// Setup and start typed.js animation!
+const typed = new Typed(".typed", {
+  strings: [
+    `
+            a <span class="role">front-end Web Developer</span>
+          `,
+  ],
+  typeSpeed: 30,
+  showCursor: false,
+})
