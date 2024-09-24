@@ -314,6 +314,20 @@ const projects = [
     isTS: false,
     isReact: true,
   },
+  {
+    id: 23,
+    title: "React Calculator",
+    description:
+      "A simple, user-friendly calculator built with React and styled with Tailwind CSS.",
+    imgSrc:
+      "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/react-calculator",
+    liveUrl: "https://react-calculator-fcc-sy.netlify.app/",
+    githubLink:
+      "https://github.com/shariq-yousuf/fCC_frontend-libraries_cert-projects/tree/main/react-calculator",
+    isJS: false,
+    isTS: false,
+    isReact: true,
+  },
 ]
 
 const skills = [
