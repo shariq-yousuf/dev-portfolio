@@ -300,6 +300,20 @@ const projects = [
     isTS: true,
     isReact: false,
   },
+  {
+    id: 22,
+    title: "Hadith App",
+    description:
+      "Get a random Hadith from hadithapi.com and post it to Twitter with one click.",
+    imgSrc:
+      "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/hadith-app",
+    liveUrl: "https://hadith-app.netlify.app/",
+    githubLink:
+      "https://github.com/shariq-yousuf/fCC_frontend-libraries_cert-projects/tree/main/random-quote-machine",
+    isJS: false,
+    isTS: false,
+    isReact: true,
+  },
 ]
 
 const skills = [
