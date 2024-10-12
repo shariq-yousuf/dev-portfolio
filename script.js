@@ -342,6 +342,19 @@ const projects = [
     isTS: false,
     isReact: true,
   },
+  {
+    id: 25,
+    title: "Ecommerce Store",
+    description: "Built with React, Redux, React Router.",
+    imgSrc:
+      "https://res.cloudinary.com/do0pop1de/image/upload/f_auto,q_auto/v1/src%20for%20portfolio%20website/Projects%20Screenshots/ecommerce-app",
+    liveUrl: "https://psdc-react-ecommerce-app.netlify.app/",
+    githubLink:
+      "https://github.com/shariq-yousuf/PSDC_React_exam_Ecommerce_project",
+    isJS: false,
+    isTS: false,
+    isReact: true,
+  },
 ]
 
 const skills = [
