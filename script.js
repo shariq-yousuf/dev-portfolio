@@ -504,7 +504,7 @@ for (const project of projectsInReverseOrder) {
 
   projectCard.innerHTML = `
     <img src="${project.imgSrc}" alt="${project.title}"/>
-    <h2>${project.title}</h2>
+    <h3>${project.title}</h3>
     <p>${project.description}</p>
     <div class="link-container">
       <a class="live-link" href="${project.liveUrl}"><i class="material-symbols-outlined live-icon"> visibility</i> Live</a>

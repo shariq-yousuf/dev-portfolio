@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
+
 * {
   box-sizing: border-box;
 }
@@ -6,6 +8,7 @@
   --code-img: url(https://res.cloudinary.com/do0pop1de/image/upload/v1718113378/src%20for%20portfolio%20website/intro-bg.jpg);
   --primary-color: rgb(255, 174, 0);
   --sec-color: rgb(239, 235, 133);
+  --my-font: "Fira Code", monospace;
 }
 
 body {
@@ -13,6 +16,7 @@ body {
   padding: 0px;
   font-size: 1rem;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-optical-sizing: auto;
 }
 
 #home {
@@ -157,6 +161,7 @@ body {
   padding: 10px;
   border: 3px solid var(--primary-color);
   position: relative;
+  overflow: hidden;
 }
 
 .project-tag {
@@ -178,8 +183,9 @@ body {
   border-radius: 10px;
 }
 
-.card h2 {
+.card h3 {
   margin: 0;
+  font-family: var(--my-font);
 }
 
 .card p {
@@ -195,8 +201,9 @@ body {
 .card a {
   text-decoration: none;
   color: inherit;
-  font-weight: bold;
-  font-size: 1.2rem;
+  font-family: var(--my-font);
+  /* font-weight: bold; */
+  /* font-size: 1.2rem; */
 }
 
 .card a:hover {
@@ -204,8 +211,10 @@ body {
 }
 
 .live-icon {
+  margin-right: -5px;
   font-size: 1.5rem;
-  vertical-align: text-top;
+  /* vertical-align: text-top; */
+  vertical-align: middle;
 }
 
 #my-skills {
